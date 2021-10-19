@@ -51,7 +51,7 @@ final searchQuery = {
   "arriveCity": "AMM",
   "leaveDate": "",
   "ReturnDate": "",
-  "travelers": {"adults": 1, "kids": 0, "infants": ""},
+  "travelers": {"adults": 1, "kids": 0, "infants": 0},
   "airLines": [
     "iraqi airline",
     "fly baghdad",

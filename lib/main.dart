@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otb_client/view/home.dart';
 
 void main() {
   runApp(const OTBApp());
@@ -9,6 +10,8 @@ class OTBApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const MaterialApp(
+      home: Home(),
+    );
   }
 }

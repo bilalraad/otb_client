@@ -20,14 +20,14 @@ class Trip {
     String? type,
     String? airline,
     FlightDetails? leaving,
-    FlightDetails? resultItemReturn,
+    FlightDetails? returning,
   }) =>
       Trip(
         tripNumber: tripNumber ?? this.tripNumber,
         type: type ?? this.type,
         airline: airline ?? this.airline,
         leaving: leaving ?? this.leaving,
-        returning: resultItemReturn ?? this.returning,
+        returning: returning ?? this.returning,
       );
 
   factory Trip.fromMap(Map<String, dynamic> json) => Trip(
