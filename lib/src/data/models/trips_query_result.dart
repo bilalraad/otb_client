@@ -1,4 +1,4 @@
-import 'package:otb_client/data/models/trip.dart';
+import 'package:otb_client/src/data/models/trip.dart';
 
 class TripsQueryResult {
   TripsQueryResult({

@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/view/home.dart';
+import 'package:otb_client/app.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const OTBApp());
-}
-
-class OTBApp extends StatelessWidget {
-  const OTBApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Home(),
-    );
-  }
 }

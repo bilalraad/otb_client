@@ -1,0 +1,56 @@
+{
+	"@walk": {
+		"placeholders": {
+			"walk": {
+				"example": "5 mins",
+				"type": "String"
+			}
+		}
+	},
+	"@walk_and_wait": {
+		"placeholders": {
+			"wait": {
+				"example": "1 min",
+				"type": "String"
+			},
+			"walk": {
+				"example": "5 mins",
+				"type": "String"
+			}
+		}
+	},
+	"@youll_be_there": {
+		"placeholders": {
+			"time": {
+				"example": "1 min",
+				"type": "String"
+			}
+		}
+	},
+	"@direction": {
+		"placeholders": {
+			"dir": {
+				"example": "Lausanne",
+				"type": "String"
+			}
+		}
+	},
+	"from": "من",
+	"to": "الى",
+	"tripType": "نوع الرحلة",
+	"tripCategory": "فئة الرحلة",
+	"departurTime": "الانطلاق",
+	"arriveTime": "الوصول",
+	"leave": "الذهاب",
+	"back": "العودة",
+	"numOfPeople": "عدد الاشخاص",
+	"adults": "الكبار",
+	"kids": "الاطفال",
+	"infants": "الرضع",
+	"lessThanTwo": "اصغر من سنتين",
+	"between3and12": "من ٢ الى ١٢ سنة",
+	"olderthan12": "اكبر من ١٢ سنة",
+	"searchWithApp": "Done",
+	"useWhatsApp": "Save route"
+	
+}
