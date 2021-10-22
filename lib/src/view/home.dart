@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:otb_client/src/data/API/search_query_service.dart';
 import 'package:otb_client/src/data/models/trips_query_result.dart';
 
+import 'utils/app_text_field.dart';
+import 'utils/app_button.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -15,7 +18,15 @@ class Home extends StatelessWidget {
             final result = snapshot.data;
             return Column(
               children: [
-                ElevatedButton(onPressed: () {}, child: Text('khg')),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AppButton(
+                    onPressed: () {},
+                    text: 'khg',
+                    buttonType: ButtonType.secondary,
+                  ),
+                ),
+                AppTextField(lableText: 'يبليل'),
                 // Container(
                 //   width: 100,
                 //   height: 100,
