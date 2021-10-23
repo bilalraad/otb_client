@@ -1,3 +1,6 @@
+import 'package:otb_client/src/data/models/travelers.dart';
+import 'package:otb_client/src/data/models/trips_query.dart';
+
 final searchResult = {
   'id': '77bfjbfjb876kjhkj',
   'resultItems': [
@@ -65,3 +68,18 @@ final confirmBooking = {
   "paymentMethod": "",
   "paymentConfirmed": "",
 };
+
+final fakeQuery = TripsQuery(
+  queryId: "OIUIOIU8798YS98Y9",
+  userDeviceToken: "ADASDASDDQWDQDQWDQWW",
+  tripCategory: "VIP",
+  type: "oneway",
+  departureCity: "BGW",
+  arriveCity: "AMM",
+  leaveDate: "",
+  travelers: Travelers(adults: 1),
+  airLines: [
+    "iraqi airline",
+    "fly baghdad",
+  ],
+);

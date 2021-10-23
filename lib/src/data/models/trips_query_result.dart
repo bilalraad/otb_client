@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 import 'package:otb_client/src/data/models/trip.dart';
 
-class TripsQueryResult {
-  TripsQueryResult({
+class TripsQueryResult extends Equatable {
+  const TripsQueryResult({
     required this.qureyId,
     required this.resultItems,
   });
@@ -30,4 +32,10 @@ class TripsQueryResult {
         "resultItems":
             List<Map<String, dynamic>>.from(resultItems.map((x) => x.toMap())),
       };
+
+  @override
+  List<Object?> get props => [qureyId, resultItems];
+
+  @override
+  bool get stringify => true;
 }

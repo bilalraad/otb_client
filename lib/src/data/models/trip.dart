@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 import 'flight_details.dart';
 
-class Trip {
-  Trip({
+class Trip extends Equatable {
+  const Trip({
     required this.tripNumber,
     required this.type,
     required this.airline,
@@ -45,4 +47,10 @@ class Trip {
         "leaving": leaving.toMap(),
         "return": returning.toMap(),
       };
+
+  @override
+  List<Object?> get props => [tripNumber, type, airline, leaving, returning];
+
+  @override
+  bool get stringify => true;
 }
