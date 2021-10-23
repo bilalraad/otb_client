@@ -7,6 +7,7 @@ import 'package:otb_client/src/view/utils/widgets/aireline_card.dart';
 import 'utils/app_text_field.dart';
 import 'utils/app_button.dart';
 import 'utils/widgets/date_picker.dart';
+import 'utils/widgets/select_country.dart';
 import 'utils/widgets/travelers_number_card.dart';
 
 class Home extends StatelessWidget {
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
                       buttonType: ButtonType.secondary,
                     ),
                   ),
-                  AppTextField(lableText: 'الاسم'),
+                  const AppTextField(lableText: 'الاسم'),
                   const SizedBox(height: 20),
                   AirlineCard(
                     airlineImage: AppAssets.flyBagdadLogo,
@@ -66,6 +67,13 @@ class Home extends StatelessWidget {
                         },
                       ),
                     ],
+                  ),
+                  SelectAirport(
+                    icon: Icons.flight_takeoff_rounded,
+                    title: 'وقت الأنطلاق',
+                    onCitySelected: (airport) {
+                      print(airport.code);
+                    },
                   ),
                 ],
               ),
