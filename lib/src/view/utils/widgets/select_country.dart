@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/data/models/airport.dart';
-import 'package:otb_client/src/view/utils/app_colors.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
+import '../../../data/models/airport.dart';
+import '../app_colors.dart';
+import '../app_text_styles.dart';
 
 class SelectAirport extends StatefulWidget {
   final Function(Airport) onCitySelected;
@@ -41,7 +41,7 @@ class _SelectAirportState extends State<SelectAirport> {
           ]),
       child: InkWell(
         onTap: () {
-          showBottomSheet(
+          showModalBottomSheet(
               context: context,
               backgroundColor: AppColors.white,
               shape: RoundedRectangleBorder(
@@ -52,9 +52,12 @@ class _SelectAirportState extends State<SelectAirport> {
                   width: double.infinity,
                   child: Column(
                     children: [
-                      Text(
-                        'اختر مدينة الانطلاق',
-                        style: AppTextStyles.subHeaderStyle(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'اختر مدينة الانطلاق',
+                          style: AppTextStyles.subHeaderStyle(),
+                        ),
                       ),
                       const Divider(thickness: 2),
                       Expanded(

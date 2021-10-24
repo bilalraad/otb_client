@@ -1,4 +1,6 @@
-import 'package:otb_client/src/data/models/travelers.dart';
+import 'package:otb_client/src/data/models/airline.dart';
+
+import 'travelers.dart';
 
 class TripsQuery {
   TripsQuery({

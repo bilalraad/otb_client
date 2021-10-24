@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
 
 class AppDatePicker extends StatefulWidget {
   final String title;
@@ -24,20 +24,20 @@ class _AppDatePickerState extends State<AppDatePicker> {
       onTap: () {
         DatePicker.showDatePicker(
           context,
-          showTitleActions: true,
-          currentTime: selectedDate ?? DateTime.now(),
-          minTime: widget.minDateTime ?? DateTime.now(),
-          onChanged: (date) {
+          initialDateTime: selectedDate ?? DateTime.now(),
+          minDateTime: widget.minDateTime ?? DateTime.now(),
+          locale: DateTimePickerLocale.ar,
+          onChange: (date, _) {
             print('change $date in time zone ' +
                 date.timeZoneOffset.inHours.toString());
           },
-          onConfirm: (date) {
+          onConfirm: (date, _) {
             setState(() {
               selectedDate = date;
             });
             widget.onDateSelected(date);
           },
-          locale: LocaleType.ar,
+          pickerMode: DateTimePickerMode.date,
         );
       },
       child: Container(

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:otb_client/src/data/models/trip.dart';
+import 'trip.dart';
 
 class TripsQueryResult extends Equatable {
   const TripsQueryResult({

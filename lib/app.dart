@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:otb_client/src/bloc/search_query/search_query_bloc.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
+import 'src/bloc/search_query/search_query_bloc.dart';
+import 'src/view/utils/app_text_styles.dart';
 
 import 'src/data/API/search_query_service.dart';
 import 'src/localization/app_localizations.dart';

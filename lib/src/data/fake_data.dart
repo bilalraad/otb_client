@@ -1,5 +1,8 @@
-import 'package:otb_client/src/data/models/travelers.dart';
-import 'package:otb_client/src/data/models/trips_query.dart';
+import 'package:otb_client/src/view/utils/app_assets.dart';
+
+import 'models/airline.dart';
+import 'models/travelers.dart';
+import 'models/trips_query.dart';
 
 final searchResult = {
   'id': '77bfjbfjb876kjhkj',
@@ -79,7 +82,7 @@ final fakeQuery = TripsQuery(
   leaveDate: "",
   travelers: Travelers(adults: 1),
   airLines: [
-    "iraqi airline",
-    "fly baghdad",
+    'THY',
+    'IAW',
   ],
 );

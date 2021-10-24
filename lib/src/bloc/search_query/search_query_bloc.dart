@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:otb_client/src/data/API/search_query_service.dart';
-import 'package:otb_client/src/data/models/trips_query.dart';
-import 'package:otb_client/src/data/models/trips_query_result.dart';
+import '../../data/API/search_query_service.dart';
+import '../../data/models/trips_query.dart';
+import '../../data/models/trips_query_result.dart';
 
 part 'search_query_event.dart';
 part 'search_query_state.dart';
@@ -18,6 +18,10 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
     on<QuerySubmitted>(_onQuerySubmitted);
     on<ResponseRecieved>((event, emit) {
       emit(SearchQueryResponseRecived(event.response));
+    });
+    on<QueryError>((event, emit) {
+      print('object');
+      emit(SearchQueryError(event.error));
     });
   }
 

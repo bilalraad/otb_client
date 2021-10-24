@@ -1,4 +1,4 @@
-import 'package:otb_client/src/view/utils/app_assets.dart';
+import '../../view/utils/app_assets.dart';
 
 class Airport {
   final String code;

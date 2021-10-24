@@ -10,7 +10,7 @@ enum ButtonType {
 class AppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
-  final double width;
+  final double? width;
   final Color? textColor;
   final Color? backroundColor;
   final ButtonType buttonType;
@@ -20,7 +20,7 @@ class AppButton extends StatelessWidget {
     required this.onPressed,
     required this.text,
     this.buttonType = ButtonType.primary,
-    this.width = 180,
+    this.width,
     this.textColor,
     this.backroundColor,
   }) : super(key: key);

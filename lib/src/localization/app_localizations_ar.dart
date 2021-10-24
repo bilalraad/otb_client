@@ -53,6 +53,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get olderthan12 => 'اكبر من ١٢ سنة';
 
   @override
+  String get tukishAirline => 'الخطوط التركية';
+
+  @override
+  String get iraqiAirline => 'الخطوط الجوية العراقية';
+
+  @override
+  String get flyBaghdad => 'فلاي بغداد';
+
+  @override
+  String get shamWings => 'أجنحة الشام';
+
+  @override
+  String get lebanonAirline => 'الخطوط اللبنانية';
+
+  @override
+  String get pleaseSelectAirlines => 'الرجاء اختيار الخطوط الجوية المناسبة لك';
+
+  @override
+  String get all => 'الكل';
+
+  @override
   String get searchWithApp => 'Done';
 
   @override

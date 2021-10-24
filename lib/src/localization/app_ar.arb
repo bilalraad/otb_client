@@ -50,6 +50,14 @@
 	"lessThanTwo": "اصغر من سنتين",
 	"between3and12": "من ٢ الى ١٢ سنة",
 	"olderthan12": "اكبر من ١٢ سنة",
+	"tukishAirline": "الخطوط التركية",
+	"iraqiAirline": "الخطوط الجوية العراقية",
+	"flyBaghdad": "فلاي بغداد",
+	"shamWings": "أجنحة الشام",
+	"lebanonAirline": "الخطوط اللبنانية",
+	"pleaseSelectAirlines": "الرجاء اختيار الخطوط الجوية المناسبة لك",
+	"all": "الكل",
+
 	"searchWithApp": "Done",
 	"useWhatsApp": "Save route"
 	

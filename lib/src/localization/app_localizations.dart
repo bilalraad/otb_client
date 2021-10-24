@@ -182,6 +182,48 @@ abstract class AppLocalizations {
   /// **'اكبر من ١٢ سنة'**
   String get olderthan12;
 
+  /// No description provided for @tukishAirline.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوط التركية'**
+  String get tukishAirline;
+
+  /// No description provided for @iraqiAirline.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوط الجوية العراقية'**
+  String get iraqiAirline;
+
+  /// No description provided for @flyBaghdad.
+  ///
+  /// In ar, this message translates to:
+  /// **'فلاي بغداد'**
+  String get flyBaghdad;
+
+  /// No description provided for @shamWings.
+  ///
+  /// In ar, this message translates to:
+  /// **'أجنحة الشام'**
+  String get shamWings;
+
+  /// No description provided for @lebanonAirline.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوط اللبنانية'**
+  String get lebanonAirline;
+
+  /// No description provided for @pleaseSelectAirlines.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار الخطوط الجوية المناسبة لك'**
+  String get pleaseSelectAirlines;
+
+  /// No description provided for @all.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get all;
+
   /// No description provided for @searchWithApp.
   ///
   /// In ar, this message translates to:

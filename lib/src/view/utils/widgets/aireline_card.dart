@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
+import '../app_text_styles.dart';
 
-class AirlineCard extends StatefulWidget {
+class AirlineCard extends StatelessWidget {
   final String airlineImage;
+  final bool value;
   final Function(bool?) onSelected;
   final String airlineName;
   const AirlineCard({
@@ -10,14 +11,9 @@ class AirlineCard extends StatefulWidget {
     required this.airlineImage,
     required this.airlineName,
     required this.onSelected,
+    required this.value,
   }) : super(key: key);
 
-  @override
-  State<AirlineCard> createState() => _AirlineCardState();
-}
-
-class _AirlineCardState extends State<AirlineCard> {
-  bool isSelected = true;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,20 +24,15 @@ class _AirlineCardState extends State<AirlineCard> {
       child: Row(
         children: [
           Checkbox(
-            value: isSelected,
+            value: value,
             activeColor: Theme.of(context).colorScheme.secondary,
-            onChanged: (newVal) {
-              setState(() {
-                isSelected = newVal!;
-              });
-              widget.onSelected(newVal);
-            },
+            onChanged: onSelected,
           ),
           const SizedBox(width: 20),
-          Image.asset(widget.airlineImage, width: 30),
+          Image.asset(airlineImage, width: 30),
           const SizedBox(width: 20),
           Text(
-            widget.airlineName,
+            airlineName,
             style: AppTextStyles.buttonTextStyle(),
           ),
         ],

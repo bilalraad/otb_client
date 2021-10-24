@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/data/fake_data.dart';
-import 'package:otb_client/src/data/models/book_trip.dart';
-import 'package:otb_client/src/data/models/trips_query.dart';
-import 'package:otb_client/src/data/models/trips_query_result.dart';
+import '../fake_data.dart';
+import '../models/book_trip.dart';
+import '../models/trips_query.dart';
+import '../models/trips_query_result.dart';
 
 abstract class BaseTripsQueryService {
   Future<void> sendTripsQuery(TripsQuery query);

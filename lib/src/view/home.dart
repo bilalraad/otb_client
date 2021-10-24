@@ -1,94 +1,115 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:otb_client/src/bloc/search_query/search_query_bloc.dart';
-import 'package:otb_client/src/data/API/search_query_service.dart';
-import 'package:otb_client/src/data/fake_data.dart';
-import 'package:otb_client/src/data/models/trips_query_result.dart';
-import 'package:otb_client/src/view/utils/app_assets.dart';
-import 'package:otb_client/src/view/utils/widgets/aireline_card.dart';
+import 'package:otb_client/src/data/models/airline.dart';
+import 'package:otb_client/src/localization/app_localizations.dart';
+import 'package:otb_client/src/view/utils/app_button.dart';
+import 'package:otb_client/src/view/utils/app_text_styles.dart';
+import 'utils/app_appbar.dart';
+import 'utils/app_assets.dart';
+import 'utils/create_route.dart';
+import 'utils/widgets/aireline_card.dart';
 
-import 'utils/app_text_field.dart';
-import 'utils/app_button.dart';
-import 'utils/widgets/date_picker.dart';
-import 'utils/widgets/select_country.dart';
-import 'utils/widgets/travelers_number_card.dart';
-
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<String> selectedAirLines = ['THY', 'IAW', 'MEA', 'FBA', 'SAW'];
+  @override
   Widget build(BuildContext context) {
+    final appLoc = AppLocalizations.of(context)!;
+
+    final supportedAirLines = [
+      AireLine(appLoc.tukishAirline, AppAssets.turkishAirlinesLogo, 'THY'),
+      AireLine(appLoc.iraqiAirline, AppAssets.iraqiAirlinesLogo, 'IAW'),
+      AireLine(appLoc.lebanonAirline, AppAssets.lebanonAirlinesLogo, 'MEA'),
+      AireLine(appLoc.flyBaghdad, AppAssets.flyBagdadLogo, 'FBA'),
+      AireLine(appLoc.shamWings, AppAssets.shamWingsLogo, 'SAW'),
+    ];
+
     return Scaffold(
-      appBar: AppBar(),
+      appBar: appAppbar(showBackButton: false),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: AppButton(
-                onPressed: () {},
-                text: 'khg',
-                buttonType: ButtonType.secondary,
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                appLoc.pleaseSelectAirlines,
+                style: AppTextStyles.subHeaderStyle(),
               ),
             ),
-            const AppTextField(lableText: 'الاسم'),
-            const SizedBox(height: 20),
-            AirlineCard(
-              airlineImage: AppAssets.flyBagdadLogo,
-              airlineName: 'الخطوط الجوية العراقية',
-              onSelected: (val) {
-                print(val);
-              },
-            ),
-            const SizedBox(height: 20),
-            TravelersNumberCard(
-              initialValue: 0,
-              onChanged: (b) {
-                print(b);
-              },
-              title: 'البالغين',
-            ),
-            const SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppDatePicker(
-                  title: 'kkmk',
-                  onDateSelected: (date) {
-                    print(date);
+                Checkbox(
+                  value: supportedAirLines.length == selectedAirLines.length,
+                  activeColor: Theme.of(context).colorScheme.secondary,
+                  onChanged: (allSelected) {
+                    if (allSelected!) {
+                      selectedAirLines.clear();
+                      for (var a in supportedAirLines) {
+                        selectedAirLines.add(a.code);
+                      }
+                    } else {
+                      selectedAirLines = [];
+                    }
+                    setState(() {});
                   },
                 ),
-                AppDatePicker(
-                  title: 'kkmk',
-                  onDateSelected: (date) {
-                    print(date);
-                  },
-                ),
+                Text(appLoc.all)
               ],
             ),
-            SelectAirport(
-              icon: Icons.flight_takeoff_rounded,
-              title: 'وقت الأنطلاق',
-              onCitySelected: (airport) {
-                print(airport.code);
-              },
-            ),
-            BlocBuilder<SearchQueryBloc, SearchQueryState>(
-              builder: (context, state) {
-                return Text(state.toString());
-              },
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  context
-                      .read<SearchQueryBloc>()
-                      .add(QuerySubmitted(fakeQuery));
+            const Divider(thickness: 2),
+            Column(
+              children: supportedAirLines.map<Widget>(
+                (a) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: AirlineCard(
+                      value: selectedAirLines.contains(a.code),
+                      airlineImage: a.logo,
+                      airlineName: a.name,
+                      onSelected: (selected) {
+                        if (selected!) {
+                          selectedAirLines.add(a.code);
+                        } else {
+                          selectedAirLines.remove(a.code);
+                        }
+                        setState(() {});
+                      },
+                    ),
+                  );
                 },
-                child: Text('press'))
+              ).toList(),
+            ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: AppButton(
+                onPressed: () {
+                  Navigator.of(context).push(createRoute(TripDetailsForm()));
+                },
+                text: 'next',
+              ),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class TripDetailsForm extends StatelessWidget {
+  const TripDetailsForm({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(),
     );
   }
 }
