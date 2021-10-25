@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/data/models/trips_query.dart';
-import 'package:otb_client/src/localization/app_localizations.dart';
-import 'package:otb_client/src/view/utils/app_appbar.dart';
-import 'package:otb_client/src/view/utils/app_button.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
-import 'package:otb_client/src/view/utils/widgets/date_picker.dart';
-import 'package:otb_client/src/view/utils/widgets/select_country.dart';
-import 'package:otb_client/src/view/utils/widgets/travelers_number_card.dart';
+import 'package:otb_client/src/view/utils/app_functions.dart';
+import '../../data/models/trips_query.dart';
+import '../../localization/app_localizations.dart';
+import '../utils/app_appbar.dart';
+import '../utils/app_button.dart';
+import '../utils/app_text_styles.dart';
+import '../utils/widgets/date_picker.dart';
+import '../utils/widgets/select_country.dart';
+import '../utils/widgets/travelers_number_card.dart';
 
 class TripDetailsForm extends StatefulWidget {
   final List<String> selectedAirlines;
@@ -99,7 +100,9 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                 title: appLoc.infants + ' (${appLoc.lessThanTwo})'),
             const Spacer(),
             AppButton(
-              onPressed: () {},
+              onPressed: () {
+                launchWhatsApp();
+              },
               text: appLoc.contactThroughWhatsApp,
               buttonType: ButtonType.secondary,
             ),

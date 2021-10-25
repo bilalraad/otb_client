@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/view/utils/app_colors.dart';
+import 'app_colors.dart';
 
 import 'app_assets.dart';
 
