@@ -8,7 +8,7 @@ Route createRoute(Widget route, {Cubic curve = Curves.ease}) {
     pageBuilder: (context, animation, secondaryAnimation) => route,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(1.0, 0.0);
-      final end = Offset.zero;
+      const end = Offset.zero;
       const curve = Curves.ease;
 
       final tween =

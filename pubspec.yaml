@@ -21,6 +21,8 @@ dependencies:
   intl: ^0.17.0
   flutter_cupertino_date_picker_fork: ^1.0.6
   equatable: ^2.0.3
+  flutter_easyloading: ^3.0.3
+  uuid: ^3.0.5
 
 dev_dependencies:
   flutter_test:

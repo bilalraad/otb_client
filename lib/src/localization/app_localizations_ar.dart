@@ -32,6 +32,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get back => 'العودة';
 
   @override
+  String get returnDate => 'موعد العودة';
+
+  @override
+  String get dapatureDate => 'موعد الذهاب';
+
+  @override
   String get numOfPeople => 'عدد الاشخاص';
 
   @override
@@ -39,6 +45,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get kids => 'الاطفال';
+
+  @override
+  String get travelers => 'المسافرين';
 
   @override
   String get infants => 'الرضع';
@@ -74,7 +83,31 @@ class AppLocalizationsAr extends AppLocalizations {
   String get all => 'الكل';
 
   @override
-  String get searchWithApp => 'Done';
+  String get next => 'التالي';
+
+  @override
+  String get economic => 'اقتصادي';
+
+  @override
+  String get bussines => 'رجال اعمال';
+
+  @override
+  String get depatrueCiry => 'مدينة الأنطلاق';
+
+  @override
+  String get returnCiry => 'مدينة الوصول';
+
+  @override
+  String get oneWay => 'ذهاب فقط';
+
+  @override
+  String get round => 'ذهاب واياب';
+
+  @override
+  String get contactThroughWhatsApp => 'تواصل مباشر من خلال الواتساب';
+
+  @override
+  String get searchThroughApp => 'بحث خلال التطبيق';
 
   @override
   String get useWhatsApp => 'Save route';

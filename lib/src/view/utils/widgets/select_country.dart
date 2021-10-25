@@ -3,7 +3,7 @@ import '../../../data/models/airport.dart';
 import '../app_colors.dart';
 import '../app_text_styles.dart';
 
-class SelectAirport extends StatefulWidget {
+class SelectCity extends StatefulWidget {
   final Function(Airport) onCitySelected;
   final String title;
   final IconData icon;
@@ -11,7 +11,7 @@ class SelectAirport extends StatefulWidget {
   ///useful when you want to prevent the user from slecting same cities for
   ///departur and return
   final String? excludeCountry;
-  const SelectAirport(
+  const SelectCity(
       {Key? key,
       required this.onCitySelected,
       required this.title,
@@ -20,10 +20,10 @@ class SelectAirport extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<SelectAirport> createState() => _SelectAirportState();
+  State<SelectCity> createState() => _SelectCityState();
 }
 
-class _SelectAirportState extends State<SelectAirport> {
+class _SelectCityState extends State<SelectCity> {
   String? selectedAirport;
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class _SelectAirportState extends State<SelectAirport> {
                       Expanded(
                         child: ListView(
                           children: Airport.supportedAirports.map((c) {
-                            if (widget.excludeCountry != c.countryName) {
+                            if (widget.excludeCountry != c.code) {
                               return Column(
                                 children: [
                                   Padding(
@@ -116,6 +116,7 @@ class _SelectAirportState extends State<SelectAirport> {
         },
         child: Row(
           children: [
+            const SizedBox(width: 10),
             Icon(
               widget.icon,
               color: Theme.of(context).colorScheme.secondary,

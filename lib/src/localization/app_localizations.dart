@@ -140,6 +140,18 @@ abstract class AppLocalizations {
   /// **'العودة'**
   String get back;
 
+  /// No description provided for @returnDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'موعد العودة'**
+  String get returnDate;
+
+  /// No description provided for @dapatureDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'موعد الذهاب'**
+  String get dapatureDate;
+
   /// No description provided for @numOfPeople.
   ///
   /// In ar, this message translates to:
@@ -157,6 +169,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الاطفال'**
   String get kids;
+
+  /// No description provided for @travelers.
+  ///
+  /// In ar, this message translates to:
+  /// **'المسافرين'**
+  String get travelers;
 
   /// No description provided for @infants.
   ///
@@ -224,11 +242,59 @@ abstract class AppLocalizations {
   /// **'الكل'**
   String get all;
 
-  /// No description provided for @searchWithApp.
+  /// No description provided for @next.
   ///
   /// In ar, this message translates to:
-  /// **'Done'**
-  String get searchWithApp;
+  /// **'التالي'**
+  String get next;
+
+  /// No description provided for @economic.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقتصادي'**
+  String get economic;
+
+  /// No description provided for @bussines.
+  ///
+  /// In ar, this message translates to:
+  /// **'رجال اعمال'**
+  String get bussines;
+
+  /// No description provided for @depatrueCiry.
+  ///
+  /// In ar, this message translates to:
+  /// **'مدينة الأنطلاق'**
+  String get depatrueCiry;
+
+  /// No description provided for @returnCiry.
+  ///
+  /// In ar, this message translates to:
+  /// **'مدينة الوصول'**
+  String get returnCiry;
+
+  /// No description provided for @oneWay.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذهاب فقط'**
+  String get oneWay;
+
+  /// No description provided for @round.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذهاب واياب'**
+  String get round;
+
+  /// No description provided for @contactThroughWhatsApp.
+  ///
+  /// In ar, this message translates to:
+  /// **'تواصل مباشر من خلال الواتساب'**
+  String get contactThroughWhatsApp;
+
+  /// No description provided for @searchThroughApp.
+  ///
+  /// In ar, this message translates to:
+  /// **'بحث خلال التطبيق'**
+  String get searchThroughApp;
 
   /// No description provided for @useWhatsApp.
   ///

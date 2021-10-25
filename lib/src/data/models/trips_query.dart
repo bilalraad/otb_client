@@ -1,4 +1,4 @@
-import 'package:otb_client/src/data/models/airline.dart';
+import 'package:uuid/uuid.dart';
 
 import 'travelers.dart';
 
@@ -77,4 +77,19 @@ class TripsQuery {
         "travelers": travelers.toMap(),
         "airLines": List<dynamic>.from(airLines.map((x) => x)),
       };
+
+  factory TripsQuery.initial() {
+    return TripsQuery(
+      queryId: const Uuid().v4(),
+      userDeviceToken: '',
+      tripCategory: '',
+      type: '',
+      departureCity: '',
+      arriveCity: '',
+      leaveDate: '',
+      returnDate: '',
+      travelers: Travelers(adults: 1),
+      airLines: [],
+    );
+  }
 }

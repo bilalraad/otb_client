@@ -1,6 +1,3 @@
-import 'package:otb_client/src/view/utils/app_assets.dart';
-
-import 'models/airline.dart';
 import 'models/travelers.dart';
 import 'models/trips_query.dart';
 

@@ -43,9 +43,12 @@
 	"arriveTime": "الوصول",
 	"leave": "الذهاب",
 	"back": "العودة",
+	"returnDate":"موعد العودة",
+	"dapatureDate": "موعد الذهاب",
 	"numOfPeople": "عدد الاشخاص",
 	"adults": "الكبار",
 	"kids": "الاطفال",
+	"travelers":"المسافرين",
 	"infants": "الرضع",
 	"lessThanTwo": "اصغر من سنتين",
 	"between3and12": "من ٢ الى ١٢ سنة",
@@ -58,7 +61,16 @@
 	"pleaseSelectAirlines": "الرجاء اختيار الخطوط الجوية المناسبة لك",
 	"all": "الكل",
 
-	"searchWithApp": "Done",
+	"next": "التالي",
+	"economic": "اقتصادي",
+	"bussines": "رجال اعمال",
+	"depatrueCiry": "مدينة الأنطلاق",
+	"returnCiry": "مدينة الوصول",
+	"oneWay": "ذهاب فقط",
+	"round": "ذهاب واياب",
+	"contactThroughWhatsApp": "تواصل مباشر من خلال الواتساب",
+	"searchThroughApp": "بحث خلال التطبيق",
+
 	"useWhatsApp": "Save route"
 	
 }

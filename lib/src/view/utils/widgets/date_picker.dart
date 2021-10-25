@@ -42,7 +42,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
       },
       child: Container(
         height: 50,
-        width: (MediaQuery.of(context).size.width / 2) - 25,
+        width: (MediaQuery.of(context).size.width / 2) - 20,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,

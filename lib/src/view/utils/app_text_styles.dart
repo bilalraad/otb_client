@@ -17,7 +17,7 @@ class AppTextStyles {
     FontWeight fontWeight = FontWeight.w400,
   }) =>
       TextStyle(
-        color: AppColors.black,
+        color: AppColors.primaryColor,
         fontSize: size,
         fontWeight: fontWeight,
       );
@@ -26,7 +26,7 @@ class AppTextStyles {
     FontWeight fontWeight = FontWeight.w500,
   }) =>
       TextStyle(
-        color: AppColors.black,
+        color: AppColors.primaryColor,
         fontSize: size,
         fontWeight: fontWeight,
       );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otb_client/src/view/utils/app_text_styles.dart';
 
 class TravelersNumberCard extends StatefulWidget {
   final Function(int) onChanged;
@@ -42,7 +43,10 @@ class _TravelersNumberCardState extends State<TravelersNumberCard> {
         children: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: Text(widget.title),
+            child: Text(
+              widget.title,
+              style: AppTextStyles.inputStyle(),
+            ),
           ),
           const Spacer(),
           IconButton(
