@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:otb_client/src/data/fake_data.dart';
 import 'package:otb_client/src/view/utils/app_functions.dart';
-import '../../data/models/trips_query.dart';
-import '../../localization/app_localizations.dart';
-import '../utils/app_appbar.dart';
-import '../utils/app_button.dart';
-import '../utils/app_text_styles.dart';
-import '../utils/widgets/date_picker.dart';
-import '../utils/widgets/select_country.dart';
-import '../utils/widgets/travelers_number_card.dart';
+import 'package:otb_client/src/view/screens/trip_details_from/widgets/radio_selector.dart';
+import '../../../data/models/trips_query.dart';
+import '../../../localization/app_localizations.dart';
+import '../../utils/app_appbar.dart';
+import '../../utils/app_button.dart';
+import '../../utils/app_text_styles.dart';
+import 'widgets/date_picker.dart';
+import 'widgets/select_catgeory_and_type.dart';
+import 'widgets/select_country.dart';
+import 'widgets/travelers_number_card.dart';
 
 class TripDetailsForm extends StatefulWidget {
   final List<String> selectedAirlines;
@@ -19,7 +23,11 @@ class TripDetailsForm extends StatefulWidget {
 }
 
 class _TripDetailsFormState extends State<TripDetailsForm> {
+  int tripTypeGroupValue = 0;
+  int tripCategoryGroupValue = 0;
+  bool isOneWay = true;
   TripsQuery newQuery = TripsQuery.initial();
+
   @override
   Widget build(BuildContext context) {
     final appLoc = AppLocalizations.of(context)!;
@@ -32,6 +40,19 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SelectCatgeoryAndType(
+              onCategorySelected: (v) {
+                print(v);
+                newQuery = newQuery.copyWith(tripCategory: v);
+              },
+              onTypeSelected: (v) {
+                newQuery = newQuery.copyWith(type: v);
+                setState(() {
+                  isOneWay = !isOneWay;
+                });
+              },
+            ),
+            const SizedBox(height: 10),
             SelectCity(
               excludeCountry: newQuery.arriveCity,
               onCitySelected: (val) {
@@ -49,7 +70,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                 setState(() {});
               },
               title: appLoc.returnCiry,
-              icon: Icons.flight_takeoff_rounded,
+              icon: Icons.location_on_outlined,
             ),
             const SizedBox(height: 10),
             Row(
@@ -62,13 +83,14 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                         leaveDate: newDepDate.toIso8601String());
                   },
                 ),
-                AppDatePicker(
-                  title: appLoc.returnDate,
-                  onDateSelected: (newReturnDate) {
-                    newQuery = newQuery.copyWith(
-                        returnDate: newReturnDate.toIso8601String());
-                  },
-                ),
+                if (!isOneWay)
+                  AppDatePicker(
+                    title: appLoc.returnDate,
+                    onDateSelected: (newReturnDate) {
+                      newQuery = newQuery.copyWith(
+                          returnDate: newReturnDate.toIso8601String());
+                    },
+                  ),
               ],
             ),
             const SizedBox(height: 10),
@@ -101,13 +123,22 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
             const Spacer(),
             AppButton(
               onPressed: () {
-                launchWhatsApp();
+                try {
+                  validateTripQuery(newQuery);
+                  launchWhatsApp(query: TripsQuery.fromMap(searchQuery));
+                } catch (e) {
+                  EasyLoading.showToast(e.toString());
+                }
               },
               text: appLoc.contactThroughWhatsApp,
               buttonType: ButtonType.secondary,
             ),
             const SizedBox(height: 10),
-            AppButton(onPressed: () {}, text: appLoc.searchThroughApp),
+            AppButton(
+                onPressed: () {
+                  print(newQuery.toString());
+                },
+                text: appLoc.searchThroughApp),
           ],
         ),
       ),

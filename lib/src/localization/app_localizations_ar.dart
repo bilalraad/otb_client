@@ -83,6 +83,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get all => 'الكل';
 
   @override
+  String get pleaseSelectOneAirline => 'الرجاء قم بتحديد خطوط جوية واحدة على الاقل';
+
+  @override
   String get next => 'التالي';
 
   @override

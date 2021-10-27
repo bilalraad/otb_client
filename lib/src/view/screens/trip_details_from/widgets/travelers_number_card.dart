@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../app_text_styles.dart';
+import '../../../utils/app_text_styles.dart';
 
 class TravelersNumberCard extends StatefulWidget {
   final Function(int) onChanged;

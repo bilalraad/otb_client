@@ -48,12 +48,12 @@ final searchResult = {
 final searchQuery = {
   "queryId": "OIUIOIU8798YS98Y9",
   "userDeviceToken": "ADASDASDDQWDQDQWDQWW",
-  "tripCategory": "VIP",
+  "tripCategory": "economy",
   "type": "oneway",
   "departureCity": "BGW",
   "arriveCity": "AMM",
-  "leaveDate": "",
-  "ReturnDate": "",
+  "leaveDate": "31/10/2021",
+  "returnDate": "",
   "travelers": {"adults": 1, "kids": 0, "infants": 0},
   "airLines": [
     "iraqi airline",

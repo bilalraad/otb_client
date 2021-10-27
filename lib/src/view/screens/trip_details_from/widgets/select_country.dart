@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/airport.dart';
-import '../app_colors.dart';
-import '../app_text_styles.dart';
+import '../../../../data/models/airport.dart';
+import '../../../utils/app_colors.dart';
+import '../../../utils/app_text_styles.dart';
 
 class SelectCity extends StatefulWidget {
   final Function(Airport) onCitySelected;

@@ -60,7 +60,7 @@ class TripsQuery {
         departureCity: json["departureCity"],
         arriveCity: json["arriveCity"],
         leaveDate: json["leaveDate"],
-        returnDate: json["ReturnDate"],
+        returnDate: json["returnDate"],
         travelers: Travelers.fromMap(json["travelers"]),
         airLines: List<String>.from(json["airLines"].map((x) => x)),
       );
@@ -73,7 +73,7 @@ class TripsQuery {
         "departureCity": departureCity,
         "arriveCity": arriveCity,
         "leaveDate": leaveDate,
-        "ReturnDate": returnDate,
+        "returnDate": returnDate,
         "travelers": travelers.toMap(),
         "airLines": List<dynamic>.from(airLines.map((x) => x)),
       };
@@ -91,5 +91,10 @@ class TripsQuery {
       travelers: Travelers(adults: 1),
       airLines: [],
     );
+  }
+
+  @override
+  String toString() {
+    return 'TripsQuery(queryId: $queryId, userDeviceToken: $userDeviceToken, tripCategory: $tripCategory, type: $type, departureCity: $departureCity, arriveCity: $arriveCity, leaveDate: $leaveDate, returnDate: $returnDate, travelers: $travelers, airLines: $airLines)';
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:otb_client/src/view/utils/app_functions.dart';
 import '../../data/models/airline.dart';
 import '../../localization/app_localizations.dart';
 import '../utils/app_appbar.dart';
 import '../utils/app_button.dart';
 import '../utils/app_text_styles.dart';
-import '../utils/create_route.dart';
 import '../utils/widgets/aireline_card.dart';
 
-import 'trip_details_from.dart';
+import 'trip_details_from/trip_details_from.dart';
 
 class SelectAirlinesScreen extends StatefulWidget {
   final List<AireLine> supportedAirLines;
@@ -90,14 +90,14 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
               child: AppButton(
                 onPressed: () {
                   if (selectedAirLines.isEmpty) {
-                    EasyLoading.showToast('Please Select at least one airline');
+                    EasyLoading.showToast(appLoc.pleaseSelectOneAirline);
                   } else {
                     Navigator.of(context).push(createRoute(
                       TripDetailsForm(selectedAirlines: selectedAirLines),
                     ));
                   }
                 },
-                text: 'next',
+                text: appLoc.next,
               ),
             )
           ],

@@ -242,6 +242,12 @@ abstract class AppLocalizations {
   /// **'الكل'**
   String get all;
 
+  /// No description provided for @pleaseSelectOneAirline.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء قم بتحديد خطوط جوية واحدة على الاقل'**
+  String get pleaseSelectOneAirline;
+
   /// No description provided for @next.
   ///
   /// In ar, this message translates to:

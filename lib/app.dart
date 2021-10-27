@@ -17,6 +17,7 @@ class OTBApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => SearchQueryBloc(MockTripsQueryService()),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         builder: EasyLoading.init(),
         localizationsDelegates: const [
           AppLocalizations.delegate,
