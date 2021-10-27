@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otb_client/src/view/utils/app_colors.dart';
 import 'package:otb_client/src/view/utils/app_text_styles.dart';
 
 class RadioSelector<T> extends StatelessWidget {
@@ -25,7 +26,7 @@ class RadioSelector<T> extends StatelessWidget {
             width: 24,
             child: Radio<T>(
               value: value,
-              activeColor: Theme.of(context).colorScheme.secondary,
+              activeColor: Theme.of(context).colorScheme.primary,
               groupValue: valueSelected,
               onChanged: onSelected,
               // dense: true,
@@ -34,7 +35,8 @@ class RadioSelector<T> extends StatelessWidget {
           const SizedBox(width: 10),
           Text(
             title,
-            style: AppTextStyles.buttonTextStyle(),
+            style: AppTextStyles.buttonTextStyle(
+                color: Theme.of(context).colorScheme.primary),
           ),
         ],
       ),

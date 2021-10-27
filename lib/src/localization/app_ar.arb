@@ -1,75 +1,45 @@
 {
-	"@walk": {
-		"placeholders": {
-			"walk": {
-				"example": "5 mins",
-				"type": "String"
-			}
-		}
-	},
-	"@walk_and_wait": {
-		"placeholders": {
-			"wait": {
-				"example": "1 min",
-				"type": "String"
-			},
-			"walk": {
-				"example": "5 mins",
-				"type": "String"
-			}
-		}
-	},
-	"@youll_be_there": {
-		"placeholders": {
-			"time": {
-				"example": "1 min",
-				"type": "String"
-			}
-		}
-	},
-	"@direction": {
-		"placeholders": {
-			"dir": {
-				"example": "Lausanne",
-				"type": "String"
-			}
-		}
-	},
-	"from": "من",
-	"to": "الى",
-	"tripType": "نوع الرحلة",
-	"tripCategory": "فئة الرحلة",
-	"departurTime": "الانطلاق",
-	"arriveTime": "الوصول",
-	"leave": "الذهاب",
-	"back": "العودة",
-	"returnDate":"موعد العودة",
-	"dapatureDate": "موعد الذهاب",
-	"numOfPeople": "عدد الاشخاص",
-	"adults": "الكبار",
-	"kids": "الاطفال",
-	"travelers":"المسافرين",
-	"infants": "الرضع",
-	"lessThanTwo": "اصغر من سنتين",
-	"between3and12": "من ٢ الى ١٢ سنة",
-	"olderthan12": "اكبر من ١٢ سنة",
-	"tukishAirline": "الخطوط التركية",
-	"iraqiAirline": "الخطوط الجوية العراقية",
-	"flyBaghdad": "فلاي بغداد",
-	"shamWings": "أجنحة الشام",
-	"lebanonAirline": "الخطوط اللبنانية",
-	"pleaseSelectAirlines": "الرجاء اختيار الخطوط الجوية المناسبة لك",
-	"all": "الكل",
-	"pleaseSelectOneAirline":"الرجاء قم بتحديد خطوط جوية واحدة على الاقل",
-	"next": "التالي",
-	"economic": "اقتصادي",
-	"bussines": "رجال اعمال",
-	"depatrueCiry": "مدينة الأنطلاق",
-	"returnCiry": "مدينة الوصول",
-	"oneWay": "ذهاب فقط",
-	"round": "ذهاب واياب",
-	"contactThroughWhatsApp": "تواصل مباشر من خلال الواتساب",
-	"searchThroughApp": "بحث خلال التطبيق",
-	"useWhatsApp": "Save route"
-	
+  "from": "من",
+  "to": "الى",
+  "tripType": "نوع الرحلة",
+  "tripCategory": "فئة الرحلة",
+  "departurTime": "الانطلاق",
+  "arriveTime": "الوصول",
+  "leave": "الذهاب",
+  "back": "العودة",
+  "returnDate": "موعد العودة",
+  "dapatureDate": "موعد الذهاب",
+  "numOfPeople": "عدد الاشخاص",
+  "adults": "الكبار",
+  "kids": "الاطفال",
+  "travelers": "المسافرين",
+  "infants": "الرضع",
+  "lessThanTwo": "اصغر من سنتين",
+  "between3and12": "من ٢ الى ١٢ سنة",
+  "olderthan12": "اكبر من ١٢ سنة",
+  "tukishAirline": "الخطوط التركية",
+  "iraqiAirline": "الخطوط الجوية العراقية",
+  "flyBaghdad": "فلاي بغداد",
+  "shamWings": "أجنحة الشام",
+  "lebanonAirline": "الخطوط اللبنانية",
+  "pleaseSelectAirlines": "الرجاء اختيار الخطوط الجوية المناسبة لك",
+  "all": "الكل",
+  "pleaseSelectOneAirline": "الرجاء قم بتحديد خطوط جوية واحدة على الاقل",
+  "next": "التالي",
+  "economic": "اقتصادي",
+  "bussines": "رجال اعمال",
+  "depatrueCiry": "مدينة الأنطلاق",
+  "returnCiry": "مدينة الوصول",
+  "oneWay": "ذهاب فقط",
+  "round": "ذهاب واياب",
+  "contactThroughWhatsApp": "تواصل مباشر من خلال الواتساب",
+  "searchThroughApp": "بحث خلال التطبيق",
+  "useWhatsApp": "Save route",
+  "pleaseSelectType": "الرجاء اختيار نوع الرحلة",
+  "pleaseSelectCategory": "الرجاء اختيار فئة الرحلة",
+  "pleaseSelectDepartureDate": "الرجاء اختيار موعد السفر",
+  "pleaseSelectReturnDate": "الرجاء اختيار موعد العودة",
+  "pleaseSelectArriveCity": "الرجاء اختيار الوجهة",
+  "pleaseSelectDepartureCity": "الرجاء اختيار مدينة الانطلاق",
+  "returnDateShouldBeAfterAtLeastOneDay": "يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب"
 }

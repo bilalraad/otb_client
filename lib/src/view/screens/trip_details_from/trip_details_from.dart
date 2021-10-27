@@ -124,8 +124,8 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
             AppButton(
               onPressed: () {
                 try {
-                  validateTripQuery(newQuery);
-                  launchWhatsApp(query: TripsQuery.fromMap(searchQuery));
+                  validateTripQuery(newQuery, appLoc);
+                  launchWhatsApp(query: newQuery);
                 } catch (e) {
                   EasyLoading.showToast(e.toString());
                 }

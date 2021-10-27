@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:otb_client/src/data/models/trips_query.dart';
+import 'package:otb_client/src/localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void launchWhatsApp({
@@ -37,19 +38,24 @@ String _tripQueryToWhatsAppMessage(TripsQuery query) {
       'الخطوط الجوية المحددة:\n${query.airLines}');
 }
 
-void validateTripQuery(TripsQuery query) {
+void validateTripQuery(TripsQuery query, AppLocalizations appLoc) {
   if (query.type.isEmpty) {
-    throw 'Please select a type';
+    throw appLoc.pleaseSelectType;
   } else if (query.tripCategory.isEmpty) {
-    throw 'Please select a category';
+    throw appLoc.pleaseSelectCategory;
   } else if (query.departureCity.isEmpty) {
-    throw 'Please select a Departure City';
+    throw appLoc.pleaseSelectDepartureCity;
   } else if (query.arriveCity.isEmpty) {
-    throw 'Please select a Arrive City';
+    throw appLoc.pleaseSelectArriveCity;
   } else if (query.leaveDate.isEmpty) {
-    throw 'Please select a leave Date';
-  } else if (query.leaveDate.isEmpty) {
-    throw 'Please select a return Date';
+    throw appLoc.pleaseSelectDepartureDate;
+  } else if (query.type == 'round') {
+    if (query.returnDate!.isEmpty) {
+      throw appLoc.pleaseSelectReturnDate;
+    } else if (DateTime.parse(query.returnDate!).isBefore(
+        DateTime.parse(query.leaveDate).add(const Duration(days: 1)))) {
+      throw appLoc.returnDateShouldBeAfterAtLeastOneDay;
+    }
   }
 }
 

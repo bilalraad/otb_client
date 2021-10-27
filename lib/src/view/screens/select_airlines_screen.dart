@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:otb_client/src/view/utils/app_colors.dart';
 import 'package:otb_client/src/view/utils/app_functions.dart';
 import '../../data/models/airline.dart';
 import '../../localization/app_localizations.dart';
@@ -45,7 +46,7 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
               children: [
                 Checkbox(
                   value: _supportedAirLines.length == selectedAirLines.length,
-                  activeColor: Theme.of(context).colorScheme.secondary,
+                  activeColor: Theme.of(context).colorScheme.primary,
                   onChanged: (allSelected) {
                     if (allSelected!) {
                       selectedAirLines.clear();
@@ -58,7 +59,9 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
                     setState(() {});
                   },
                 ),
-                Text(appLoc.all)
+                Text(appLoc.all,
+                    style: AppTextStyles.buttonTextStyle(
+                        color: AppColors.primaryColor))
               ],
             ),
             const Divider(thickness: 2),

@@ -28,8 +28,12 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPrimary = buttonType == ButtonType.primary;
-    final buttonBgColor = isPrimary
+    final defaultTextColor = isPrimary
         ? Theme.of(context).colorScheme.secondary
+        : Theme.of(context).colorScheme.primary;
+
+    final buttonBgColor = isPrimary
+        ? Theme.of(context).colorScheme.primary
         : Theme.of(context).colorScheme.background;
     return ElevatedButton(
         onPressed: onPressed,
@@ -40,7 +44,7 @@ class AppButton extends StatelessWidget {
                     ? BorderSide.none
                     : BorderSide(
                         width: 2,
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                 borderRadius: BorderRadius.circular(10))),
         child: Container(
@@ -50,7 +54,8 @@ class AppButton extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             text,
-            style: AppTextStyles.buttonTextStyle().copyWith(color: textColor),
+            style: AppTextStyles.buttonTextStyle()
+                .copyWith(color: textColor ?? defaultTextColor),
           ),
         ));
   }

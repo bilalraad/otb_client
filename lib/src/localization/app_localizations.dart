@@ -307,6 +307,48 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'Save route'**
   String get useWhatsApp;
+
+  /// No description provided for @pleaseSelectType.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار نوع الرحلة'**
+  String get pleaseSelectType;
+
+  /// No description provided for @pleaseSelectCategory.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار فئة الرحلة'**
+  String get pleaseSelectCategory;
+
+  /// No description provided for @pleaseSelectDepartureDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار موعد السفر'**
+  String get pleaseSelectDepartureDate;
+
+  /// No description provided for @pleaseSelectReturnDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار موعد العودة'**
+  String get pleaseSelectReturnDate;
+
+  /// No description provided for @pleaseSelectArriveCity.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار الوجهة'**
+  String get pleaseSelectArriveCity;
+
+  /// No description provided for @pleaseSelectDepartureCity.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار مدينة الانطلاق'**
+  String get pleaseSelectDepartureCity;
+
+  /// No description provided for @returnDateShouldBeAfterAtLeastOneDay.
+  ///
+  /// In ar, this message translates to:
+  /// **'يجب ان يكون موعد العودة عبى الاقل بعد يوم من موعد الذهاب'**
+  String get returnDateShouldBeAfterAtLeastOneDay;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

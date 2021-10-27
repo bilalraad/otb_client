@@ -11,10 +11,11 @@ AppBar appAppbar({
   return AppBar(
     centerTitle: true,
     actions: actions,
+    backgroundColor: AppColors.secondaryColor,
     leading: showBackButton
         ? IconButton(
             icon: const Icon(Icons.arrow_back_ios_rounded,
-                color: AppColors.secondaryColor),
+                color: AppColors.primaryColor),
             onPressed: onBackPressed,
           )
         : const SizedBox(),

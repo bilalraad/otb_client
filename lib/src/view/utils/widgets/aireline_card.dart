@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otb_client/src/view/utils/app_colors.dart';
 import '../app_text_styles.dart';
 
 class AirlineCard extends StatelessWidget {
@@ -25,7 +26,7 @@ class AirlineCard extends StatelessWidget {
         children: [
           Checkbox(
             value: value,
-            activeColor: Theme.of(context).colorScheme.secondary,
+            activeColor: Theme.of(context).colorScheme.primary,
             onChanged: onSelected,
           ),
           const SizedBox(width: 20),
@@ -33,7 +34,7 @@ class AirlineCard extends StatelessWidget {
           const SizedBox(width: 20),
           Text(
             airlineName,
-            style: AppTextStyles.buttonTextStyle(),
+            style: AppTextStyles.buttonTextStyle(color: AppColors.primaryColor),
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:otb_client/src/view/utils/app_colors.dart';
 import 'src/bloc/search_query/search_query_bloc.dart';
 import 'src/view/utils/app_text_styles.dart';
 
@@ -36,10 +37,10 @@ class OTBApp extends StatelessWidget {
               subtitle1: AppTextStyles.subHeaderStyle(),
             ),
             colorScheme: const ColorScheme.light(
-              primary: Color(0xFF27346A),
-              primaryVariant: Color(0xFFBFC1CC),
-              secondary: Color(0xFFFFB11E),
-              secondaryVariant: Color(0xFFEADABD),
+              primary: AppColors.primaryColor,
+              primaryVariant: Color(0xFF132B1E),
+              secondary: AppColors.secondaryColor,
+              secondaryVariant: AppColors.primaryColor,
               surface: Colors.white,
               background: Colors.white,
               error: Color(0xFFCF2127),

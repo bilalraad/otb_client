@@ -31,4 +31,8 @@ class Travelers {
         "kids": kids,
         "infants": infants,
       };
+
+  @override
+  String toString() =>
+      'Travelers(adults: $adults, kids: $kids, infants: $infants)';
 }

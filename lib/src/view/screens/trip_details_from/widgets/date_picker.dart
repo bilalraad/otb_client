@@ -58,7 +58,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
           children: [
             Icon(
               Icons.calendar_today,
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.primary,
             ),
             const SizedBox(width: 10),
             Column(

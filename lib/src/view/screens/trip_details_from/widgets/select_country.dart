@@ -119,7 +119,7 @@ class _SelectCityState extends State<SelectCity> {
             const SizedBox(width: 10),
             Icon(
               widget.icon,
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.primary,
             ),
             const SizedBox(width: 10),
             Text(selectedAirport ?? widget.title),

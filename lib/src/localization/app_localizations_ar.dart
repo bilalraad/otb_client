@@ -114,4 +114,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get useWhatsApp => 'Save route';
+
+  @override
+  String get pleaseSelectType => 'الرجاء اختيار نوع الرحلة';
+
+  @override
+  String get pleaseSelectCategory => 'الرجاء اختيار فئة الرحلة';
+
+  @override
+  String get pleaseSelectDepartureDate => 'الرجاء اختيار موعد السفر';
+
+  @override
+  String get pleaseSelectReturnDate => 'الرجاء اختيار موعد العودة';
+
+  @override
+  String get pleaseSelectArriveCity => 'الرجاء اختيار الوجهة';
+
+  @override
+  String get pleaseSelectDepartureCity => 'الرجاء اختيار مدينة الانطلاق';
+
+  @override
+  String get returnDateShouldBeAfterAtLeastOneDay => 'يجب ان يكون موعد العودة عبى الاقل بعد يوم من موعد الذهاب';
 }

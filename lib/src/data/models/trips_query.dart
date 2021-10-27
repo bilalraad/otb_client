@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:otb_client/src/view/utils/enums.dart';
 import 'package:uuid/uuid.dart';
 
 import 'travelers.dart';
@@ -82,8 +84,8 @@ class TripsQuery {
     return TripsQuery(
       queryId: const Uuid().v4(),
       userDeviceToken: '',
-      tripCategory: '',
-      type: '',
+      tripCategory: describeEnum(TripCategory.economic),
+      type: describeEnum(TripType.oneWay),
       departureCity: '',
       arriveCity: '',
       leaveDate: '',
