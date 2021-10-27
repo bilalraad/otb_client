@@ -113,9 +113,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get searchThroughApp => 'بحث خلال التطبيق';
 
   @override
-  String get useWhatsApp => 'Save route';
-
-  @override
   String get pleaseSelectType => 'الرجاء اختيار نوع الرحلة';
 
   @override
@@ -134,5 +131,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pleaseSelectDepartureCity => 'الرجاء اختيار مدينة الانطلاق';
 
   @override
-  String get returnDateShouldBeAfterAtLeastOneDay => 'يجب ان يكون موعد العودة عبى الاقل بعد يوم من موعد الذهاب';
+  String get returnDateShouldBeAfterAtLeastOneDay => 'يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب';
+
+  @override
+  String get pleaseWait => 'الرجاء الانتظار';
+
+  @override
+  String get searchingTripsForYou => 'جاري البحث عن رحلات تناسب طلبك';
+
+  @override
+  String get mightTakeFiveToFifteen => 'قد يستغرق الامر من ٥ الى ١٥ دقيقة';
+
+  @override
+  String get youllBeNotified => 'سوف يتم تنبيهك عند وصول نتيجة';
 }

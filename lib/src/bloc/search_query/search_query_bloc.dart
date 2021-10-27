@@ -19,8 +19,7 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
     on<ResponseRecieved>((event, emit) {
       emit(SearchQueryResponseRecived(event.response));
     });
-    on<QueryError>((event, emit) {
-      print('object');
+    on<QueryStreamError>((event, emit) {
       emit(SearchQueryError(event.error));
     });
   }
@@ -43,7 +42,7 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
       add(ResponseRecieved(event));
     })
           ..onError((e) {
-            add(QueryError(e.toString()));
+            add(QueryStreamError(e.toString()));
           });
   }
 
