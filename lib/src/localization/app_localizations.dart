@@ -302,12 +302,6 @@ abstract class AppLocalizations {
   /// **'بحث خلال التطبيق'**
   String get searchThroughApp;
 
-  /// No description provided for @useWhatsApp.
-  ///
-  /// In ar, this message translates to:
-  /// **'Save route'**
-  String get useWhatsApp;
-
   /// No description provided for @pleaseSelectType.
   ///
   /// In ar, this message translates to:
@@ -347,8 +341,32 @@ abstract class AppLocalizations {
   /// No description provided for @returnDateShouldBeAfterAtLeastOneDay.
   ///
   /// In ar, this message translates to:
-  /// **'يجب ان يكون موعد العودة عبى الاقل بعد يوم من موعد الذهاب'**
+  /// **'يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب'**
   String get returnDateShouldBeAfterAtLeastOneDay;
+
+  /// No description provided for @pleaseWait.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء الانتظار'**
+  String get pleaseWait;
+
+  /// No description provided for @searchingTripsForYou.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري البحث عن رحلات تناسب طلبك'**
+  String get searchingTripsForYou;
+
+  /// No description provided for @mightTakeFiveToFifteen.
+  ///
+  /// In ar, this message translates to:
+  /// **'قد يستغرق الامر من ٥ الى ١٥ دقيقة'**
+  String get mightTakeFiveToFifteen;
+
+  /// No description provided for @youllBeNotified.
+  ///
+  /// In ar, this message translates to:
+  /// **'سوف يتم تنبيهك عند وصول نتيجة'**
+  String get youllBeNotified;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

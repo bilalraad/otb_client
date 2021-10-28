@@ -34,12 +34,15 @@
   "round": "ذهاب واياب",
   "contactThroughWhatsApp": "تواصل مباشر من خلال الواتساب",
   "searchThroughApp": "بحث خلال التطبيق",
-  "useWhatsApp": "Save route",
   "pleaseSelectType": "الرجاء اختيار نوع الرحلة",
   "pleaseSelectCategory": "الرجاء اختيار فئة الرحلة",
   "pleaseSelectDepartureDate": "الرجاء اختيار موعد السفر",
   "pleaseSelectReturnDate": "الرجاء اختيار موعد العودة",
   "pleaseSelectArriveCity": "الرجاء اختيار الوجهة",
   "pleaseSelectDepartureCity": "الرجاء اختيار مدينة الانطلاق",
-  "returnDateShouldBeAfterAtLeastOneDay": "يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب"
+  "returnDateShouldBeAfterAtLeastOneDay": "يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب",
+  "pleaseWait": "الرجاء الانتظار",
+  "searchingTripsForYou": "جاري البحث عن رحلات تناسب طلبك",
+  "mightTakeFiveToFifteen": "قد يستغرق الامر من ٥ الى ١٥ دقيقة",
+  "youllBeNotified": "سوف يتم تنبيهك عند وصول نتيجة"
 }
