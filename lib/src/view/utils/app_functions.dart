@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'app_assets.dart';
 import '../../data/models/trips_query.dart';
 import '../../localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -114,5 +115,22 @@ String mapAirlineCodeToName(Airline code, AppLocalizations appLoc) {
       return appLoc.shamWings;
     default:
       return appLoc.iraqiAirline;
+  }
+}
+
+String mapAirlineCodeToLogo(Airline code) {
+  switch (code) {
+    case Airline.THY:
+      return AppAssets.turkishAirlinesLogo;
+    case Airline.FBA:
+      return AppAssets.flyBagdadLogo;
+    case Airline.IAW:
+      return AppAssets.iraqiAirlinesLogo;
+    case Airline.MEA:
+      return AppAssets.lebanonAirlinesLogo;
+    case Airline.SAW:
+      return AppAssets.shamWingsLogo;
+    default:
+      return AppAssets.iraqiAirlinesLogo;
   }
 }

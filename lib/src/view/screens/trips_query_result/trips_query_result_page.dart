@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../home.dart';
 
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../../localization/app_localizations.dart';
@@ -23,7 +24,9 @@ class TripsQueryResultPage extends StatelessWidget {
     final appLoc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: appAppbar(showBackButton: false),
+      appBar: appAppbar(onBackPressed: () {
+        Navigator.of(context).pushReplacement(createRoute(Home()));
+      }),
       body: BlocConsumer<SearchQueryBloc, SearchQueryState>(
         listener: (context, state) {
           // TODO: implement listener

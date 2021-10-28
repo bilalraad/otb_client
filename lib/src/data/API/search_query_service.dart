@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 import '../fake_data.dart';
 import '../models/book_trip.dart';
 import '../models/trips_query.dart';

@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import '../utils/app_colors.dart';
-import '../utils/app_functions.dart';
-import '../../data/models/airline.dart';
-import '../../localization/app_localizations.dart';
-import '../utils/app_appbar.dart';
-import '../utils/app_button.dart';
-import '../utils/app_text_styles.dart';
-import '../utils/widgets/aireline_card.dart';
+import '../../utils/enums.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/app_functions.dart';
+import '../../../data/models/airline.dart';
+import '../../../localization/app_localizations.dart';
+import '../../utils/app_appbar.dart';
+import '../../utils/app_button.dart';
+import '../../utils/app_text_styles.dart';
+import 'widgets/aireline_card.dart';
 
-import 'trip_details_from/trip_details_from.dart';
+import '../trip_details_from/trip_details_from.dart';
 
 class SelectAirlinesScreen extends StatefulWidget {
-  final List<AireLine> supportedAirLines;
-  const SelectAirlinesScreen({Key? key, required this.supportedAirLines})
-      : super(key: key);
+  const SelectAirlinesScreen({Key? key}) : super(key: key);
 
   @override
   State<SelectAirlinesScreen> createState() => _SelectAirlinesScreenState();
 }
 
 class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
-  List<String> selectedAirLines = ['THY', 'IAW', 'MEA', 'FBA', 'SAW'];
-
-  List<AireLine> get _supportedAirLines => widget.supportedAirLines;
+  List<Airline> selectedAirLines = Airline.values;
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +42,13 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
             Row(
               children: [
                 Checkbox(
-                  value: _supportedAirLines.length == selectedAirLines.length,
+                  value: Airline.values.length == selectedAirLines.length,
                   activeColor: Theme.of(context).colorScheme.primary,
                   onChanged: (allSelected) {
                     if (allSelected!) {
                       selectedAirLines.clear();
-                      for (var a in widget.supportedAirLines) {
-                        selectedAirLines.add(a.code);
+                      for (var a in Airline.values) {
+                        selectedAirLines.add(a);
                       }
                     } else {
                       selectedAirLines = [];
@@ -66,19 +63,19 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
             ),
             const Divider(thickness: 2),
             Column(
-              children: _supportedAirLines.map<Widget>(
+              children: Airline.values.map<Widget>(
                 (a) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: AirlineCard(
-                      value: selectedAirLines.contains(a.code),
-                      airlineImage: a.logo,
-                      airlineName: a.name,
+                      value: selectedAirLines.contains(a),
+                      airlineImage: mapAirlineCodeToLogo(a),
+                      airlineName: mapAirlineCodeToName(a, appLoc),
                       onSelected: (selected) {
                         if (selected!) {
-                          selectedAirLines.add(a.code);
+                          selectedAirLines.add(a);
                         } else {
-                          selectedAirLines.remove(a.code);
+                          selectedAirLines.remove(a);
                         }
                         setState(() {});
                       },
@@ -93,7 +90,7 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
               child: AppButton(
                 onPressed: () {
                   if (selectedAirLines.isEmpty) {
-                    EasyLoading.showToast(appLoc.pleaseSelectOneAirline);
+                    EasyLoading.showError(appLoc.pleaseSelectOneAirline);
                   } else {
                     Navigator.of(context).push(createRoute(
                       TripDetailsForm(selectedAirlines: selectedAirLines),

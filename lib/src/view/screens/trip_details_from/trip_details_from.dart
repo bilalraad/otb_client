@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import '../../utils/enums.dart';
+
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../utils/app_functions.dart';
 import '../../../data/models/trips_query.dart';
@@ -15,7 +17,7 @@ import 'widgets/select_country.dart';
 import 'widgets/travelers_number_card.dart';
 
 class TripDetailsForm extends StatefulWidget {
-  final List<String> selectedAirlines;
+  final List<Airline> selectedAirlines;
   const TripDetailsForm({Key? key, required this.selectedAirlines})
       : super(key: key);
 
@@ -27,7 +29,13 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
   int tripTypeGroupValue = 0;
   int tripCategoryGroupValue = 0;
   bool isOneWay = true;
-  TripsQuery newQuery = TripsQuery.initial();
+  late TripsQuery newQuery;
+
+  @override
+  void initState() {
+    newQuery = TripsQuery.initial().copyWith(airLines: widget.selectedAirlines);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,6 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                   children: [
                     SelectCatgeoryAndType(
                       onCategorySelected: (v) {
-                        print(v);
                         newQuery = newQuery.copyWith(tripCategory: v);
                       },
                       onTypeSelected: (v) {
@@ -157,7 +164,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                         Navigator.of(context).pushReplacement(
                             createRoute(const TripsQueryResultPage()));
                       } catch (e) {
-                        EasyLoading.showToast(e.toString());
+                        EasyLoading.showError(e.toString());
                       }
                     },
                     text: appLoc.searchThroughApp),
