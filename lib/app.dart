@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:otb_client/src/view/utils/app_colors.dart';
+import 'src/view/utils/app_colors.dart';
 import 'src/bloc/search_query/search_query_bloc.dart';
 import 'src/view/utils/app_text_styles.dart';
 

@@ -33,9 +33,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
       await Future.delayed(const Duration(seconds: 10));
       yield TripsQueryResult.fromMap(searchResult);
     } else {
-      yield TripsQueryResult.fromMap(searchResult);
-
-      // throw FlutterError('network Error');
+      throw FlutterError('network Error');
     }
   }
 
@@ -46,7 +44,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
     if (random.nextBool()) {
       print(query.toMap());
     } else {
-      // throw FlutterError('network Error');
+      throw FlutterError('network Error');
     }
   }
 }

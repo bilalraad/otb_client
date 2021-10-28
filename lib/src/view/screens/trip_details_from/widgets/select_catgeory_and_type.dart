@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/localization/app_localizations.dart';
-import 'package:otb_client/src/view/screens/trip_details_from/widgets/radio_selector.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
-import 'package:otb_client/src/view/utils/enums.dart';
+import '../../../../localization/app_localizations.dart';
+import 'radio_selector.dart';
+import '../../../utils/app_text_styles.dart';
+import '../../../utils/enums.dart';
 
 class SelectCatgeoryAndType extends StatefulWidget {
-  final Function(String) onCategorySelected;
-  final Function(String) onTypeSelected;
+  final Function(TripCategory) onCategorySelected;
+  final Function(TripType) onTypeSelected;
 
   const SelectCatgeoryAndType(
       {Key? key,
@@ -39,7 +39,7 @@ class _SelectCatgeoryAndTypeState extends State<SelectCatgeoryAndType> {
               onSelected: (v) {
                 setState(() {
                   tripCategoryGroupValue = v!;
-                  widget.onCategorySelected(describeEnum(v));
+                  widget.onCategorySelected(v);
                 });
               },
               value: TripCategory.economic,
@@ -50,7 +50,7 @@ class _SelectCatgeoryAndTypeState extends State<SelectCatgeoryAndType> {
               onSelected: (v) {
                 setState(() {
                   tripCategoryGroupValue = v!;
-                  widget.onCategorySelected(describeEnum(v));
+                  widget.onCategorySelected(v);
                 });
               },
               value: TripCategory.business,
@@ -71,7 +71,7 @@ class _SelectCatgeoryAndTypeState extends State<SelectCatgeoryAndType> {
               onSelected: (v) {
                 setState(() {
                   tripTypeGroupValue = v!;
-                  widget.onTypeSelected(describeEnum(v));
+                  widget.onTypeSelected(v);
                 });
               },
               value: TripType.oneWay,
@@ -82,7 +82,7 @@ class _SelectCatgeoryAndTypeState extends State<SelectCatgeoryAndType> {
               onSelected: (v) {
                 setState(() {
                   tripTypeGroupValue = v!;
-                  widget.onTypeSelected(describeEnum(v));
+                  widget.onTypeSelected(v);
                 });
               },
               value: TripType.round,

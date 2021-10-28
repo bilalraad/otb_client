@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:otb_client/src/view/utils/enums.dart';
+import '../../view/utils/enums.dart';
 import 'package:uuid/uuid.dart';
 
 import 'travelers.dart';
@@ -12,7 +12,7 @@ class TripsQuery {
     required this.type,
     required this.departureCity,
     required this.arriveCity,
-    required this.leaveDate,
+    this.leaveDate,
     this.returnDate,
     required this.travelers,
     required this.airLines,
@@ -20,26 +20,26 @@ class TripsQuery {
 
   final String queryId;
   final String userDeviceToken;
-  final String tripCategory;
-  final String type;
+  final TripCategory tripCategory;
+  final TripType type;
   final String departureCity;
   final String arriveCity;
-  final String leaveDate;
-  final String? returnDate;
+  final DateTime? leaveDate;
+  final DateTime? returnDate;
   final Travelers travelers;
-  final List<String> airLines;
+  final List<Airline> airLines;
 
   TripsQuery copyWith({
     String? queryId,
     String? userDeviceToken,
-    String? tripCategory,
-    String? type,
+    TripCategory? tripCategory,
+    TripType? type,
     String? departureCity,
     String? arriveCity,
-    String? leaveDate,
-    String? returnDate,
+    DateTime? leaveDate,
+    DateTime? returnDate,
     Travelers? travelers,
-    List<String>? airLines,
+    List<Airline>? airLines,
   }) =>
       TripsQuery(
         queryId: queryId ?? this.queryId,
@@ -54,18 +54,27 @@ class TripsQuery {
         airLines: airLines ?? this.airLines,
       );
 
-  factory TripsQuery.fromMap(Map<String, dynamic> json) => TripsQuery(
-        queryId: json["queryId"],
-        userDeviceToken: json["userDeviceToken"],
-        tripCategory: json["tripCategory"],
-        type: json["type"],
-        departureCity: json["departureCity"],
-        arriveCity: json["arriveCity"],
-        leaveDate: json["leaveDate"],
-        returnDate: json["returnDate"],
-        travelers: Travelers.fromMap(json["travelers"]),
-        airLines: List<String>.from(json["airLines"].map((x) => x)),
-      );
+  factory TripsQuery.fromMap(Map<String, dynamic> json) {
+    List<Airline> airlines = [];
+
+    for (var airline in json["airLines"]) {
+      airlines
+          .add(Airline.values.firstWhere((al) => describeEnum(al) == airline));
+    }
+
+    return TripsQuery(
+      queryId: json["queryId"],
+      userDeviceToken: json["userDeviceToken"],
+      tripCategory: json["tripCategory"],
+      type: json["type"],
+      departureCity: json["departureCity"],
+      arriveCity: json["arriveCity"],
+      leaveDate: json["leaveDate"],
+      returnDate: json["returnDate"],
+      travelers: Travelers.fromMap(json["travelers"]),
+      airLines: airlines,
+    );
+  }
 
   Map<String, dynamic> toMap() => {
         "queryId": queryId,
@@ -77,19 +86,17 @@ class TripsQuery {
         "leaveDate": leaveDate,
         "returnDate": returnDate,
         "travelers": travelers.toMap(),
-        "airLines": List<dynamic>.from(airLines.map((x) => x)),
+        "airLines": List<dynamic>.from(airLines.map((x) => describeEnum(x))),
       };
 
   factory TripsQuery.initial() {
     return TripsQuery(
       queryId: const Uuid().v4(),
       userDeviceToken: '',
-      tripCategory: describeEnum(TripCategory.economic),
-      type: describeEnum(TripType.oneWay),
+      tripCategory: TripCategory.economic,
+      type: TripType.oneWay,
       departureCity: '',
       arriveCity: '',
-      leaveDate: '',
-      returnDate: '',
       travelers: Travelers(adults: 1),
       airLines: [],
     );

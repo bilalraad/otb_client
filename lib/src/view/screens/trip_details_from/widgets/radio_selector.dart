@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/view/utils/app_colors.dart';
-import 'package:otb_client/src/view/utils/app_text_styles.dart';
+import '../../../utils/app_text_styles.dart';
 
 class RadioSelector<T> extends StatelessWidget {
   final String title;

@@ -8,10 +8,24 @@ class SearchQueryInitial extends SearchQueryState {
   List<Object?> get props => [];
 }
 
-class SearchQueryError extends SearchQueryState {
+class SearchQuerySendingError extends SearchQueryState {
   final String error;
+  final TripsQuery query;
 
-  SearchQueryError(this.error);
+  SearchQuerySendingError(this.error, this.query);
+
+  @override
+  List<Object?> get props => [error];
+
+  @override
+  String toString() => 'SearchQueryError(error: $error)';
+}
+
+class SearchQueryStreamError extends SearchQueryState {
+  final String error;
+  final String queryId;
+
+  SearchQueryStreamError(this.error, this.queryId);
 
   @override
   List<Object?> get props => [error];

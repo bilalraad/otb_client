@@ -1,45 +1,55 @@
-import 'models/travelers.dart';
-import 'models/trips_query.dart';
+import 'package:flutter/foundation.dart';
+import '../view/utils/enums.dart';
 
 final searchResult = {
   'id': '77bfjbfjb876kjhkj',
   'resultItems': [
     {
       "trip_number": "A-12",
-      "type": "round",
-      "airline": "Fly Baghdad",
+      "price": 1500.0,
+      "type": describeEnum(TripType.round),
+      "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": "BGW",
-        "to": "DAM",
-        "departure_time": "12:25",
-        "arrive_time": "15:59"
+        "from": describeEnum(Airport.BGW),
+        "to": describeEnum(Airport.DAM),
+        "departure_time": DateTime.now().toIso8601String(),
+        "arrive_time": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
       },
       "return": {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
-        "from": "DAM",
-        "to": "BGW",
-        "departure_time": "9:25",
-        "arrive_time": "12:59"
+        "from": describeEnum(Airport.DAM),
+        "to": describeEnum(Airport.BGW),
+        "departure_time": DateTime.now().toIso8601String(),
+        "arrive_time": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
       }
     },
     {
       "trip_number": "A-13",
-      "type": "round",
-      "airline": "Iraqi Airlines",
+      "price": 1500.0,
+      "type": describeEnum(TripType.round),
+      "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": "BGW",
-        "to": "SAW",
-        "departure_time": "12:25",
-        "arrive_time": "15:59"
+        "from": describeEnum(Airport.BGW),
+        "to": describeEnum(Airport.BEY),
+        "departure_time": DateTime.now().toIso8601String(),
+        "arrive_time": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
       },
       "return": {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
-        "from": "SAW",
-        "to": "BGW",
-        "departure_time": "9:25",
-        "arrive_time": "12:59"
+        "from": describeEnum(Airport.BEY),
+        "to": describeEnum(Airport.BGW),
+        "departure_time": DateTime.now().toIso8601String(),
+        "arrive_time": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
       }
     }
   ]
@@ -48,16 +58,16 @@ final searchResult = {
 final searchQuery = {
   "queryId": "OIUIOIU8798YS98Y9",
   "userDeviceToken": "ADASDASDDQWDQDQWDQWW",
-  "tripCategory": "economy",
-  "type": "oneway",
-  "departureCity": "BGW",
-  "arriveCity": "AMM",
-  "leaveDate": "31/10/2021",
+  "tripCategory": describeEnum(TripCategory.economic),
+  "type": describeEnum(TripType.oneWay),
+  "departureCity": describeEnum(Airport.BGW),
+  "arriveCity": describeEnum(Airport.AMM),
+  "leaveDate": DateTime.now().toIso8601String(),
   "returnDate": "",
   "travelers": {"adults": 1, "kids": 0, "infants": 0},
   "airLines": [
-    "iraqi airline",
-    "fly baghdad",
+    describeEnum(Airline.FBA),
+    describeEnum(Airline.SAW),
   ],
 };
 
@@ -69,17 +79,17 @@ final confirmBooking = {
   "paymentConfirmed": "",
 };
 
-final fakeQuery = TripsQuery(
-  queryId: "OIUIOIU8798YS98Y9",
-  userDeviceToken: "ADASDASDDQWDQDQWDQWW",
-  tripCategory: "VIP",
-  type: "oneway",
-  departureCity: "BGW",
-  arriveCity: "AMM",
-  leaveDate: "",
-  travelers: Travelers(adults: 1),
-  airLines: [
-    'THY',
-    'IAW',
-  ],
-);
+// final fakeQuery = TripsQuery(
+//   queryId: "OIUIOIU8798YS98Y9",
+//   userDeviceToken: "ADASDASDDQWDQDQWDQWW",
+//   tripCategory: "VIP",
+//   type: "oneway",
+//   departureCity: "BGW",
+//   arriveCity: "AMM",
+//   leaveDate: "",
+//   travelers: Travelers(adults: 1),
+//   airLines: [
+//     'THY',
+//     'IAW',
+//   ],
+// );

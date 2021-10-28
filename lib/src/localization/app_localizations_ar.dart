@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Arabic (`ar`).
@@ -20,7 +17,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tripCategory => 'فئة الرحلة';
 
   @override
-  String get departurTime => 'الانطلاق';
+  String get departurTime => 'الأنطلاق';
 
   @override
   String get arriveTime => 'الوصول';
@@ -38,13 +35,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dapatureDate => 'موعد الذهاب';
 
   @override
-  String get numOfPeople => 'عدد الاشخاص';
+  String get numOfPeople => 'عدد الأشخاص';
 
   @override
   String get adults => 'الكبار';
 
   @override
-  String get kids => 'الاطفال';
+  String get kids => 'الأطفال';
 
   @override
   String get travelers => 'المسافرين';
@@ -53,13 +50,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get infants => 'الرضع';
 
   @override
-  String get lessThanTwo => 'اصغر من سنتين';
+  String get lessThanTwo => 'أصغر من سنتين';
 
   @override
   String get between3and12 => 'من ٢ الى ١٢ سنة';
 
   @override
-  String get olderthan12 => 'اكبر من ١٢ سنة';
+  String get olderthan12 => 'أكبر من ١٢ سنة';
 
   @override
   String get tukishAirline => 'الخطوط التركية';
@@ -77,19 +74,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lebanonAirline => 'الخطوط اللبنانية';
 
   @override
-  String get pleaseSelectAirlines => 'الرجاء اختيار الخطوط الجوية المناسبة لك';
+  String get pleaseSelectAirlines => 'الرجاء إختيار الخطوط الجوية المناسبة لك';
 
   @override
   String get all => 'الكل';
 
   @override
-  String get pleaseSelectOneAirline => 'الرجاء قم بتحديد خطوط جوية واحدة على الاقل';
+  String get pleaseSelectOneAirline =>
+      'الرجاء قم بتحديد خطوط جوية واحدة على الأقل';
 
   @override
   String get next => 'التالي';
 
   @override
-  String get economic => 'اقتصادي';
+  String get economic => 'إقتصادي';
 
   @override
   String get bussines => 'رجال اعمال';
@@ -104,7 +102,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get oneWay => 'ذهاب فقط';
 
   @override
-  String get round => 'ذهاب واياب';
+  String get round => 'ذهاب وإياب';
 
   @override
   String get contactThroughWhatsApp => 'تواصل مباشر من خلال الواتساب';
@@ -113,28 +111,29 @@ class AppLocalizationsAr extends AppLocalizations {
   String get searchThroughApp => 'بحث خلال التطبيق';
 
   @override
-  String get pleaseSelectType => 'الرجاء اختيار نوع الرحلة';
+  String get pleaseSelectType => 'الرجاء إختيار نوع الرحلة';
 
   @override
-  String get pleaseSelectCategory => 'الرجاء اختيار فئة الرحلة';
+  String get pleaseSelectCategory => 'الرجاء إختيار فئة الرحلة';
 
   @override
-  String get pleaseSelectDepartureDate => 'الرجاء اختيار موعد السفر';
+  String get pleaseSelectDepartureDate => 'الرجاء إختيار موعد السفر';
 
   @override
-  String get pleaseSelectReturnDate => 'الرجاء اختيار موعد العودة';
+  String get pleaseSelectReturnDate => 'الرجاء إختيار موعد العودة';
 
   @override
-  String get pleaseSelectArriveCity => 'الرجاء اختيار الوجهة';
+  String get pleaseSelectArriveCity => 'الرجاء إختيار الوجهة';
 
   @override
-  String get pleaseSelectDepartureCity => 'الرجاء اختيار مدينة الانطلاق';
+  String get pleaseSelectDepartureCity => 'الرجاء إختيار مدينة الانطلاق';
 
   @override
-  String get returnDateShouldBeAfterAtLeastOneDay => 'يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب';
+  String get returnDateShouldBeAfterAtLeastOneDay =>
+      'يجب ان يكون موعد العودة على الأقل بعد يوم من موعد الذهاب';
 
   @override
-  String get pleaseWait => 'الرجاء الانتظار';
+  String get pleaseWait => 'الرجاء الأنتظار';
 
   @override
   String get searchingTripsForYou => 'جاري البحث عن رحلات تناسب طلبك';
@@ -144,4 +143,62 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get youllBeNotified => 'سوف يتم تنبيهك عند وصول نتيجة';
+
+  @override
+  String get checkInternet =>
+      'الرجاء التأكد من اتصالك بالأنترنت والمحاولة مرة اخرى';
+
+  @override
+  String get tryAgain => 'إعادة المحاولة';
+
+  @override
+  String get errorWhileSending => 'حدث خطا أثناء البحث عن رحلات';
+
+  @override
+  String get unknownError => 'حدث خطأ غير معروف';
+
+  @override
+  String get bookNow => 'احجز الان';
+
+  @override
+  String get baghdad => 'بغداد';
+
+  @override
+  String get damascus => 'دمشق';
+
+  @override
+  String get beirut => 'بيروت';
+
+  @override
+  String get cairo => 'القاهرة';
+
+  @override
+  String get amman => 'عمان';
+
+  @override
+  String get istanbulAtaturk => 'اسطنبول اتاتورك';
+
+  @override
+  String get istanbulSabiha => 'اسطنبول صبيحة';
+
+  @override
+  String get searchResults => 'نتائج البحث';
+
+  @override
+  String get totalCost => 'التكلفة الكلية';
+
+  @override
+  String get forOnePerson => 'للشخص';
+
+  @override
+  String get payWithZaincash => 'الدفع من خلال زين كاش';
+
+  @override
+  String get directPayment => 'الدفع المباشر';
+
+  @override
+  String get deliveryPayment => 'الدفع بخدمة التوصيل';
+
+  @override
+  String get pleaseSelectPaymentMethod => 'الرجاء اختيار طريقة الدفع';
 }

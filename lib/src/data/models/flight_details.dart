@@ -1,5 +1,10 @@
-class FlightDetails {
-  FlightDetails({
+import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import '../../view/utils/enums.dart';
+
+class FlightDetails extends Equatable {
+  const FlightDetails({
     required this.date,
     required this.from,
     required this.to,
@@ -7,18 +12,18 @@ class FlightDetails {
     required this.arriveTime,
   });
 
-  final String date;
-  final String from;
-  final String to;
-  final String departureTime;
-  final String arriveTime;
+  final DateTime date;
+  final Airport from;
+  final Airport to;
+  final TimeOfDay departureTime;
+  final TimeOfDay arriveTime;
 
   FlightDetails copyWith({
-    String? date,
-    String? from,
-    String? to,
-    String? departureTime,
-    String? arriveTime,
+    DateTime? date,
+    Airport? from,
+    Airport? to,
+    TimeOfDay? departureTime,
+    TimeOfDay? arriveTime,
   }) =>
       FlightDetails(
         date: date ?? this.date,
@@ -28,19 +33,33 @@ class FlightDetails {
         arriveTime: arriveTime ?? this.arriveTime,
       );
 
-  factory FlightDetails.fromMap(Map<String, dynamic> json) => FlightDetails(
-        date: json["date"],
-        from: json["from"],
-        to: json["to"],
-        departureTime: json["departure_time"],
-        arriveTime: json["arrive_time"],
-      );
+  factory FlightDetails.fromMap(Map<String, dynamic> json) {
+    print(json);
+    return FlightDetails(
+      date: DateTime.parse(json["date"]),
+      from: Airport.values.firstWhere((a) => describeEnum(a) == json["from"]),
+      to: Airport.values.firstWhere((a) => describeEnum(a) == json["from"]),
+      departureTime:
+          TimeOfDay.fromDateTime(DateTime.parse(json["departure_time"])),
+      arriveTime: TimeOfDay.fromDateTime(DateTime.parse(json["arrive_time"])),
+    );
+  }
 
   Map<String, dynamic> toMap() => {
-        "date": date,
-        "from": from,
-        "to": to,
-        "departure_time": departureTime,
-        "arrive_time": arriveTime,
+        "date": date.toIso8601String(),
+        "from": describeEnum(from),
+        "to": describeEnum(to),
+        "departure_time": DateTime(date.year, date.month, date.day,
+                departureTime.hour, departureTime.minute)
+            .toIso8601String(),
+        "arrive_time": DateTime(date.year, date.month, date.day,
+                arriveTime.hour, arriveTime.minute)
+            .toIso8601String(),
       };
+
+  @override
+  List<Object?> get props => [date, from, to, departureTime, arriveTime];
+
+  @override
+  bool get stringify => true;
 }

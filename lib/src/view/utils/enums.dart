@@ -1,9 +1,9 @@
-enum TripType {
-  oneWay,
-  round,
-}
+// ignore_for_file: constant_identifier_names
 
-enum TripCategory {
-  economic,
-  business,
-}
+enum TripType { oneWay, round }
+
+enum TripCategory { economic, business }
+
+enum Airport { BGW, DAM, BEY, CAI, AMM, SAW, IST }
+
+enum Airline { IAW, THY, MEA, FBA, SAW }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:otb_client/src/bloc/search_query/search_query_bloc.dart';
-import 'package:otb_client/src/view/utils/app_functions.dart';
+import '../../../bloc/search_query/search_query_bloc.dart';
+import '../../utils/app_functions.dart';
 import '../../../data/models/trips_query.dart';
 import '../../../localization/app_localizations.dart';
 import '../../utils/app_appbar.dart';
 import '../../utils/app_button.dart';
 import '../../utils/app_text_styles.dart';
-import '../trips_query_result_page.dart';
+import '../trips_query_result/trips_query_result_page.dart';
 import 'widgets/date_picker.dart';
 import 'widgets/select_catgeory_and_type.dart';
 import 'widgets/select_country.dart';
@@ -84,20 +84,15 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                         AppDatePicker(
                           title: appLoc.dapatureDate,
                           onDateSelected: (newDepDate) {
-                            newQuery = newQuery.copyWith(
-                                leaveDate: newDepDate.toIso8601String());
+                            newQuery = newQuery.copyWith(leaveDate: newDepDate);
                           },
                         ),
                         if (!isOneWay)
                           AppDatePicker(
                             title: appLoc.returnDate,
-                            minDateTime: newQuery.leaveDate.isNotEmpty
-                                ? DateTime.parse(newQuery.leaveDate)
-                                    .add(const Duration(days: 1))
-                                : null,
                             onDateSelected: (newReturnDate) {
-                              newQuery = newQuery.copyWith(
-                                  returnDate: newReturnDate.toIso8601String());
+                              newQuery =
+                                  newQuery.copyWith(returnDate: newReturnDate);
                             },
                           ),
                       ],

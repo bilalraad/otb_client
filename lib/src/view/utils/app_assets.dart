@@ -15,4 +15,5 @@ class AppAssets {
   static const lebanonFlag = 'assets/images/flags/lebanon.png';
   static const jordanFlag = 'assets/images/flags/jordan.png';
   static const waiting = 'assets/images/waiting.png';
+  static const queryError = 'assets/images/query_error.png';
 }

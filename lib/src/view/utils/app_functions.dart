@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:otb_client/src/data/models/trips_query.dart';
-import 'package:otb_client/src/localization/app_localizations.dart';
+import '../../data/models/trips_query.dart';
+import '../../localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'enums.dart';
 
 void launchWhatsApp({
   int phone = 07821304951,
@@ -39,21 +41,17 @@ String _tripQueryToWhatsAppMessage(TripsQuery query) {
 }
 
 void validateTripQuery(TripsQuery query, AppLocalizations appLoc) {
-  if (query.type.isEmpty) {
-    throw appLoc.pleaseSelectType;
-  } else if (query.tripCategory.isEmpty) {
-    throw appLoc.pleaseSelectCategory;
-  } else if (query.departureCity.isEmpty) {
+  if (query.departureCity.isEmpty) {
     throw appLoc.pleaseSelectDepartureCity;
   } else if (query.arriveCity.isEmpty) {
     throw appLoc.pleaseSelectArriveCity;
-  } else if (query.leaveDate.isEmpty) {
+  } else if (query.leaveDate == null) {
     throw appLoc.pleaseSelectDepartureDate;
-  } else if (query.type == 'round') {
-    if (query.returnDate!.isEmpty) {
+  } else if (query.type == TripType.round) {
+    if (query.returnDate == null) {
       throw appLoc.pleaseSelectReturnDate;
-    } else if (DateTime.parse(query.returnDate!).isBefore(
-        DateTime.parse(query.leaveDate).add(const Duration(days: 1)))) {
+    } else if (query.returnDate!
+        .isBefore(query.leaveDate!.add(const Duration(days: 1)))) {
       throw appLoc.returnDateShouldBeAfterAtLeastOneDay;
     }
   }
@@ -79,4 +77,42 @@ Route createRoute(Widget route, {Cubic curve = Curves.ease}) {
       );
     },
   );
+}
+
+String mapAirportCodeToName(Airport code, AppLocalizations appLoc) {
+  switch (code) {
+    case Airport.BGW:
+      return appLoc.baghdad;
+    case Airport.DAM:
+      return appLoc.damascus;
+    case Airport.BEY:
+      return appLoc.beirut;
+    case Airport.CAI:
+      return appLoc.cairo;
+    case Airport.AMM:
+      return appLoc.amman;
+    case Airport.SAW:
+      return appLoc.istanbulSabiha;
+    case Airport.IST:
+      return appLoc.istanbulAtaturk;
+    default:
+      return appLoc.baghdad;
+  }
+}
+
+String mapAirlineCodeToName(Airline code, AppLocalizations appLoc) {
+  switch (code) {
+    case Airline.THY:
+      return appLoc.tukishAirline;
+    case Airline.FBA:
+      return appLoc.flyBaghdad;
+    case Airline.IAW:
+      return appLoc.iraqiAirline;
+    case Airline.MEA:
+      return appLoc.lebanonAirline;
+    case Airline.SAW:
+      return appLoc.shamWings;
+    default:
+      return appLoc.iraqiAirline;
+  }
 }

@@ -12,13 +12,23 @@ class QuerySubmitted extends SearchQueryEvent {
   List<Object?> get props => [query];
 }
 
-class QueryStreamError extends SearchQueryEvent {
+class QueryResultStreamError extends SearchQueryEvent {
   final String error;
+  final String queryId;
 
-  QueryStreamError(this.error);
+  QueryResultStreamError(this.error, this.queryId);
 
   @override
   List<Object?> get props => [error];
+}
+
+class QueryResultStreamRetry extends SearchQueryEvent {
+  final String queryId;
+
+  QueryResultStreamRetry(this.queryId);
+
+  @override
+  List<Object?> get props => [queryId];
 }
 
 class ResponseRecieved extends SearchQueryEvent {

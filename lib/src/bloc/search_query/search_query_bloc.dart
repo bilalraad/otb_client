@@ -19,8 +19,12 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
     on<ResponseRecieved>((event, emit) {
       emit(SearchQueryResponseRecived(event.response));
     });
-    on<QueryStreamError>((event, emit) {
-      emit(SearchQueryError(event.error));
+    on<QueryResultStreamError>((event, emit) {
+      emit(SearchQueryStreamError(event.error, event.queryId));
+    });
+    on<QueryResultStreamRetry>((event, emit) {
+      emit(SearchQueryWaitingForResponse(event.queryId));
+      monitorQueryResults(event.queryId);
     });
   }
 
@@ -32,17 +36,18 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
       emit(SearchQueryWaitingForResponse(event.query.queryId));
       monitorQueryResults(event.query.queryId);
     } catch (e) {
-      emit(SearchQueryError(e.toString()));
+      emit(SearchQuerySendingError(e.toString(), event.query));
     }
   }
 
   void monitorQueryResults(String queryId) {
+    resultsStreamSubscription?.cancel();
     resultsStreamSubscription =
         queryService.getTripsResult(queryId).listen((event) {
       add(ResponseRecieved(event));
     })
           ..onError((e) {
-            add(QueryStreamError(e.toString()));
+            add(QueryResultStreamError(e.toString(), queryId));
           });
   }
 

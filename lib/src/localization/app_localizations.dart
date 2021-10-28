@@ -119,7 +119,7 @@ abstract class AppLocalizations {
   /// No description provided for @departurTime.
   ///
   /// In ar, this message translates to:
-  /// **'الانطلاق'**
+  /// **'الأنطلاق'**
   String get departurTime;
 
   /// No description provided for @arriveTime.
@@ -155,7 +155,7 @@ abstract class AppLocalizations {
   /// No description provided for @numOfPeople.
   ///
   /// In ar, this message translates to:
-  /// **'عدد الاشخاص'**
+  /// **'عدد الأشخاص'**
   String get numOfPeople;
 
   /// No description provided for @adults.
@@ -167,7 +167,7 @@ abstract class AppLocalizations {
   /// No description provided for @kids.
   ///
   /// In ar, this message translates to:
-  /// **'الاطفال'**
+  /// **'الأطفال'**
   String get kids;
 
   /// No description provided for @travelers.
@@ -185,7 +185,7 @@ abstract class AppLocalizations {
   /// No description provided for @lessThanTwo.
   ///
   /// In ar, this message translates to:
-  /// **'اصغر من سنتين'**
+  /// **'أصغر من سنتين'**
   String get lessThanTwo;
 
   /// No description provided for @between3and12.
@@ -197,7 +197,7 @@ abstract class AppLocalizations {
   /// No description provided for @olderthan12.
   ///
   /// In ar, this message translates to:
-  /// **'اكبر من ١٢ سنة'**
+  /// **'أكبر من ١٢ سنة'**
   String get olderthan12;
 
   /// No description provided for @tukishAirline.
@@ -233,7 +233,7 @@ abstract class AppLocalizations {
   /// No description provided for @pleaseSelectAirlines.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار الخطوط الجوية المناسبة لك'**
+  /// **'الرجاء إختيار الخطوط الجوية المناسبة لك'**
   String get pleaseSelectAirlines;
 
   /// No description provided for @all.
@@ -245,7 +245,7 @@ abstract class AppLocalizations {
   /// No description provided for @pleaseSelectOneAirline.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء قم بتحديد خطوط جوية واحدة على الاقل'**
+  /// **'الرجاء قم بتحديد خطوط جوية واحدة على الأقل'**
   String get pleaseSelectOneAirline;
 
   /// No description provided for @next.
@@ -257,7 +257,7 @@ abstract class AppLocalizations {
   /// No description provided for @economic.
   ///
   /// In ar, this message translates to:
-  /// **'اقتصادي'**
+  /// **'إقتصادي'**
   String get economic;
 
   /// No description provided for @bussines.
@@ -287,7 +287,7 @@ abstract class AppLocalizations {
   /// No description provided for @round.
   ///
   /// In ar, this message translates to:
-  /// **'ذهاب واياب'**
+  /// **'ذهاب وإياب'**
   String get round;
 
   /// No description provided for @contactThroughWhatsApp.
@@ -305,49 +305,49 @@ abstract class AppLocalizations {
   /// No description provided for @pleaseSelectType.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار نوع الرحلة'**
+  /// **'الرجاء إختيار نوع الرحلة'**
   String get pleaseSelectType;
 
   /// No description provided for @pleaseSelectCategory.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار فئة الرحلة'**
+  /// **'الرجاء إختيار فئة الرحلة'**
   String get pleaseSelectCategory;
 
   /// No description provided for @pleaseSelectDepartureDate.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار موعد السفر'**
+  /// **'الرجاء إختيار موعد السفر'**
   String get pleaseSelectDepartureDate;
 
   /// No description provided for @pleaseSelectReturnDate.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار موعد العودة'**
+  /// **'الرجاء إختيار موعد العودة'**
   String get pleaseSelectReturnDate;
 
   /// No description provided for @pleaseSelectArriveCity.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار الوجهة'**
+  /// **'الرجاء إختيار الوجهة'**
   String get pleaseSelectArriveCity;
 
   /// No description provided for @pleaseSelectDepartureCity.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار مدينة الانطلاق'**
+  /// **'الرجاء إختيار مدينة الانطلاق'**
   String get pleaseSelectDepartureCity;
 
   /// No description provided for @returnDateShouldBeAfterAtLeastOneDay.
   ///
   /// In ar, this message translates to:
-  /// **'يجب ان يكون موعد العودة على الاقل بعد يوم من موعد الذهاب'**
+  /// **'يجب ان يكون موعد العودة على الأقل بعد يوم من موعد الذهاب'**
   String get returnDateShouldBeAfterAtLeastOneDay;
 
   /// No description provided for @pleaseWait.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء الانتظار'**
+  /// **'الرجاء الأنتظار'**
   String get pleaseWait;
 
   /// No description provided for @searchingTripsForYou.
@@ -367,6 +367,120 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'سوف يتم تنبيهك عند وصول نتيجة'**
   String get youllBeNotified;
+
+  /// No description provided for @checkInternet.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء التأكد من اتصالك بالأنترنت والمحاولة مرة اخرى'**
+  String get checkInternet;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get tryAgain;
+
+  /// No description provided for @errorWhileSending.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث خطا أثناء البحث عن رحلات'**
+  String get errorWhileSending;
+
+  /// No description provided for @unknownError.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث خطأ غير معروف'**
+  String get unknownError;
+
+  /// No description provided for @bookNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'احجز الان'**
+  String get bookNow;
+
+  /// No description provided for @baghdad.
+  ///
+  /// In ar, this message translates to:
+  /// **'بغداد'**
+  String get baghdad;
+
+  /// No description provided for @damascus.
+  ///
+  /// In ar, this message translates to:
+  /// **'دمشق'**
+  String get damascus;
+
+  /// No description provided for @beirut.
+  ///
+  /// In ar, this message translates to:
+  /// **'بيروت'**
+  String get beirut;
+
+  /// No description provided for @cairo.
+  ///
+  /// In ar, this message translates to:
+  /// **'القاهرة'**
+  String get cairo;
+
+  /// No description provided for @amman.
+  ///
+  /// In ar, this message translates to:
+  /// **'عمان'**
+  String get amman;
+
+  /// No description provided for @istanbulAtaturk.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسطنبول اتاتورك'**
+  String get istanbulAtaturk;
+
+  /// No description provided for @istanbulSabiha.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسطنبول صبيحة'**
+  String get istanbulSabiha;
+
+  /// No description provided for @searchResults.
+  ///
+  /// In ar, this message translates to:
+  /// **'نتائج البحث'**
+  String get searchResults;
+
+  /// No description provided for @totalCost.
+  ///
+  /// In ar, this message translates to:
+  /// **'التكلفة الكلية'**
+  String get totalCost;
+
+  /// No description provided for @forOnePerson.
+  ///
+  /// In ar, this message translates to:
+  /// **'للشخص'**
+  String get forOnePerson;
+
+  /// No description provided for @payWithZaincash.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدفع من خلال زين كاش'**
+  String get payWithZaincash;
+
+  /// No description provided for @directPayment.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدفع المباشر'**
+  String get directPayment;
+
+  /// No description provided for @deliveryPayment.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدفع بخدمة التوصيل'**
+  String get deliveryPayment;
+
+  /// No description provided for @pleaseSelectPaymentMethod.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء اختيار طريقة الدفع'**
+  String get pleaseSelectPaymentMethod;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
