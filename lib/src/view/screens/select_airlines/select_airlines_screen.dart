@@ -3,7 +3,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import '../../utils/enums.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_functions.dart';
-import '../../../data/models/airline.dart';
 import '../../../localization/app_localizations.dart';
 import '../../utils/app_appbar.dart';
 import '../../utils/app_button.dart';

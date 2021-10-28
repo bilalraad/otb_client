@@ -481,6 +481,114 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الرجاء اختيار طريقة الدفع'**
   String get pleaseSelectPaymentMethod;
+
+  /// No description provided for @pleaseFillYourInfo.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال المعلومات الخاصة بك'**
+  String get pleaseFillYourInfo;
+
+  /// No description provided for @youllGetaCall.
+  ///
+  /// In ar, this message translates to:
+  /// **'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ واتمام بقية الاجرائات'**
+  String get youllGetaCall;
+
+  /// No description provided for @location.
+  ///
+  /// In ar, this message translates to:
+  /// **'بغداد - المنصور - شارع 14 رمضان'**
+  String get location;
+
+  /// No description provided for @contactNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'07800000000'**
+  String get contactNumber;
+
+  /// No description provided for @transferToThisNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'قم بتحويل المبلغ على الرقم :'**
+  String get transferToThisNumber;
+
+  /// No description provided for @pressImageToOpenMap.
+  ///
+  /// In ar, this message translates to:
+  /// **'اضغط على الصورة لفتح الخريطة'**
+  String get pressImageToOpenMap;
+
+  /// No description provided for @writeYourNumberInInfoSection.
+  ///
+  /// In ar, this message translates to:
+  /// **'اثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات'**
+  String get writeYourNumberInInfoSection;
+
+  /// No description provided for @youllGetaCallAfterPayemntConfirmed.
+  ///
+  /// In ar, this message translates to:
+  /// **'بعد وصول المبلغ سوف يتم الاتصال بالرقم المرفق لأكمال الاجراءات'**
+  String get youllGetaCallAfterPayemntConfirmed;
+
+  /// No description provided for @ifYouDidntHaveAWallet.
+  ///
+  /// In ar, this message translates to:
+  /// **'اذا لم يكن لديك محفظة اذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيلبكاتبة رقم الهاتف الخاص بك في خانة الملاحظات'**
+  String get ifYouDidntHaveAWallet;
+
+  /// No description provided for @youllGetaCallThenOurAgentWillCome.
+  ///
+  /// In ar, this message translates to:
+  /// **'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك سوف يأتيك الوكيل لاستلام المبلغ خلال 24 ساعة'**
+  String get youllGetaCallThenOurAgentWillCome;
+
+  /// No description provided for @fullName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم الكامل'**
+  String get fullName;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهاتف'**
+  String get phoneNumber;
+
+  /// No description provided for @address.
+  ///
+  /// In ar, this message translates to:
+  /// **'العنوان'**
+  String get address;
+
+  /// No description provided for @bookinConfirmed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم الحجز'**
+  String get bookinConfirmed;
+
+  /// No description provided for @thankForDoingBussinesWithUs.
+  ///
+  /// In ar, this message translates to:
+  /// **'شكرا لتعاملك معنا'**
+  String get thankForDoingBussinesWithUs;
+
+  /// No description provided for @ifYouHaveAnyQuestion.
+  ///
+  /// In ar, this message translates to:
+  /// **'اذا كان لديك اي استفسار يمكن التواصل معنامن خلال الواتساب على الرقم'**
+  String get ifYouHaveAnyQuestion;
+
+  /// No description provided for @backToHome.
+  ///
+  /// In ar, this message translates to:
+  /// **'العودة الى الرئيسية'**
+  String get backToHome;
+
+  /// No description provided for @confirm.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاكيد'**
+  String get confirm;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../../../../data/models/flight_details.dart';
 import '../../../../localization/app_localizations.dart';
 import '../../../utils/app_text_styles.dart';
@@ -26,7 +27,12 @@ class FlighTimingDetails extends StatelessWidget {
               const Icon(Icons.flight_takeoff_rounded),
               Text(appLoc.departurTime),
               Text(
-                "${flightDetails.departureTime.hour}:${flightDetails.departureTime.minute}",
+                DateFormat.jm().format(DateTime(
+                    2021,
+                    1,
+                    1,
+                    flightDetails.departureTime.hour,
+                    flightDetails.departureTime.minute)),
                 style: AppTextStyles.body(fontWeight: FontWeight.w500),
               ),
             ],
@@ -61,7 +67,12 @@ class FlighTimingDetails extends StatelessWidget {
               const Icon(Icons.flight_land_rounded),
               Text(appLoc.arriveTime),
               Text(
-                "${flightDetails.arriveTime.hour}:${flightDetails.arriveTime.minute}",
+                DateFormat.jm().format(DateTime(
+                    2021,
+                    1,
+                    1,
+                    flightDetails.arriveTime.hour,
+                    flightDetails.arriveTime.minute)),
                 style: AppTextStyles.body(fontWeight: FontWeight.w500),
               ),
             ],

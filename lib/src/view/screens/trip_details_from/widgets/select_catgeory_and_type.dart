@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../localization/app_localizations.dart';
-import 'radio_selector.dart';
 import '../../../utils/app_text_styles.dart';
 import '../../../utils/enums.dart';
+import 'radio_selector.dart';
 
 class SelectCatgeoryAndType extends StatefulWidget {
   final Function(TripCategory) onCategorySelected;

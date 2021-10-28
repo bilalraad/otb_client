@@ -10,19 +10,28 @@ import 'enums.dart';
 
 void launchWhatsApp({
   int phone = 07821304951,
-  String message = 'sdc',
   required TripsQuery query,
 }) async {
   String url() {
     if (Platform.isAndroid) {
       return "https://wa.me/+964$phone/?text=${_tripQueryToWhatsAppMessage(query)}";
     } else {
-      return "https://api.whatsapp.com/send?phone=+964$phone&text=${Uri.parse('message')}";
+      return "https://api.whatsapp.com/send?phone=+964$phone&text=${_tripQueryToWhatsAppMessage(query)}";
     }
   }
 
   try {
     await launch(url());
+  } catch (e) {
+    print(e);
+  }
+}
+
+Future<void> launchMap() async {
+  String googleUrl =
+      'https://www.google.com/maps/search/?api=1&query=33.2636061,44.3727852';
+  try {
+    await launch(googleUrl);
   } catch (e) {
     print(e);
   }
@@ -133,4 +142,32 @@ String mapAirlineCodeToLogo(Airline code) {
     default:
       return AppAssets.iraqiAirlinesLogo;
   }
+}
+
+String? validatePhoneNo(String? phoneNo) {
+  final phoneRegEx = RegExp(r"07[3-9][0-9]{8}");
+  if (phoneNo == null || phoneNo.isEmpty) {
+    return "رجاءا ادخل رقم الهاتف";
+  } else if (!phoneRegEx.hasMatch(phoneNo) || phoneNo.length > 11) {
+    return "الرقم غير صحيح";
+  }
+  return null;
+}
+
+String? validateFullName(String? fullName) {
+  if (fullName == null || fullName.isEmpty) {
+    return "الرجاء ادخال الاسم";
+  } else if (fullName.length < 8) {
+    return "الرجاء ادخال الاسم الكامل";
+  }
+  return null;
+}
+
+String? validateAddress(String? address) {
+  if (address == null || address.isEmpty) {
+    return "الرجاء ادخال العنوان";
+  } else if (address.length < 8) {
+    return "الرجاء ادخال عنوان مفصل";
+  }
+  return null;
 }

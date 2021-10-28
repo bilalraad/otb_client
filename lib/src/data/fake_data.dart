@@ -5,16 +5,17 @@ final searchResult = {
   'id': '77bfjbfjb876kjhkj',
   'resultItems': [
     {
-      "trip_number": "A-12",
+      "tripNumber": "A-12",
       "price": 1500.0,
+      "totalCost": 1900.0,
       "type": describeEnum(TripType.round),
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
         "from": describeEnum(Airport.BGW),
         "to": describeEnum(Airport.DAM),
-        "departure_time": DateTime.now().toIso8601String(),
-        "arrive_time": DateTime.now()
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
             .toIso8601String(),
       },
@@ -22,23 +23,24 @@ final searchResult = {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
         "from": describeEnum(Airport.DAM),
         "to": describeEnum(Airport.BGW),
-        "departure_time": DateTime.now().toIso8601String(),
-        "arrive_time": DateTime.now()
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
             .toIso8601String(),
       }
     },
     {
-      "trip_number": "A-13",
+      "tripNumber": "A-13",
       "price": 1500.0,
+      "totalCost": 1900.0,
       "type": describeEnum(TripType.round),
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
         "from": describeEnum(Airport.BGW),
         "to": describeEnum(Airport.BEY),
-        "departure_time": DateTime.now().toIso8601String(),
-        "arrive_time": DateTime.now()
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
             .toIso8601String(),
       },
@@ -46,8 +48,8 @@ final searchResult = {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
         "from": describeEnum(Airport.BEY),
         "to": describeEnum(Airport.BGW),
-        "departure_time": DateTime.now().toIso8601String(),
-        "arrive_time": DateTime.now()
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
             .toIso8601String(),
       }
@@ -69,6 +71,32 @@ final searchQuery = {
     describeEnum(Airline.FBA),
     describeEnum(Airline.SAW),
   ],
+};
+
+final fakeTrip = {
+  "tripNumber": "A-12",
+  "price": 1500.0,
+  "totalCost": 1900.0,
+  "type": describeEnum(TripType.round),
+  "airline": describeEnum(Airline.IAW),
+  "leaving": {
+    "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
+    "from": describeEnum(Airport.BGW),
+    "to": describeEnum(Airport.DAM),
+    "departureTime": DateTime.now().toIso8601String(),
+    "arriveTime": DateTime.now()
+        .add(const Duration(hours: 24, minutes: 10))
+        .toIso8601String(),
+  },
+  "return": {
+    "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
+    "from": describeEnum(Airport.DAM),
+    "to": describeEnum(Airport.BGW),
+    "departureTime": DateTime.now().toIso8601String(),
+    "arriveTime": DateTime.now()
+        .add(const Duration(hours: 24, minutes: 10))
+        .toIso8601String(),
+  }
 };
 
 final confirmBooking = {

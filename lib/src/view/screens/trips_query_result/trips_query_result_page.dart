@@ -25,12 +25,9 @@ class TripsQueryResultPage extends StatelessWidget {
 
     return Scaffold(
       appBar: appAppbar(onBackPressed: () {
-        Navigator.of(context).pushReplacement(createRoute(Home()));
+        Navigator.of(context).pushReplacement(createRoute(const Home()));
       }),
-      body: BlocConsumer<SearchQueryBloc, SearchQueryState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+      body: BlocBuilder<SearchQueryBloc, SearchQueryState>(
         builder: (context, state) {
           if (state is SearchQueryLoading) {
             return const Center(child: CircularProgressIndicator());
@@ -100,6 +97,7 @@ class TripsQueryResultPage extends StatelessWidget {
                         const SizedBox(height: 10),
                   ),
                 ),
+                const SizedBox(height: 10),
               ],
             );
           } else {

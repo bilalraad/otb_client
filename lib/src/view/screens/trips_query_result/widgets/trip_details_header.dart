@@ -11,12 +11,10 @@ class TripDetailsHeader extends StatelessWidget {
     Key? key,
     required this.flightDetails,
     required this.airelineName,
-    this.airplaneDirection = 1,
   }) : super(key: key);
 
   final FlightDetails flightDetails;
   final String airelineName;
-  final int airplaneDirection;
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +53,9 @@ class TripDetailsHeader extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(width: 10),
-                RotatedBox(
-                  quarterTurns: airplaneDirection,
-                  child: const Icon(Icons.flight_outlined),
+                const RotatedBox(
+                  quarterTurns: 1,
+                  child: Icon(Icons.flight_outlined),
                 ),
                 const SizedBox(width: 10),
                 Column(

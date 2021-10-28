@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import '../../utils/enums.dart';
 
 import '../../../bloc/search_query/search_query_bloc.dart';
-import '../../utils/app_functions.dart';
 import '../../../data/models/trips_query.dart';
 import '../../../localization/app_localizations.dart';
 import '../../utils/app_appbar.dart';
 import '../../utils/app_button.dart';
+import '../../utils/app_functions.dart';
 import '../../utils/app_text_styles.dart';
+import '../../utils/enums.dart';
 import '../trips_query_result/trips_query_result_page.dart';
 import 'widgets/date_picker.dart';
 import 'widgets/select_catgeory_and_type.dart';

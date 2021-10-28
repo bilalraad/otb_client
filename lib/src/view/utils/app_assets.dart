@@ -16,4 +16,7 @@ class AppAssets {
   static const jordanFlag = 'assets/images/flags/jordan.png';
   static const waiting = 'assets/images/waiting.png';
   static const queryError = 'assets/images/query_error.png';
+  static const completed = 'assets/images/completed.png';
+  static const officeLocation = 'assets/images/office_location.png';
+  static const zaincashInfoFeild = 'assets/images/zaincash_info_feild.png';
 }

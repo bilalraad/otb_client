@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_colors.dart';
 
 import 'app_text_styles.dart';
 
@@ -49,15 +50,14 @@ class AppTextField extends StatelessWidget {
         icon: icon != null ? Icon(icon, size: 20) : null,
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+          borderSide: const BorderSide(color: AppColors.inputFontColor),
           borderRadius: BorderRadius.circular(10),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: Theme.of(context).colorScheme.secondary),
+          borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
           borderRadius: BorderRadius.circular(10),
         ),
         suffixIcon: suffixIcon,

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import '../../checkout/select_payment.dart';
 
 import 'trip_details_header.dart';
 import '../../../../data/models/trip.dart';
@@ -45,7 +46,6 @@ class ResponseTripItem extends StatelessWidget {
                 TripDetailsHeader(
                   flightDetails: trip.returning,
                   airelineName: mapAirlineCodeToName(trip.airline, appLoc),
-                  airplaneDirection: -1,
                 ),
                 const SizedBox(height: 10),
                 FlighTimingDetails(flightDetails: trip.returning),
@@ -54,7 +54,10 @@ class ResponseTripItem extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           AppButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(createRoute(SelectPaymentMethod(trip: trip)));
+            },
             text: appLoc.bookNow,
             icon: Text(trip.price.toString() + "\$\n" + appLoc.forOnePerson),
           )

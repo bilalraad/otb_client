@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../models/trip.dart';
 
 import '../fake_data.dart';
 import '../models/book_trip.dart';
@@ -33,6 +34,10 @@ class MockTripsQueryService extends BaseTripsQueryService {
     if (random.nextBool()) {
       await Future.delayed(const Duration(seconds: 10));
       yield TripsQueryResult.fromMap(searchResult);
+      await Future.delayed(const Duration(seconds: 10));
+      yield TripsQueryResult.fromMap(searchResult).copyWith(
+          resultItems: TripsQueryResult.fromMap(searchResult).resultItems
+            ..add(Trip.fromMap(fakeTrip)));
     } else {
       throw FlutterError('network Error');
     }

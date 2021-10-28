@@ -1,3 +1,6 @@
+
+
+
 import 'app_localizations.dart';
 
 /// The translations for Arabic (`ar`).
@@ -80,8 +83,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get all => 'الكل';
 
   @override
-  String get pleaseSelectOneAirline =>
-      'الرجاء قم بتحديد خطوط جوية واحدة على الأقل';
+  String get pleaseSelectOneAirline => 'الرجاء قم بتحديد خطوط جوية واحدة على الأقل';
 
   @override
   String get next => 'التالي';
@@ -129,8 +131,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pleaseSelectDepartureCity => 'الرجاء إختيار مدينة الانطلاق';
 
   @override
-  String get returnDateShouldBeAfterAtLeastOneDay =>
-      'يجب ان يكون موعد العودة على الأقل بعد يوم من موعد الذهاب';
+  String get returnDateShouldBeAfterAtLeastOneDay => 'يجب ان يكون موعد العودة على الأقل بعد يوم من موعد الذهاب';
 
   @override
   String get pleaseWait => 'الرجاء الأنتظار';
@@ -145,8 +146,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get youllBeNotified => 'سوف يتم تنبيهك عند وصول نتيجة';
 
   @override
-  String get checkInternet =>
-      'الرجاء التأكد من اتصالك بالأنترنت والمحاولة مرة اخرى';
+  String get checkInternet => 'الرجاء التأكد من اتصالك بالأنترنت والمحاولة مرة اخرى';
 
   @override
   String get tryAgain => 'إعادة المحاولة';
@@ -201,4 +201,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pleaseSelectPaymentMethod => 'الرجاء اختيار طريقة الدفع';
+
+  @override
+  String get pleaseFillYourInfo => 'الرجاء ادخال المعلومات الخاصة بك';
+
+  @override
+  String get youllGetaCall => 'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ واتمام بقية الاجرائات';
+
+  @override
+  String get location => 'بغداد - المنصور - شارع 14 رمضان';
+
+  @override
+  String get contactNumber => '07800000000';
+
+  @override
+  String get transferToThisNumber => 'قم بتحويل المبلغ على الرقم :';
+
+  @override
+  String get pressImageToOpenMap => 'اضغط على الصورة لفتح الخريطة';
+
+  @override
+  String get writeYourNumberInInfoSection => 'اثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات';
+
+  @override
+  String get youllGetaCallAfterPayemntConfirmed => 'بعد وصول المبلغ سوف يتم الاتصال بالرقم المرفق لأكمال الاجراءات';
+
+  @override
+  String get ifYouDidntHaveAWallet => 'اذا لم يكن لديك محفظة اذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيلبكاتبة رقم الهاتف الخاص بك في خانة الملاحظات';
+
+  @override
+  String get youllGetaCallThenOurAgentWillCome => 'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك سوف يأتيك الوكيل لاستلام المبلغ خلال 24 ساعة';
+
+  @override
+  String get fullName => 'الاسم الكامل';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get bookinConfirmed => 'تم الحجز';
+
+  @override
+  String get thankForDoingBussinesWithUs => 'شكرا لتعاملك معنا';
+
+  @override
+  String get ifYouHaveAnyQuestion => 'اذا كان لديك اي استفسار يمكن التواصل معنامن خلال الواتساب على الرقم';
+
+  @override
+  String get backToHome => 'العودة الى الرئيسية';
+
+  @override
+  String get confirm => 'تاكيد';
 }

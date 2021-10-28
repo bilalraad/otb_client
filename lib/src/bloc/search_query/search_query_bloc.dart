@@ -11,10 +11,10 @@ part 'search_query_event.dart';
 part 'search_query_state.dart';
 
 class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
-  final BaseTripsQueryService queryService;
-  StreamSubscription? resultsStreamSubscription;
+  final BaseTripsQueryService _queryService;
+  StreamSubscription? _resultsStreamSubscription;
 
-  SearchQueryBloc(this.queryService) : super(SearchQueryInitial()) {
+  SearchQueryBloc(this._queryService) : super(SearchQueryInitial()) {
     on<QuerySubmitted>(_onQuerySubmitted);
     on<ResponseRecieved>((event, emit) {
       emit(SearchQueryResponseRecived(event.response));
@@ -32,7 +32,7 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
       QuerySubmitted event, Emitter<SearchQueryState> emit) async {
     try {
       emit(SearchQueryLoading());
-      await queryService.sendTripsQuery(event.query);
+      await _queryService.sendTripsQuery(event.query);
       emit(SearchQueryWaitingForResponse(event.query.queryId));
       monitorQueryResults(event.query.queryId);
     } catch (e) {
@@ -41,9 +41,9 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
   }
 
   void monitorQueryResults(String queryId) {
-    resultsStreamSubscription?.cancel();
-    resultsStreamSubscription =
-        queryService.getTripsResult(queryId).listen((event) {
+    _resultsStreamSubscription?.cancel();
+    _resultsStreamSubscription =
+        _queryService.getTripsResult(queryId).listen((event) {
       add(ResponseRecieved(event));
     })
           ..onError((e) {
@@ -53,7 +53,7 @@ class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
 
   @override
   Future<void> close() {
-    resultsStreamSubscription?.cancel();
+    _resultsStreamSubscription?.cancel();
     return super.close();
   }
 }

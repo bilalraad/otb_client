@@ -34,14 +34,13 @@ class FlightDetails extends Equatable {
       );
 
   factory FlightDetails.fromMap(Map<String, dynamic> json) {
-    print(json);
     return FlightDetails(
       date: DateTime.parse(json["date"]),
       from: Airport.values.firstWhere((a) => describeEnum(a) == json["from"]),
-      to: Airport.values.firstWhere((a) => describeEnum(a) == json["from"]),
+      to: Airport.values.firstWhere((a) => describeEnum(a) == json["to"]),
       departureTime:
-          TimeOfDay.fromDateTime(DateTime.parse(json["departure_time"])),
-      arriveTime: TimeOfDay.fromDateTime(DateTime.parse(json["arrive_time"])),
+          TimeOfDay.fromDateTime(DateTime.parse(json["departureTime"])),
+      arriveTime: TimeOfDay.fromDateTime(DateTime.parse(json["arriveTime"])),
     );
   }
 
@@ -49,11 +48,11 @@ class FlightDetails extends Equatable {
         "date": date.toIso8601String(),
         "from": describeEnum(from),
         "to": describeEnum(to),
-        "departure_time": DateTime(date.year, date.month, date.day,
+        "departureTime": DateTime(date.year, date.month, date.day,
                 departureTime.hour, departureTime.minute)
             .toIso8601String(),
-        "arrive_time": DateTime(date.year, date.month, date.day,
-                arriveTime.hour, arriveTime.minute)
+        "arriveTime": DateTime(date.year, date.month, date.day, arriveTime.hour,
+                arriveTime.minute)
             .toIso8601String(),
       };
 
