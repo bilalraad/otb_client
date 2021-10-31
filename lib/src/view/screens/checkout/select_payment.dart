@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/trip.dart';
 import '../../../localization/app_localizations.dart';
-import 'confirmation_page.dart';
+import 'confirmation_page/confirmation_page.dart';
 import '../../utils/app_appbar.dart';
 import '../../utils/app_assets.dart';
 import '../../utils/app_functions.dart';

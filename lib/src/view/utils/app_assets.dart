@@ -19,4 +19,5 @@ class AppAssets {
   static const completed = 'assets/images/completed.png';
   static const officeLocation = 'assets/images/office_location.png';
   static const zaincashInfoFeild = 'assets/images/zaincash_info_feild.png';
+  static const bookingError = 'assets/images/booking_error.png';
 }

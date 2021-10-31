@@ -10,11 +10,11 @@ import '../../data/models/trips_query_result.dart';
 part 'search_query_event.dart';
 part 'search_query_state.dart';
 
-class SearchQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
+class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
   final BaseTripsQueryService _queryService;
   StreamSubscription? _resultsStreamSubscription;
 
-  SearchQueryBloc(this._queryService) : super(SearchQueryInitial()) {
+  TripsQueryBloc(this._queryService) : super(SearchQueryInitial()) {
     on<QuerySubmitted>(_onQuerySubmitted);
     on<ResponseRecieved>((event, emit) {
       emit(SearchQueryResponseRecived(event.response));

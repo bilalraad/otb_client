@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'app.dart';
+import 'src/data/API/search_query_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppObserver();
-  runApp(const OTBApp());
+  final _tripsQueryService = MockTripsQueryService();
+  runApp(OTBApp(tripsQueryService: _tripsQueryService));
 }
 
 class AppObserver extends BlocObserver {

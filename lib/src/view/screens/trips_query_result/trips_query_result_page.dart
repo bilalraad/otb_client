@@ -27,7 +27,7 @@ class TripsQueryResultPage extends StatelessWidget {
       appBar: appAppbar(onBackPressed: () {
         Navigator.of(context).pushReplacement(createRoute(const Home()));
       }),
-      body: BlocBuilder<SearchQueryBloc, SearchQueryState>(
+      body: BlocBuilder<TripsQueryBloc, SearchQueryState>(
         builder: (context, state) {
           if (state is SearchQueryLoading) {
             return const Center(child: CircularProgressIndicator());
@@ -38,9 +38,7 @@ class TripsQueryResultPage extends StatelessWidget {
               title: appLoc.errorWhileSending,
               error: state.error,
               onRetry: () {
-                context
-                    .read<SearchQueryBloc>()
-                    .add(QuerySubmitted(state.query));
+                context.read<TripsQueryBloc>().add(QuerySubmitted(state.query));
               },
             );
           } else if (state is SearchQueryStreamError) {
@@ -49,7 +47,7 @@ class TripsQueryResultPage extends StatelessWidget {
               error: state.error,
               onRetry: () {
                 context
-                    .read<SearchQueryBloc>()
+                    .read<TripsQueryBloc>()
                     .add(QueryResultStreamRetry(state.queryId));
               },
             );

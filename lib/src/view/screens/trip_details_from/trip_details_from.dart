@@ -159,7 +159,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                       try {
                         validateTripQuery(newQuery, appLoc);
                         context
-                            .read<SearchQueryBloc>()
+                            .read<TripsQueryBloc>()
                             .add(QuerySubmitted(newQuery));
                         Navigator.of(context).pushReplacement(
                             createRoute(const TripsQueryResultPage()));
