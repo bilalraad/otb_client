@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:otb_client/src/view/utils/utils.dart';
+import '../../../../utils/utils.dart';
 import '../../../../../localization/app_localizations.dart';
 
 class InformationBlock extends StatefulWidget {

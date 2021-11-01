@@ -23,6 +23,7 @@ class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
       emit(SearchQueryStreamError(event.error, event.queryId));
     });
     on<QueryResultStreamRetry>((event, emit) {
+      emit(SearchQueryLoading());
       emit(SearchQueryWaitingForResponse(event.queryId));
       monitorQueryResults(event.queryId);
     });

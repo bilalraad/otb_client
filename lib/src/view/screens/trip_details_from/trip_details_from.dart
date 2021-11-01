@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-import 'package:otb_client/src/view/utils/utils.dart';
+import '../../utils/utils.dart';
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../../data/models/trips_query.dart';
 import '../../../localization/app_localizations.dart';

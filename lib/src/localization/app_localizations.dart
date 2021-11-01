@@ -497,7 +497,7 @@ abstract class AppLocalizations {
   /// No description provided for @location.
   ///
   /// In ar, this message translates to:
-  /// **'بغداد - المنصور - شارع 14 رمضان'**
+  /// **'بغداد - المنصور - مقابل مول المنصور'**
   String get location;
 
   /// No description provided for @contactNumber.

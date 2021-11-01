@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-import 'package:otb_client/src/view/utils/utils.dart';
+import '../../utils/utils.dart';
 import '../../../localization/app_localizations.dart';
 import 'widgets/aireline_card.dart';
 import '../trip_details_from/trip_details_from.dart';

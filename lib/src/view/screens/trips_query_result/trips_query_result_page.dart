@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,9 +7,9 @@ import '../../home.dart';
 import '../../utils/utils.dart';
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../../localization/app_localizations.dart';
-import './widgets/display_error.dart';
-import './widgets/response_trip_item.dart';
-import './widgets/waiting_for_response.dart';
+import 'widgets/display_error.dart';
+import 'widgets/response_trip_item.dart';
+import 'widgets/waiting_for_response.dart';
 
 class TripsQueryResultPage extends StatelessWidget {
   const TripsQueryResultPage({
@@ -26,7 +27,7 @@ class TripsQueryResultPage extends StatelessWidget {
       body: BlocBuilder<TripsQueryBloc, SearchQueryState>(
         builder: (context, state) {
           if (state is SearchQueryLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: CupertinoActivityIndicator());
           } else if (state is SearchQueryWaitingForResponse) {
             return const WaitingForResponseWidget();
           } else if (state is SearchQuerySendingError) {
@@ -95,7 +96,7 @@ class TripsQueryResultPage extends StatelessWidget {
               ],
             );
           } else {
-            return const CircularProgressIndicator();
+            return const CupertinoActivityIndicator();
           }
         },
       ),

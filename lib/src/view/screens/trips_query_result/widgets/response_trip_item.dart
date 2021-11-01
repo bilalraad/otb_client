@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/utils.dart';
 import '../../checkout/select_payment.dart';
-import './trip_details_header.dart';
+import 'trip_details_header.dart';
 import '../../../../data/models/trip.dart';
 import '../../../../localization/app_localizations.dart';
-import './fligh_timing_details.dart';
+import 'fligh_timing_details.dart';
 
 class ResponseTripItem extends StatelessWidget {
   final Trip trip;

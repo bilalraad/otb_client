@@ -6,9 +6,9 @@ import '../../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../../data/models/book_trip.dart';
 import '../../../../data/models/trip.dart';
 import '../../../../localization/app_localizations.dart';
-import './widgets/direct_payment_description.dart';
-import './widgets/information_block.dart';
-import './widgets/zaincash_payment_description.dart';
+import 'widgets/direct_payment_description.dart';
+import 'widgets/information_block.dart';
+import 'widgets/zaincash_payment_description.dart';
 import '../final_stage.dart';
 
 class ConfirmationPage extends StatelessWidget {

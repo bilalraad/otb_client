@@ -29,7 +29,7 @@ void launchWhatsApp({
 
 Future<void> launchMap() async {
   String googleUrl =
-      'https://www.google.com/maps/search/?api=1&query=33.2636061,44.3727852';
+      'https://www.google.com/maps/search/?api=1&query=33.3205560,44.3541790';
   try {
     await launch(googleUrl);
   } catch (e) {
