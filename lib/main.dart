@@ -8,7 +8,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Bloc.observer = AppObserver();
-  final _tripsQueryService = MockTripsQueryService();
+  final _tripsQueryService = FirebaseTripsQueryService();
   runApp(OTBApp(tripsQueryService: _tripsQueryService));
 }
 

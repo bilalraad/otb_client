@@ -51,7 +51,7 @@ class SearchQueryWaitingForResponse extends SearchQueryState {
 }
 
 class SearchQueryResponseRecived extends SearchQueryState {
-  final TripsQueryResult trips;
+  final List<Trip> trips;
   SearchQueryResponseRecived(this.trips);
 
   @override

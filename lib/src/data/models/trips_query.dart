@@ -65,12 +65,14 @@ class TripsQuery {
     return TripsQuery(
       queryId: json["queryId"],
       userDeviceToken: json["userDeviceToken"],
-      tripCategory: json["tripCategory"],
-      type: json["type"],
+      tripCategory: TripCategory.values
+          .firstWhere((tc) => describeEnum(tc) == json["tripCategory"]),
+      type:
+          TripType.values.firstWhere((ty) => describeEnum(ty) == json["type"]),
       departureCity: json["departureCity"],
       arriveCity: json["arriveCity"],
-      leaveDate: json["leaveDate"],
-      returnDate: json["returnDate"],
+      leaveDate: DateTime.parse(json["leaveDate"]),
+      returnDate: DateTime.parse(json["returnDate"]),
       travelers: Travelers.fromMap(json["travelers"]),
       airLines: airlines,
     );
@@ -79,12 +81,12 @@ class TripsQuery {
   Map<String, dynamic> toMap() => {
         "queryId": queryId,
         "userDeviceToken": userDeviceToken,
-        "tripCategory": tripCategory,
-        "type": type,
+        "tripCategory": describeEnum(tripCategory),
+        "type": describeEnum(type),
         "departureCity": departureCity,
         "arriveCity": arriveCity,
-        "leaveDate": leaveDate,
-        "returnDate": returnDate,
+        "leaveDate": leaveDate?.toIso8601String(),
+        "returnDate": returnDate?.toIso8601String(),
         "travelers": travelers.toMap(),
         "airLines": List<dynamic>.from(airLines.map((x) => describeEnum(x))),
       };

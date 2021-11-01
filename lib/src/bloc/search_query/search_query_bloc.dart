@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:otb_client/src/data/models/trip.dart';
 import '../../data/API/search_query_service.dart';
 import '../../data/models/trips_query.dart';
 import '../../data/models/trips_query_result.dart';
@@ -45,7 +46,7 @@ class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
     _resultsStreamSubscription?.cancel();
     _resultsStreamSubscription =
         _queryService.getTripsResult(queryId).listen((event) {
-      add(ResponseRecieved(event));
+      if (event.isNotEmpty) add(ResponseRecieved(event));
     })
           ..onError((e) {
             add(QueryResultStreamError(e.toString(), queryId));

@@ -32,7 +32,7 @@ class QueryResultStreamRetry extends SearchQueryEvent {
 }
 
 class ResponseRecieved extends SearchQueryEvent {
-  final TripsQueryResult response;
+  final List<Trip> response;
 
   ResponseRecieved(this.response);
   @override
