@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import '../../utils/enums.dart';
-import '../../utils/app_colors.dart';
-import '../../utils/app_functions.dart';
-import '../../../localization/app_localizations.dart';
-import '../../utils/app_appbar.dart';
-import '../../utils/app_button.dart';
-import '../../utils/app_text_styles.dart';
-import 'widgets/aireline_card.dart';
 
+import 'package:otb_client/src/view/utils/utils.dart';
+import '../../../localization/app_localizations.dart';
+import 'widgets/aireline_card.dart';
 import '../trip_details_from/trip_details_from.dart';
 
 class SelectAirlinesScreen extends StatefulWidget {

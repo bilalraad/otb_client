@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../utils/utils.dart';
 import '../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../localization/app_localizations.dart';
 import '../../home.dart';
-import '../../utils/app_appbar.dart';
-import '../../utils/app_assets.dart';
-import '../../utils/app_button.dart';
-import '../../utils/app_functions.dart';
-import '../../utils/app_text_styles.dart';
 
 class FinalStage extends StatelessWidget {
   const FinalStage({Key? key}) : super(key: key);
@@ -57,7 +54,7 @@ class FinalStage extends StatelessWidget {
                 ),
               );
             } else {
-              return const CupertinoActivityIndicator();
+              return const Center(child: CupertinoActivityIndicator());
             }
           },
         ),
@@ -104,7 +101,11 @@ class OrderSuccessWidget extends StatelessWidget {
             onPressed: () {
               // launchWhatsApp(query: query)
             },
-            text: appLoc.contactNumber,
+            text: "\t\t\t" + appLoc.contactNumber,
+            icon: SizedBox(
+              width: 25,
+              child: Image.asset(AppAssets.whatsappIcon),
+            ),
             buttonType: ButtonType.secondary,
           ),
         ),

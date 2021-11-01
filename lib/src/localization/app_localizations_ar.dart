@@ -200,19 +200,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deliveryPayment => 'الدفع بخدمة التوصيل';
 
   @override
-  String get pleaseSelectPaymentMethod => 'الرجاء اختيار طريقة الدفع';
+  String get pleaseSelectPaymentMethod => 'الرجاء إختيار طريقة الدفع';
 
   @override
-  String get pleaseFillYourInfo => 'الرجاء ادخال المعلومات الخاصة بك';
+  String get pleaseFillYourInfo => 'الرجاء إدخال المعلومات الخاصة بك';
 
   @override
-  String get youllGetaCall => 'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ واتمام بقية الاجرائات';
+  String get youllGetaCall => 'سوف يتم الأتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ وإتمام بقية الاجرائات';
 
   @override
   String get location => 'بغداد - المنصور - شارع 14 رمضان';
 
   @override
-  String get contactNumber => '07800000000';
+  String get contactNumber => '07730000231';
 
   @override
   String get transferToThisNumber => 'قم بتحويل المبلغ على الرقم :';
@@ -221,19 +221,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pressImageToOpenMap => 'اضغط على الصورة لفتح الخريطة';
 
   @override
-  String get writeYourNumberInInfoSection => 'اثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات';
+  String get writeYourNumberInInfoSection => 'أثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات';
 
   @override
-  String get youllGetaCallAfterPayemntConfirmed => 'بعد وصول المبلغ سوف يتم الاتصال بالرقم المرفق لأكمال الاجراءات';
+  String get youllGetaCallAfterPayemntConfirmed => 'بعد وصول المبلغ سوف يتم الأتصال بالرقم المرفق لأكمال الاجراءات';
 
   @override
-  String get ifYouDidntHaveAWallet => 'اذا لم يكن لديك محفظة اذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيلبكاتبة رقم الهاتف الخاص بك في خانة الملاحظات';
+  String get ifYouDidntHaveAWallet => 'اذا لم يكن لديك محفظة إذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيل بكاتبة رقم الهاتف الخاص بك في خانة الملاحظات';
 
   @override
-  String get youllGetaCallThenOurAgentWillCome => 'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك سوف يأتيك الوكيل لاستلام المبلغ خلال 24 ساعة';
+  String get youllGetaCallThenOurAgentWillCome => 'سوف يتم الأتصال بك لتأكيد الحجز بعد ذلك سوف يأتيك الوكيل لأستلام المبلغ خلال 24 ساعة';
 
   @override
-  String get fullName => 'الاسم الكامل';
+  String get fullName => 'الأسم الكامل';
 
   @override
   String get phoneNumber => 'رقم الهاتف';
@@ -254,5 +254,5 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backToHome => 'العودة الى الرئيسية';
 
   @override
-  String get confirm => 'تاكيد';
+  String get confirm => 'تأكيد';
 }

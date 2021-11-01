@@ -479,19 +479,19 @@ abstract class AppLocalizations {
   /// No description provided for @pleaseSelectPaymentMethod.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء اختيار طريقة الدفع'**
+  /// **'الرجاء إختيار طريقة الدفع'**
   String get pleaseSelectPaymentMethod;
 
   /// No description provided for @pleaseFillYourInfo.
   ///
   /// In ar, this message translates to:
-  /// **'الرجاء ادخال المعلومات الخاصة بك'**
+  /// **'الرجاء إدخال المعلومات الخاصة بك'**
   String get pleaseFillYourInfo;
 
   /// No description provided for @youllGetaCall.
   ///
   /// In ar, this message translates to:
-  /// **'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ واتمام بقية الاجرائات'**
+  /// **'سوف يتم الأتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ وإتمام بقية الاجرائات'**
   String get youllGetaCall;
 
   /// No description provided for @location.
@@ -503,7 +503,7 @@ abstract class AppLocalizations {
   /// No description provided for @contactNumber.
   ///
   /// In ar, this message translates to:
-  /// **'07800000000'**
+  /// **'07730000231'**
   String get contactNumber;
 
   /// No description provided for @transferToThisNumber.
@@ -521,31 +521,31 @@ abstract class AppLocalizations {
   /// No description provided for @writeYourNumberInInfoSection.
   ///
   /// In ar, this message translates to:
-  /// **'اثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات'**
+  /// **'أثناء تحويل المبلغ تأكد من كتابة رقم الهاتف الخاص بك في خانة الملاحظات'**
   String get writeYourNumberInInfoSection;
 
   /// No description provided for @youllGetaCallAfterPayemntConfirmed.
   ///
   /// In ar, this message translates to:
-  /// **'بعد وصول المبلغ سوف يتم الاتصال بالرقم المرفق لأكمال الاجراءات'**
+  /// **'بعد وصول المبلغ سوف يتم الأتصال بالرقم المرفق لأكمال الاجراءات'**
   String get youllGetaCallAfterPayemntConfirmed;
 
   /// No description provided for @ifYouDidntHaveAWallet.
   ///
   /// In ar, this message translates to:
-  /// **'اذا لم يكن لديك محفظة اذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيلبكاتبة رقم الهاتف الخاص بك في خانة الملاحظات'**
+  /// **'اذا لم يكن لديك محفظة إذهب الى اقرب وكيل معتمد وتأكد من تبليغ الوكيل بكاتبة رقم الهاتف الخاص بك في خانة الملاحظات'**
   String get ifYouDidntHaveAWallet;
 
   /// No description provided for @youllGetaCallThenOurAgentWillCome.
   ///
   /// In ar, this message translates to:
-  /// **'سوف يتم الاتصال بك لتأكيد الحجز بعد ذلك يمكنك سوف يأتيك الوكيل لاستلام المبلغ خلال 24 ساعة'**
+  /// **'سوف يتم الأتصال بك لتأكيد الحجز بعد ذلك سوف يأتيك الوكيل لأستلام المبلغ خلال 24 ساعة'**
   String get youllGetaCallThenOurAgentWillCome;
 
   /// No description provided for @fullName.
   ///
   /// In ar, this message translates to:
-  /// **'الاسم الكامل'**
+  /// **'الأسم الكامل'**
   String get fullName;
 
   /// No description provided for @phoneNumber.
@@ -587,7 +587,7 @@ abstract class AppLocalizations {
   /// No description provided for @confirm.
   ///
   /// In ar, this message translates to:
-  /// **'تاكيد'**
+  /// **'تأكيد'**
   String get confirm;
 }
 

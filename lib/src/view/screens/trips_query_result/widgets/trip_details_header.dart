@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../../../utils/utils.dart';
 import '../../../../data/models/flight_details.dart';
 import '../../../../localization/app_localizations.dart';
-import '../../../utils/app_assets.dart';
-import '../../../utils/app_functions.dart';
-import '../../../utils/app_text_styles.dart';
 
 class TripDetailsHeader extends StatelessWidget {
   const TripDetailsHeader({

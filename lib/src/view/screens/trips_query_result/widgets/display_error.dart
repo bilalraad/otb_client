@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../utils/utils.dart';
 import '../../../../localization/app_localizations.dart';
-import '../../../utils/app_assets.dart';
-import '../../../utils/app_button.dart';
-import '../../../utils/app_text_styles.dart';
 
 class DisplayError extends StatelessWidget {
   final String error;

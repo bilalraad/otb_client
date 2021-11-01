@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'package:otb_client/src/view/utils/utils.dart';
 import '../../../../../localization/app_localizations.dart';
-import '../../../../utils/app_functions.dart';
-import '../../../../utils/app_text_field.dart';
 
 class InformationBlock extends StatefulWidget {
   final bool showAddress;

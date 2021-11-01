@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../data/models/trip.dart';
 import '../../../localization/app_localizations.dart';
 import 'confirmation_page/confirmation_page.dart';
-import '../../utils/app_appbar.dart';
-import '../../utils/app_assets.dart';
-import '../../utils/app_functions.dart';
-import '../../utils/app_text_styles.dart';
-import '../../utils/enums.dart';
+import 'package:otb_client/src/view/utils/utils.dart';
 
 class SelectPaymentMethod extends StatelessWidget {
   final Trip trip;

@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../utils/utils.dart';
 import '../../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../../data/models/book_trip.dart';
-import '../final_stage.dart';
-import '../../../utils/app_functions.dart';
-import 'package:provider/src/provider.dart';
 import '../../../../data/models/trip.dart';
 import '../../../../localization/app_localizations.dart';
-import '../../../utils/app_appbar.dart';
-import '../../../utils/app_button.dart';
-import '../../../utils/app_text_styles.dart';
-import '../../../utils/enums.dart';
-import 'widgets/direct_payment_description.dart';
-import 'widgets/information_block.dart';
-import 'widgets/zaincash_payment_description.dart';
+import './widgets/direct_payment_description.dart';
+import './widgets/information_block.dart';
+import './widgets/zaincash_payment_description.dart';
+import '../final_stage.dart';
 
 class ConfirmationPage extends StatelessWidget {
   final Trip trip;

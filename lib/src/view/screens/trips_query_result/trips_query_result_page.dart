@@ -1,18 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../home.dart';
 
+import '../../home.dart';
+import '../../utils/utils.dart';
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../../localization/app_localizations.dart';
-import '../../utils/app_appbar.dart';
-import '../../utils/app_colors.dart';
-import '../../utils/app_functions.dart';
-import '../../utils/app_text_styles.dart';
-
-import 'widgets/display_error.dart';
-import 'widgets/response_trip_item.dart';
-import 'widgets/waiting_for_response.dart';
+import './widgets/display_error.dart';
+import './widgets/response_trip_item.dart';
+import './widgets/waiting_for_response.dart';
 
 class TripsQueryResultPage extends StatelessWidget {
   const TripsQueryResultPage({

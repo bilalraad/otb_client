@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otb_client/src/view/utils/utils.dart';
 import '../../../../../localization/app_localizations.dart';
-import '../../../../utils/app_assets.dart';
-import '../../../../utils/app_text_styles.dart';
 
 class ZaincashPaymentDescription extends StatelessWidget {
   const ZaincashPaymentDescription({Key? key}) : super(key: key);
