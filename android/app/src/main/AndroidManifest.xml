@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.otb_client">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.otb.otbclient">
 
 
   <uses-permission android:name="android.permission.INTERNET"/>

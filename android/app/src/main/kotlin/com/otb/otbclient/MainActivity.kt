@@ -1,4 +1,4 @@
-package com.example.otb_client
+package com.otb.otbclient
 
 import io.flutter.embedding.android.FlutterActivity
 
