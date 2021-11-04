@@ -1,4 +1,4 @@
-# otb_client
+# otbclient
 
 A new Flutter project.
 

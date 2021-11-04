@@ -8,7 +8,6 @@ import '../models/trip.dart';
 import '../fake_data.dart';
 import '../models/book_trip.dart';
 import '../models/trips_query.dart';
-import '../models/trips_query_result.dart';
 
 abstract class BaseTripsQueryService {
   Future<void> sendTripsQuery(TripsQuery query);

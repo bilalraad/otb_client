@@ -82,7 +82,7 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: AppButton(
-                onPressed: () {
+                onPressed: () async {
                   if (selectedAirLines.isEmpty) {
                     EasyLoading.showError(appLoc.pleaseSelectOneAirline);
                   } else {
