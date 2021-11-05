@@ -11,7 +11,7 @@ import 'src/view/home.dart';
 import 'src/view/utils/app_colors.dart';
 import 'src/view/utils/app_text_styles.dart';
 
-class OTBApp extends StatelessWidget {
+class OTBApp extends StatefulWidget {
   final BaseTripsQueryService tripsQueryService;
   const OTBApp({
     Key? key,
@@ -19,42 +19,41 @@ class OTBApp extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<OTBApp> createState() => _OTBAppState();
+}
+
+class _OTBAppState extends State<OTBApp> {
+  @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => TripsQueryBloc(tripsQueryService)),
-        BlocProvider(create: (context) => ConfirmOrderCubit(tripsQueryService))
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      builder: EasyLoading.init(),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        builder: EasyLoading.init(),
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [Locale('ar', '')],
-        theme: ThemeData(
-            fontFamily: 'IBM',
-            textTheme: TextTheme(
-              button: AppTextStyles.buttonTextStyle(),
-              bodyText1: AppTextStyles.body(),
-              bodyText2: AppTextStyles.body(),
-              headline6: AppTextStyles.headerStyle(),
-              subtitle1: AppTextStyles.subHeaderStyle(),
-            ),
-            colorScheme: const ColorScheme.light(
-              primary: AppColors.primaryColor,
-              primaryVariant: Color(0xFF132B1E),
-              secondary: AppColors.secondaryColor,
-              secondaryVariant: AppColors.primaryColor,
-              surface: Colors.white,
-              background: Colors.white,
-              error: Color(0xFFCF2127),
-            )),
-        home: const Home(),
-      ),
+      supportedLocales: const [Locale('ar', '')],
+      theme: ThemeData(
+          fontFamily: 'IBM',
+          textTheme: TextTheme(
+            button: AppTextStyles.buttonTextStyle(),
+            bodyText1: AppTextStyles.body(),
+            bodyText2: AppTextStyles.body(),
+            headline6: AppTextStyles.headerStyle(),
+            subtitle1: AppTextStyles.subHeaderStyle(),
+          ),
+          colorScheme: const ColorScheme.light(
+            primary: AppColors.primaryColor,
+            primaryVariant: Color(0xFF132B1E),
+            secondary: AppColors.secondaryColor,
+            secondaryVariant: AppColors.primaryColor,
+            surface: Colors.white,
+            background: Colors.white,
+            error: Color(0xFFCF2127),
+          )),
+      home: const Home(),
     );
   }
 }

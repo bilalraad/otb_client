@@ -11,11 +11,16 @@ import 'widgets/display_error.dart';
 import 'widgets/response_trip_item.dart';
 import 'widgets/waiting_for_response.dart';
 
-class TripsQueryResultPage extends StatelessWidget {
+class TripsQueryResultPage extends StatefulWidget {
   const TripsQueryResultPage({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<TripsQueryResultPage> createState() => _TripsQueryResultPageState();
+}
+
+class _TripsQueryResultPageState extends State<TripsQueryResultPage> {
   @override
   Widget build(BuildContext context) {
     final appLoc = AppLocalizations.of(context)!;

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/models/trip.dart';
@@ -10,7 +11,7 @@ import '../../data/models/trips_query.dart';
 part 'search_query_event.dart';
 part 'search_query_state.dart';
 
-class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
+class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
   final BaseTripsQueryService _queryService;
   StreamSubscription? _resultsStreamSubscription;
 
@@ -25,7 +26,7 @@ class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
     on<QueryResultStreamRetry>((event, emit) {
       emit(SearchQueryLoading());
       emit(SearchQueryWaitingForResponse(event.queryId));
-      monitorQueryResults(event.queryId);
+      _monitorQueryResults(event.queryId);
     });
   }
 
@@ -35,13 +36,13 @@ class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
       emit(SearchQueryLoading());
       await _queryService.sendTripsQuery(event.query);
       emit(SearchQueryWaitingForResponse(event.query.queryId));
-      monitorQueryResults(event.query.queryId);
+      _monitorQueryResults(event.query.queryId);
     } catch (e) {
       emit(SearchQuerySendingError(e.toString(), event.query));
     }
   }
 
-  void monitorQueryResults(String queryId) {
+  void _monitorQueryResults(String queryId) {
     _resultsStreamSubscription?.cancel();
     _resultsStreamSubscription =
         _queryService.getTripsResult(queryId).listen((event) {
@@ -56,5 +57,20 @@ class TripsQueryBloc extends Bloc<SearchQueryEvent, SearchQueryState> {
   Future<void> close() {
     _resultsStreamSubscription?.cancel();
     return super.close();
+  }
+
+  @override
+  SearchQueryState? fromJson(Map<String, dynamic> json) {
+    print(json.toString() + 'sdadad');
+    if (json['queryId'] != null) {
+      _monitorQueryResults(json['queryId']);
+      return SearchQueryWaitingForResponse(json['queryId']);
+    }
+  }
+
+  @override
+  Map<String, dynamic>? toJson(SearchQueryState state) {
+    print(state.toString() + "asdsds");
+    return state.toMap();
   }
 }

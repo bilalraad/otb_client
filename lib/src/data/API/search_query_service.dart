@@ -16,6 +16,15 @@ abstract class BaseTripsQueryService {
 }
 
 class MockTripsQueryService extends BaseTripsQueryService {
+  static final MockTripsQueryService _mockservice =
+      MockTripsQueryService._internal();
+
+  factory MockTripsQueryService() {
+    return _mockservice;
+  }
+
+  MockTripsQueryService._internal();
+
   @override
   Future<void> confirmOrder(BookTrip bookOrder) async {
     return await Future.delayed(const Duration(seconds: 2), () {
@@ -67,6 +76,15 @@ class MockTripsQueryService extends BaseTripsQueryService {
 
 class FirebaseTripsQueryService extends BaseTripsQueryService {
   final _fireStore = FirebaseFirestore.instance;
+
+  static final FirebaseTripsQueryService _mockservice =
+      FirebaseTripsQueryService._internal();
+
+  factory FirebaseTripsQueryService() {
+    return _mockservice;
+  }
+
+  FirebaseTripsQueryService._internal();
 
   @override
   Future<void> confirmOrder(BookTrip bookOrder) async {

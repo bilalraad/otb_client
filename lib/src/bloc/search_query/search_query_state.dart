@@ -1,11 +1,16 @@
 part of 'search_query_bloc.dart';
 
 @immutable
-abstract class SearchQueryState extends Equatable {}
+abstract class SearchQueryState extends Equatable {
+  Map<String, dynamic> toMap();
+}
 
 class SearchQueryInitial extends SearchQueryState {
   @override
   List<Object?> get props => [];
+
+  @override
+  Map<String, dynamic> toMap() => {};
 }
 
 class SearchQuerySendingError extends SearchQueryState {
@@ -19,6 +24,9 @@ class SearchQuerySendingError extends SearchQueryState {
 
   @override
   String toString() => 'SearchQueryError(error: $error)';
+
+  @override
+  Map<String, dynamic> toMap() => {};
 }
 
 class SearchQueryStreamError extends SearchQueryState {
@@ -32,11 +40,17 @@ class SearchQueryStreamError extends SearchQueryState {
 
   @override
   String toString() => 'SearchQueryError(error: $error)';
+
+  @override
+  Map<String, dynamic> toMap() => {};
 }
 
 class SearchQueryLoading extends SearchQueryState {
   @override
   List<Object?> get props => [];
+
+  @override
+  Map<String, dynamic> toMap() => {};
 }
 
 class SearchQueryWaitingForResponse extends SearchQueryState {
@@ -48,6 +62,15 @@ class SearchQueryWaitingForResponse extends SearchQueryState {
 
   @override
   String toString() => 'SearchQueryWaitingForResponse(queryId: $queryId)';
+
+  @override
+  Map<String, dynamic> toMap() {
+    return {'queryId': queryId};
+  }
+
+  factory SearchQueryWaitingForResponse.fromMap(Map<String, dynamic> map) {
+    return SearchQueryWaitingForResponse(map['queryId']);
+  }
 }
 
 class SearchQueryResponseRecived extends SearchQueryState {
@@ -59,4 +82,7 @@ class SearchQueryResponseRecived extends SearchQueryState {
 
   @override
   String toString() => 'SearchQueryResponseRecived(trips: $trips)';
+
+  @override
+  Map<String, dynamic> toMap() => {};
 }
