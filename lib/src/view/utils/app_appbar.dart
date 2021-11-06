@@ -20,7 +20,7 @@ AppBar appAppbar({
           )
         : const SizedBox(),
     title: SizedBox(
-      width: 100,
+      width: 150,
       child: Image.asset(AppAssets.applogo),
     ),
   );
