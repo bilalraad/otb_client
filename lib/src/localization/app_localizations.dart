@@ -589,6 +589,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تأكيد'**
   String get confirm;
+
+  /// No description provided for @aboutUs.
+  ///
+  /// In ar, this message translates to:
+  /// **'شركة ناشئة هدفها تسهيل عملية حجز التذاكر وتوفير رحلات بأسعارمناسبة للجميع ونطمح الى ان نكون رائدين بهذا المجال.'**
+  String get aboutUs;
+
+  /// No description provided for @whoAreWe.
+  ///
+  /// In ar, this message translates to:
+  /// **'من نحن'**
+  String get whoAreWe;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

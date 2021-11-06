@@ -33,7 +33,6 @@ class _HomeState extends State<Home> {
     messaging.setAutoInitEnabled(true);
 
     if (Platform.isIOS) {
-      print('object');
       messaging.requestPermission(
         alert: true,
         announcement: false,

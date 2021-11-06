@@ -10,9 +10,13 @@ class AppUserCubit extends Cubit<AppUserState> {
 
   AppUserCubit(this._fcm) : super(const AppUserState());
 
-  void getUserToken() {
+  void getUserToken() async {
     try {
-      _fcm.getToken();
+      final deviceToken = await _fcm.getToken();
+      print(deviceToken);
+      emit(AppUserState(
+          status: AppUserStatus.tokenRegistered,
+          user: AppUser(deviceToken: deviceToken!)));
     } catch (e) {
       print(e);
     }

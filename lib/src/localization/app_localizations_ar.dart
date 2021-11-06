@@ -255,4 +255,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get confirm => 'تأكيد';
+
+  @override
+  String get aboutUs => 'شركة ناشئة هدفها تسهيل عملية حجز التذاكر وتوفير رحلات بأسعارمناسبة للجميع ونطمح الى ان نكون رائدين بهذا المجال.';
+
+  @override
+  String get whoAreWe => 'من نحن';
 }

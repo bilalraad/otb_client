@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otbclient/src/data/models/book_trip.dart';
 import '../../utils/utils.dart';
 import '../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../localization/app_localizations.dart';
@@ -12,8 +13,6 @@ class FinalStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appLoc = AppLocalizations.of(context)!;
-
     return Scaffold(
       appBar: appAppbar(showBackButton: false),
       body: Padding(
@@ -24,40 +23,54 @@ class FinalStage extends StatelessWidget {
               return const OrderSuccessWidget();
             }
             if (state is SendingOrderFailed) {
-              return Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      appLoc.errorWhileSending,
-                      style: AppTextStyles.headerStyle(),
-                    ),
-                    Text(appLoc.checkInternet),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Image.asset(AppAssets.queryError),
-                    ),
-                    const SizedBox(height: 20),
-                    AppButton(
-                      buttonType: ButtonType.secondary,
-                      width: MediaQuery.of(context).size.width / 2,
-                      onPressed: () {
-                        context
-                            .read<ConfirmOrderCubit>()
-                            .confirmOrder(state.failedOrder);
-                      },
-                      text: appLoc.tryAgain,
-                    )
-                  ],
-                ),
-              );
+              return OrderFailedWidget(failedOrder: state.failedOrder);
             } else {
               return const Center(child: CupertinoActivityIndicator());
             }
           },
         ),
+      ),
+    );
+  }
+}
+
+class OrderFailedWidget extends StatelessWidget {
+  const OrderFailedWidget({
+    Key? key,
+    required this.failedOrder,
+  }) : super(key: key);
+
+  final BookTrip failedOrder;
+
+  @override
+  Widget build(BuildContext context) {
+    final appLoc = AppLocalizations.of(context)!;
+
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            appLoc.errorWhileSending,
+            style: AppTextStyles.headerStyle(),
+          ),
+          Text(appLoc.checkInternet),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.5,
+            child: Image.asset(AppAssets.queryError),
+          ),
+          const SizedBox(height: 20),
+          AppButton(
+            buttonType: ButtonType.secondary,
+            width: MediaQuery.of(context).size.width / 2,
+            onPressed: () {
+              context.read<ConfirmOrderCubit>().confirmOrder(failedOrder);
+            },
+            text: appLoc.tryAgain,
+          )
+        ],
       ),
     );
   }
@@ -99,6 +112,7 @@ class OrderSuccessWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 2,
           child: AppButton(
             onPressed: () {
+              //TODO: ADD THE ABILITY TO LAUNCH WHATSAPP WITHOUT QUERY
               // launchWhatsApp(query: query)
             },
             text: "\t\t\t" + appLoc.contactNumber,
