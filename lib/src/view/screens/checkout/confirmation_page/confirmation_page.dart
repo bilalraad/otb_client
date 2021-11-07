@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otbclient/src/bloc/app_user/app_user_cubit.dart';
+import 'package:otbclient/src/data/models/user.dart';
 
 import '../../../utils/utils.dart';
 import '../../../../bloc/confirm_order/confirm_order_cubit.dart';
@@ -27,6 +29,7 @@ class ConfirmationPage extends StatelessWidget {
     final nameController = TextEditingController();
     final phoneNumberController = TextEditingController();
     final addressController = TextEditingController();
+    AppUser appUser = context.read<AppUserCubit>().state.user;
 
     Widget _getPaymentDetailsWidget() {
       switch (paymentType) {
@@ -60,6 +63,7 @@ class ConfirmationPage extends StatelessWidget {
               addressController: addressController,
               nameController: nameController,
               phoneNumberController: phoneNumberController,
+              appUser: appUser,
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -83,23 +87,26 @@ class ConfirmationPage extends StatelessWidget {
                   ],
                 ),
                 AppButton(
-                    onPressed: () async {
-                      if (formKey.currentState!.validate()) {
-                        Navigator.of(context)
-                            .pushReplacement(createRoute(const FinalStage()));
-                        final order = BookTrip(
-                          clientName: nameController.text,
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
+                      Navigator.of(context)
+                          .pushReplacement(createRoute(const FinalStage()));
+                      appUser = appUser.copyWith(
                           address: addressController.text,
-                          clientPhoneNumber: phoneNumberController.text,
-                          paymentMethod: paymentType,
-                          selectedTrip: trip,
-                        );
-                        await context
-                            .read<ConfirmOrderCubit>()
-                            .confirmOrder(order);
-                      }
-                    },
-                    text: appLoc.confirm),
+                          name: nameController.text,
+                          phoneNumber: phoneNumberController.text);
+                      final order = BookTrip(
+                        clientInfo: appUser,
+                        paymentMethod: paymentType,
+                        selectedTrip: trip,
+                      );
+                      await context
+                          .read<ConfirmOrderCubit>()
+                          .confirmOrder(order);
+                    }
+                  },
+                  text: appLoc.confirm,
+                ),
               ],
             )
           ],

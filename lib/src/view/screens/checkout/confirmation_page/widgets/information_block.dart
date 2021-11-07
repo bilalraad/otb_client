@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otbclient/src/data/models/user.dart';
 
 import '../../../../utils/utils.dart';
 import '../../../../../localization/app_localizations.dart';
@@ -6,16 +7,19 @@ import '../../../../../localization/app_localizations.dart';
 class InformationBlock extends StatefulWidget {
   final bool showAddress;
   final GlobalKey<FormState> formKey;
+  final AppUser appUser;
   final TextEditingController nameController;
   final TextEditingController phoneNumberController;
   final TextEditingController addressController;
+
   const InformationBlock(
       {Key? key,
       this.showAddress = false,
       required this.formKey,
       required this.nameController,
       required this.phoneNumberController,
-      required this.addressController})
+      required this.addressController,
+      required this.appUser})
       : super(key: key);
 
   @override
@@ -23,6 +27,15 @@ class InformationBlock extends StatefulWidget {
 }
 
 class _InformationBlockState extends State<InformationBlock> {
+  @override
+  void initState() {
+    widget.nameController.text = widget.appUser.name ?? '';
+    widget.phoneNumberController.text = widget.appUser.phoneNumber ?? '';
+    widget.addressController.text = widget.appUser.address ?? '';
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final appLoc = AppLocalizations.of(context)!;
