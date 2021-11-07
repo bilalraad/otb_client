@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:otbclient/src/bloc/app_user/app_user_cubit.dart';
-import 'package:otbclient/src/data/models/user.dart';
 
+import 'src/bloc/app_user/app_user_cubit.dart';
 import 'src/bloc/confirm_order/confirm_order_cubit.dart';
 import 'src/bloc/search_query/search_query_bloc.dart';
 import 'src/data/API/search_query_service.dart';

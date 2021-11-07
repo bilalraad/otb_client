@@ -209,7 +209,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get youllGetaCall => 'سوف يتم الأتصال بك لتأكيد الحجز بعد ذلك يمكنك زيارة مكتبنا لدفع المبلغ وإتمام بقية الاجرائات';
 
   @override
-  String get location => 'بغداد - المنصور - مقابل مول المنصور';
+  String get location => 'بغداد المنصور ـ مقابل مول المنصور - عمارة المنصور رويال ط 2';
 
   @override
   String get contactNumber => '07730000231';
@@ -248,7 +248,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get thankForDoingBussinesWithUs => 'شكرا لتعاملك معنا';
 
   @override
-  String get ifYouHaveAnyQuestion => 'اذا كان لديك اي استفسار يمكن التواصل معنامن خلال الواتساب على الرقم';
+  String get ifYouHaveAnyQuestion => 'اذا كان لديك اي استفسار يمكن التواصل معنا من خلال الواتساب على الرقم';
 
   @override
   String get backToHome => 'العودة الى الرئيسية';

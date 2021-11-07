@@ -19,9 +19,6 @@ class DirectPaymentDescription extends StatelessWidget {
           style: AppTextStyles.headerStyle(),
         ),
         const SizedBox(height: 20),
-        //TODO: GET THE ACTUALL LOCATION
-        //TODO: GET LOCATION IMAGE
-        //TODO: Test THIS MORE
         InkWell(
           onTap: () async {
             await launchMap();

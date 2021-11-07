@@ -497,7 +497,7 @@ abstract class AppLocalizations {
   /// No description provided for @location.
   ///
   /// In ar, this message translates to:
-  /// **'بغداد - المنصور - مقابل مول المنصور'**
+  /// **'بغداد المنصور ـ مقابل مول المنصور - عمارة المنصور رويال ط 2'**
   String get location;
 
   /// No description provided for @contactNumber.
@@ -575,7 +575,7 @@ abstract class AppLocalizations {
   /// No description provided for @ifYouHaveAnyQuestion.
   ///
   /// In ar, this message translates to:
-  /// **'اذا كان لديك اي استفسار يمكن التواصل معنامن خلال الواتساب على الرقم'**
+  /// **'اذا كان لديك اي استفسار يمكن التواصل معنا من خلال الواتساب على الرقم'**
   String get ifYouHaveAnyQuestion;
 
   /// No description provided for @backToHome.

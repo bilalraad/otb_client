@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
-import './app.dart';
+import 'app.dart';
 import 'src/bloc/app_user/app_user_cubit.dart';
 import 'src/data/API/search_query_service.dart';
 import 'src/data/local_database/app_local_db.dart';
@@ -17,7 +17,7 @@ Future<void> main() async {
   HydratedBloc.storage = await HydratedStorage.build(
       storageDirectory: await getApplicationDocumentsDirectory());
   Bloc.observer = AppObserver();
-  final _tripsQueryService = MockTripsQueryService();
+  final _tripsQueryService = FirebaseTripsQueryService();
   final _appUserCubit =
       AppUserCubit(FirebaseMessaging.instance, SecureLocalDB());
   runApp(BlocProvider.value(

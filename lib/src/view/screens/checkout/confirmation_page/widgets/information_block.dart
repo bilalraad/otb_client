@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otbclient/src/data/models/user.dart';
+import '../../../../../data/models/user.dart';
 
 import '../../../../utils/utils.dart';
 import '../../../../../localization/app_localizations.dart';

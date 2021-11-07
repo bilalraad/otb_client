@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:otbclient/src/bloc/app_user/app_user_cubit.dart';
+import '../app_user/app_user_cubit.dart';
 import '../../data/API/search_query_service.dart';
 import '../../data/models/book_trip.dart';
 

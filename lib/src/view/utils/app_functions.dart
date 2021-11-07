@@ -10,12 +10,18 @@ import 'enums.dart';
 
 void launchWhatsApp({
   int phone = 07821304951,
-  required TripsQuery query,
+  TripsQuery? query,
 }) async {
   String url() {
     if (Platform.isAndroid) {
+      if (query == null) return 'https://wa.me/+964$phone';
+
       return "https://wa.me/+964$phone/?text=${_tripQueryToWhatsAppMessage(query)}";
     } else {
+      if (query == null) {
+        return 'https://api.whatsapp.com/send?phone=+964$phone';
+      }
+
       return "https://api.whatsapp.com/send?phone=+964$phone&text=${_tripQueryToWhatsAppMessage(query)}";
     }
   }

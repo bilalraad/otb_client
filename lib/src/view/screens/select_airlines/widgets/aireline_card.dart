@@ -23,21 +23,27 @@ class AirlineCard extends StatelessWidget {
         border: Border.all(width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Row(
-        children: [
-          Checkbox(
-            value: value,
-            activeColor: Theme.of(context).colorScheme.primary,
-            onChanged: onSelected,
-          ),
-          const SizedBox(width: 20),
-          Image.asset(airlineImage, width: 30),
-          const SizedBox(width: 20),
-          Text(
-            airlineName,
-            style: AppTextStyles.buttonTextStyle(color: AppColors.primaryColor),
-          ),
-        ],
+      child: InkWell(
+        onTap: () {
+          onSelected(!value);
+        },
+        child: Row(
+          children: [
+            Checkbox(
+              value: value,
+              activeColor: Theme.of(context).colorScheme.primary,
+              onChanged: onSelected,
+            ),
+            const SizedBox(width: 20),
+            Image.asset(airlineImage, width: 30),
+            const SizedBox(width: 20),
+            Text(
+              airlineName,
+              style:
+                  AppTextStyles.buttonTextStyle(color: AppColors.primaryColor),
+            ),
+          ],
+        ),
       ),
     );
   }

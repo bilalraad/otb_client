@@ -2,12 +2,27 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:flutter/material.dart';
+import '../exceptions/exceptions.dart';
 import '../models/trip.dart';
 
 import '../fake_data.dart';
 import '../models/book_trip.dart';
 import '../models/trips_query.dart';
+
+///To check the internet connection and data connection
+Future<bool> connected() async {
+  try {
+    if (await DataConnectionChecker().hasConnection) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (_) {
+    return false;
+  }
+}
 
 abstract class BaseTripsQueryService {
   Future<void> sendTripsQuery(TripsQuery query);
@@ -32,7 +47,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
       if (random.nextBool()) {
         print(bookOrder.toMap());
       } else {
-        throw FlutterError('network Error');
+        throw FlutterError('Unknown Error');
       }
     });
   }
@@ -49,7 +64,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
       await Future.delayed(const Duration(seconds: 10));
       yield fakeItems..add(Trip.fromMap(fakeTrip));
     } else {
-      throw FlutterError('network Error');
+      throw FlutterError('network_error');
     }
   }
 
@@ -60,7 +75,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
     if (random.nextBool()) {
       print(query.toMap());
     } else {
-      throw FlutterError('network Error');
+      throw FlutterError('network_error');
     }
   }
 
@@ -88,10 +103,13 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
 
   @override
   Future<void> confirmOrder(BookTrip bookOrder) async {
+    if (!await connected()) {
+      throw NetworkException();
+    }
     try {
       await _fireStore.collection('confirmedOrders').add(bookOrder.toMap());
     } catch (e) {
-      rethrow;
+      throw UnknownErrorException();
     }
   }
 
@@ -108,6 +126,9 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
 
   @override
   Future<void> sendTripsQuery(TripsQuery query) async {
+    if (!await connected()) {
+      throw NetworkException();
+    }
     try {
       await _fireStore
           .collection('quries')
@@ -126,8 +147,7 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
         }
       });
     } catch (e) {
-      //TODO: HANDEL ERRORS;
-      rethrow;
+      throw UnknownErrorException();
     }
   }
 

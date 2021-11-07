@@ -28,11 +28,13 @@ class _TripsQueryResultPageState extends State<TripsQueryResultPage> {
       builder: (context, state) {
         return Scaffold(
             appBar: appAppbar(
+              showInfo: false,
               onBackPressed: () {
                 Navigator.of(context)
                     .pushReplacement(createRoute(const Home()));
               },
-              showBackButton: (state is SearchQueryResponseRecived),
+              showBackButton: (state is SearchQueryResponseRecived ||
+                  state is SearchQuerySendingError),
             ),
             body: Builder(builder: (c) {
               if (state is SearchQueryLoading) {

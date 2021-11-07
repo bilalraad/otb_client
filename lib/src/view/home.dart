@@ -4,8 +4,8 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:otbclient/src/bloc/search_query/search_query_bloc.dart';
-import 'package:otbclient/src/view/screens/trips_query_result/trips_query_result_page.dart';
+import '../bloc/search_query/search_query_bloc.dart';
+import 'screens/trips_query_result/trips_query_result_page.dart';
 
 import 'screens/select_airlines/select_airlines_screen.dart';
 

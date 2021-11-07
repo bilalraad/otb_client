@@ -18,7 +18,10 @@ class SelectPaymentMethod extends StatelessWidget {
         )));
 
     return Scaffold(
-      appBar: appAppbar(onBackPressed: () => Navigator.of(context).pop()),
+      appBar: appAppbar(
+        showInfo: false,
+        onBackPressed: () => Navigator.of(context).pop(),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(

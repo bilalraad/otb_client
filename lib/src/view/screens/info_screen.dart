@@ -45,8 +45,7 @@ class InfoScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 2,
               child: AppButton(
                 onPressed: () {
-                  //TODO: ADD THE ABILITY TO LAUNCH WHATSAPP WITHOUT QUERY
-                  // launchWhatsApp(query: query);
+                  launchWhatsApp();
                 },
                 text: "\t\t\t" + appLoc.contactNumber,
                 icon: SizedBox(
@@ -62,9 +61,6 @@ class InfoScreen extends StatelessWidget {
               style: AppTextStyles.headerStyle(),
             ),
             const SizedBox(height: 20),
-            //TODO: GET THE ACTUALL LOCATION
-            //TODO: GET LOCATION IMAGE
-            //TODO: Test THIS MORE
             InkWell(
               onTap: () async {
                 await launchMap();

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:otbclient/src/data/models/user.dart';
+import 'user.dart';
 
 import 'trip.dart';
 import '../../view/utils/enums.dart';

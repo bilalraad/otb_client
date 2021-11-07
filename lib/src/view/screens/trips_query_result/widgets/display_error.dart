@@ -27,7 +27,7 @@ class DisplayError extends StatelessWidget {
           ),
           Text(appLoc.checkInternet),
           Text(
-            'Error: ' + error,
+            error,
             style: const TextStyle(color: Colors.red),
             textAlign: TextAlign.center,
           ),

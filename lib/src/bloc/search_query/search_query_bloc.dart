@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
+import '../../data/exceptions/exceptions.dart';
 
 import '../../data/models/trip.dart';
 import '../../data/API/search_query_service.dart';
@@ -37,8 +38,8 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
       await _queryService.sendTripsQuery(event.query);
       emit(SearchQueryWaitingForResponse(event.query.queryId));
       _monitorQueryResults(event.query.queryId);
-    } catch (e) {
-      emit(SearchQuerySendingError(e.toString(), event.query));
+    } on BaseException catch (e) {
+      emit(SearchQuerySendingError(e.code, event.query));
     }
   }
 
@@ -49,7 +50,7 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
       if (event.isNotEmpty) add(ResponseRecieved(event));
     })
           ..onError((e) {
-            add(QueryResultStreamError(e.toString(), queryId));
+            add(QueryResultStreamError((e as Exception).toString(), queryId));
           });
   }
 

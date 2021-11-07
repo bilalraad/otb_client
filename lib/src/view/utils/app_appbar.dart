@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:otbclient/src/view/screens/info_screen.dart';
-import 'package:otbclient/src/view/utils/utils.dart';
+import '../screens/info_screen.dart';
+import 'utils.dart';
 import 'app_colors.dart';
 
 import 'app_assets.dart';
@@ -17,7 +17,7 @@ AppBar appAppbar({
         Builder(builder: (context) {
           return IconButton(
               onPressed: () {
-                Navigator.of(context).push(createRoute(InfoScreen()));
+                Navigator.of(context).push(createRoute(const InfoScreen()));
               },
               icon: const Icon(
                 Icons.info,

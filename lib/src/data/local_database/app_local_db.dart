@@ -1,5 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:otbclient/src/data/models/user.dart';
+import '../models/user.dart';
 
 abstract class BaseApplocalDB {
   void updateUserData(AppUser user);

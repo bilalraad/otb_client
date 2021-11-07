@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:otbclient/src/data/models/book_trip.dart';
+import '../../../data/models/book_trip.dart';
 import '../../utils/utils.dart';
 import '../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../localization/app_localizations.dart';
@@ -14,7 +14,7 @@ class FinalStage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appAppbar(showBackButton: false),
+      appBar: appAppbar(showBackButton: false, showInfo: false),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: BlocBuilder<ConfirmOrderCubit, ConfirmOrderState>(
@@ -111,10 +111,7 @@ class OrderSuccessWidget extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width / 2,
           child: AppButton(
-            onPressed: () {
-              //TODO: ADD THE ABILITY TO LAUNCH WHATSAPP WITHOUT QUERY
-              // launchWhatsApp(query: query)
-            },
+            onPressed: () => launchWhatsApp(),
             text: "\t\t\t" + appLoc.contactNumber,
             icon: SizedBox(
               width: 25,
