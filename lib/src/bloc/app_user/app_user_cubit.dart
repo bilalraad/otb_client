@@ -21,6 +21,7 @@ class AppUserCubit extends Cubit<AppUserState> {
         emit(
             AppUserState(status: AppUserStatus.tokenRegistered, user: appUser));
       } else {
+        //TODO: HANDLE WHEN THE TOKEN IS MISSING DUE TO INTERNET PROBLEMS
         final deviceToken = await _fcm.getToken();
         emit(AppUserState(
             status: AppUserStatus.tokenRegistered,

@@ -31,9 +31,8 @@ class ResponseTripItem extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           FlighTimingDetails(flightDetails: trip.leaving),
-          Visibility(
-            visible: trip.type == TripType.round,
-            child: Column(
+          if (trip.type == TripType.round)
+            Column(
               children: [
                 const SizedBox(height: 10),
                 Divider(
@@ -42,14 +41,13 @@ class ResponseTripItem extends StatelessWidget {
                   color: Theme.of(context).colorScheme.primary,
                 ),
                 TripDetailsHeader(
-                  flightDetails: trip.returning,
+                  flightDetails: trip.returning!,
                   airelineName: mapAirlineCodeToName(trip.airline, appLoc),
                 ),
                 const SizedBox(height: 10),
-                FlighTimingDetails(flightDetails: trip.returning),
+                FlighTimingDetails(flightDetails: trip.returning!),
               ],
             ),
-          ),
           const SizedBox(height: 10),
           AppButton(
             onPressed: () {

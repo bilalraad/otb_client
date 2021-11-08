@@ -57,6 +57,44 @@ final searchResult = {
   ]
 };
 
+final searchResultOneWay = {
+  'id': '77bfjbfjb876kjhkj',
+  'resultItems': [
+    {
+      "tripNumber": "A-12",
+      "price": 1500.0,
+      "totalCost": 1900.0,
+      "type": describeEnum(TripType.oneWay),
+      "airline": describeEnum(Airline.IAW),
+      "leaving": {
+        "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
+        "from": describeEnum(Airport.BGW),
+        "to": describeEnum(Airport.DAM),
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
+      },
+    },
+    {
+      "tripNumber": "A-13",
+      "price": 1500.0,
+      "totalCost": 1900.0,
+      "type": describeEnum(TripType.oneWay),
+      "airline": describeEnum(Airline.IAW),
+      "leaving": {
+        "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
+        "from": describeEnum(Airport.BGW),
+        "to": describeEnum(Airport.BEY),
+        "departureTime": DateTime.now().toIso8601String(),
+        "arriveTime": DateTime.now()
+            .add(const Duration(hours: 24, minutes: 10))
+            .toIso8601String(),
+      },
+    }
+  ]
+};
+
 final searchQuery = {
   "queryId": "OIUIOIU8798YS98Y9",
   "userDeviceToken": "ADASDASDDQWDQDQWDQWW",

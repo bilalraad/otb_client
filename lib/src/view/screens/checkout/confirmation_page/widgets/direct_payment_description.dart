@@ -16,6 +16,7 @@ class DirectPaymentDescription extends StatelessWidget {
         Text(appLoc.youllGetaCall),
         Text(
           appLoc.location,
+          textAlign: TextAlign.center,
           style: AppTextStyles.headerStyle(),
         ),
         const SizedBox(height: 20),

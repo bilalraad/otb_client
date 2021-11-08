@@ -134,30 +134,23 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
           .collection('quries')
           .doc(query.queryId)
           .set(query.toMap());
-
-      //TODO: Remove after testing complete
-      Future.delayed(const Duration(seconds: 10), () {
-        for (var item
-            in searchResult['resultItems'] as List<Map<String, dynamic>>) {
-          _fireStore
-              .collection('quries')
-              .doc(query.queryId)
-              .collection('queryResults')
-              .add(item);
-        }
-      });
     } catch (e) {
       throw UnknownErrorException();
     }
   }
 
   List<Trip> _tripsfromDocSnap(
-      List<QueryDocumentSnapshot<Map<String, dynamic>>> queryResults) {
+      List<QueryDocumentSnapshot<Map<String, dynamic>>>? queryResults) {
+    logger(FirebaseTripsQueryService).d('queryResults');
+    logger(FirebaseTripsQueryService).d(queryResults);
     List<Trip> _trips = [];
-
-    for (var trip in queryResults) {
-      _trips.add(Trip.fromMap(trip.data()));
+    if (queryResults != null) {
+      for (var trip in queryResults) {
+        logger(FirebaseTripsQueryService).d(trip.data());
+        _trips.add(Trip.fromMap(trip.data()));
+      }
     }
+
     return _trips;
   }
 }

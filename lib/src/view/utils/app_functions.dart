@@ -8,6 +8,7 @@ import '../../localization/app_localizations.dart';
 import './utils.dart';
 
 void launchWhatsApp({
+  //TODO: Change to the otb real number
   int phone = 07821304951,
   TripsQuery? query,
 }) async {
@@ -44,6 +45,7 @@ Future<void> launchMap() async {
 }
 
 String _tripQueryToWhatsAppMessage(TripsQuery query) {
+  //TODO: make sure to send [tripCategory] and [type] in their string fromat
   return ('اريد حجز رحلة من ${query.departureCity} الى ${query.arriveCity} \n'
       'نوع الرحلة: ${query.type}\n'
       'فئة الرحلة: ${query.tripCategory}\n\n'

@@ -19,7 +19,7 @@ class Trip extends Equatable {
   final TripType type;
   final Airline airline;
   final FlightDetails leaving;
-  final FlightDetails returning;
+  final FlightDetails? returning;
   final double price;
   final double totalCost;
 
@@ -48,7 +48,8 @@ class Trip extends Equatable {
       airline: Airline.values
           .firstWhere((al) => describeEnum(al) == json["airline"]),
       leaving: FlightDetails.fromMap(json["leaving"]),
-      returning: FlightDetails.fromMap(json["return"]),
+      returning:
+          json["return"] != null ? FlightDetails.fromMap(json["return"]) : null,
       price: json['price'],
       totalCost: json['totalCost'],
     );
@@ -59,7 +60,7 @@ class Trip extends Equatable {
         "type": describeEnum(type),
         "airline": describeEnum(airline),
         "leaving": leaving.toMap(),
-        "return": returning.toMap(),
+        "return": returning?.toMap(),
         "price": price,
         "totalCost": totalCost,
       };

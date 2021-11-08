@@ -50,7 +50,7 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
       if (event.isNotEmpty) add(ResponseRecieved(event));
     })
           ..onError((e) {
-            add(QueryResultStreamError((e as Exception).toString(), queryId));
+            add(QueryResultStreamError(e.toString(), queryId));
           });
   }
 
