@@ -58,6 +58,7 @@ class InfoScreen extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               appLoc.location,
+              textAlign: TextAlign.center,
               style: AppTextStyles.headerStyle(),
             ),
             const SizedBox(height: 20),

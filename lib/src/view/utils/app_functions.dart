@@ -1,13 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'app_assets.dart';
-import '../../data/models/trips_query.dart';
-import '../../localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'enums.dart';
-import 'utils.dart';
+import '../../data/models/trips_query.dart';
+import '../../localization/app_localizations.dart';
+import './utils.dart';
 
 void launchWhatsApp({
   int phone = 07821304951,

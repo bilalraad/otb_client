@@ -14,7 +14,7 @@ class SelectAirlinesScreen extends StatefulWidget {
 }
 
 class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
-  List<Airline> selectedAirLines = Airline.values;
+  List<Airline> _selectedAirLines = [];
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +36,16 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
             Row(
               children: [
                 Checkbox(
-                  value: Airline.values.length == selectedAirLines.length,
+                  value: Airline.values.length == _selectedAirLines.length,
                   activeColor: Theme.of(context).colorScheme.primary,
                   onChanged: (allSelected) {
                     if (allSelected!) {
-                      selectedAirLines.clear();
+                      _selectedAirLines.clear();
                       for (var a in Airline.values) {
-                        selectedAirLines.add(a);
+                        _selectedAirLines.add(a);
                       }
                     } else {
-                      selectedAirLines = [];
+                      _selectedAirLines = [];
                     }
                     setState(() {});
                   },
@@ -62,14 +62,14 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: AirlineCard(
-                      value: selectedAirLines.contains(a),
+                      value: _selectedAirLines.contains(a),
                       airlineImage: mapAirlineCodeToLogo(a),
                       airlineName: mapAirlineCodeToName(a, appLoc),
                       onSelected: (selected) {
                         if (selected!) {
-                          selectedAirLines.add(a);
+                          _selectedAirLines.add(a);
                         } else {
-                          selectedAirLines.remove(a);
+                          _selectedAirLines.remove(a);
                         }
                         setState(() {});
                       },
@@ -83,11 +83,11 @@ class _SelectAirlinesScreenState extends State<SelectAirlinesScreen> {
               padding: const EdgeInsets.only(bottom: 20),
               child: AppButton(
                 onPressed: () async {
-                  if (selectedAirLines.isEmpty) {
+                  if (_selectedAirLines.isEmpty) {
                     EasyLoading.showError(appLoc.pleaseSelectOneAirline);
                   } else {
                     Navigator.of(context).push(createRoute(
-                      TripDetailsForm(selectedAirlines: selectedAirLines),
+                      TripDetailsForm(selectedAirlines: _selectedAirLines),
                     ));
                   }
                 },

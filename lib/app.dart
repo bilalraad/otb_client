@@ -14,9 +14,11 @@ import 'src/view/utils/app_text_styles.dart';
 
 class OTBApp extends StatelessWidget {
   final BaseTripsQueryService tripsQueryService;
+  final String flavor;
   const OTBApp({
     Key? key,
     required this.tripsQueryService,
+    required this.flavor,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class OTBApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
+        title: flavor,
         supportedLocales: const [Locale('ar', '')],
         theme: ThemeData(
             fontFamily: 'IBM',

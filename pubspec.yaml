@@ -45,15 +45,6 @@ dev_dependencies:
 dependency_overrides:
   test_api: ^0.4.2
 
-flutter_icons:
-  image_path_ios: "assets/images/logo_filled.png"
-  image_path_android: "assets/images/logo.png"
-  remove_alpha_ios: true
-  android: true # can specify file name here e.g. "ic_launcher"
-  ios: true # can specify file name here e.g. "My-Launcher-Icon"
-  adaptive_icon_background: "#E4F2EB"
-  adaptive_icon_foreground: "assets/images/logo.png"
-
 flutter:
   uses-material-design: true
   generate: true
@@ -63,7 +54,6 @@ flutter:
     - assets/images/
     - assets/images/flags/
     - assets/files/
-
   #   - images/a_dot_ham.jpeg
 
   fonts:

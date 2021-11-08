@@ -3,13 +3,13 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:otbclient/src/view/utils/utils.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'app.dart';
-import 'src/bloc/app_user/app_user_cubit.dart';
-import 'src/data/API/search_query_service.dart';
-import 'src/data/local_database/app_local_db.dart';
+import './app.dart';
+import './src/view/utils/utils.dart';
+import './src/bloc/app_user/app_user_cubit.dart';
+import './src/data/API/search_query_service.dart';
+import './src/data/local_database/app_local_db.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ Future<void> main() async {
       AppUserCubit(FirebaseMessaging.instance, SecureLocalDB());
   runApp(BlocProvider.value(
     value: _appUserCubit,
-    child: OTBApp(tripsQueryService: _tripsQueryService),
+    child: OTBApp(tripsQueryService: _tripsQueryService, flavor: 'staging'),
   ));
 }
 
