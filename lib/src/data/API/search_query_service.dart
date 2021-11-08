@@ -3,10 +3,10 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
-import 'package:flutter/material.dart';
+import 'package:otbclient/src/view/utils/logger.dart';
+
 import '../exceptions/exceptions.dart';
 import '../models/trip.dart';
-
 import '../fake_data.dart';
 import '../models/book_trip.dart';
 import '../models/trips_query.dart';
@@ -45,9 +45,9 @@ class MockTripsQueryService extends BaseTripsQueryService {
     return await Future.delayed(const Duration(seconds: 2), () {
       final random = Random();
       if (random.nextBool()) {
-        print(bookOrder.toMap());
+        logger(MockTripsQueryService).d(bookOrder);
       } else {
-        throw FlutterError('Unknown Error');
+        throw UnknownErrorException();
       }
     });
   }
@@ -64,7 +64,7 @@ class MockTripsQueryService extends BaseTripsQueryService {
       await Future.delayed(const Duration(seconds: 10));
       yield fakeItems..add(Trip.fromMap(fakeTrip));
     } else {
-      throw FlutterError('network_error');
+      throw NetworkException();
     }
   }
 
@@ -73,9 +73,9 @@ class MockTripsQueryService extends BaseTripsQueryService {
     await Future.delayed(const Duration(seconds: 2));
     final random = Random();
     if (random.nextBool()) {
-      print(query.toMap());
+      logger(MockTripsQueryService).d(query);
     } else {
-      throw FlutterError('network_error');
+      throw NetworkException();
     }
   }
 

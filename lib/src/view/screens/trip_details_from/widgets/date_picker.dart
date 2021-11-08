@@ -27,10 +27,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
           initialDateTime: selectedDate ?? DateTime.now(),
           minDateTime: widget.minDateTime ?? DateTime.now(),
           locale: DateTimePickerLocale.ar,
-          onChange: (date, _) {
-            print('change $date in time zone ' +
-                date.timeZoneOffset.inHours.toString());
-          },
+          onChange: (date, _) {},
           onConfirm: (date, _) {
             setState(() {
               selectedDate = date;

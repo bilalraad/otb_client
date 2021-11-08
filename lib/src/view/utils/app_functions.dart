@@ -7,6 +7,7 @@ import '../../localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'enums.dart';
+import 'utils.dart';
 
 void launchWhatsApp({
   int phone = 07821304951,
@@ -28,8 +29,9 @@ void launchWhatsApp({
 
   try {
     await launch(url());
-  } catch (e) {
-    print(e);
+  } catch (e, s) {
+    logger(TripsQuery).e(e);
+    logger(TripsQuery).e(s);
   }
 }
 
@@ -39,7 +41,7 @@ Future<void> launchMap() async {
   try {
     await launch(googleUrl);
   } catch (e) {
-    print(e);
+    logger(TripsQuery).e(e);
   }
 }
 
@@ -73,8 +75,8 @@ void validateTripQuery(TripsQuery query, AppLocalizations appLoc) {
   }
 }
 
-///this function will make special transition animation
-///if you want to change the effect then set the [curve] to watever u want
+/// This function will make special transition animation
+/// if you want to change the effect then set the [curve] to watever u want
 Route createRoute(Widget route, {Cubic curve = Curves.ease}) {
   return PageRouteBuilder(
     transitionDuration: const Duration(milliseconds: 500),
@@ -151,6 +153,7 @@ String mapAirlineCodeToLogo(Airline code) {
 }
 
 String? validatePhoneNo(String? phoneNo) {
+  //TODO: INTEGRATE LOCALIZATION
   final phoneRegEx = RegExp(r"07[3-9][0-9]{8}");
   if (phoneNo == null || phoneNo.isEmpty) {
     return "رجاءا ادخل رقم الهاتف";

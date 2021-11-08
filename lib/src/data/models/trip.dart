@@ -41,7 +41,6 @@ class Trip extends Equatable {
           totalCost: totalCost ?? this.totalCost);
 
   factory Trip.fromMap(Map<String, dynamic> json) {
-    print(json);
     return Trip(
       tripNumber: json["tripNumber"],
       type:

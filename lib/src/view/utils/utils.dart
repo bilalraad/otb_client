@@ -6,3 +6,4 @@ export './app_functions.dart';
 export './app_text_field.dart';
 export './app_text_styles.dart';
 export './enums.dart';
+export './logger.dart';

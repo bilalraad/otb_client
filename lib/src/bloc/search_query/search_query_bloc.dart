@@ -62,7 +62,6 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
 
   @override
   SearchQueryState? fromJson(Map<String, dynamic> json) {
-    print(json.toString() + 'sdadad');
     if (json['queryId'] != null) {
       _monitorQueryResults(json['queryId']);
       return SearchQueryWaitingForResponse(json['queryId']);
@@ -71,7 +70,6 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
 
   @override
   Map<String, dynamic>? toJson(SearchQueryState state) {
-    print(state.toString() + "asdsds");
     return state.toMap();
   }
 }

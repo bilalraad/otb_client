@@ -3,17 +3,14 @@ import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:just_audio/just_audio.dart';
 import '../bloc/search_query/search_query_bloc.dart';
 import 'screens/trips_query_result/trips_query_result_page.dart';
 
 import 'screens/select_airlines/select_airlines_screen.dart';
+import 'utils/logger.dart';
 
 Future<dynamic> _onBackgroundMessage(RemoteMessage message) async {
-  print(message.notification);
-  final player = AudioPlayer();
-  await player.setAsset('assets/files/notification_sound.wav');
-  player.play();
+  logger(FirebaseMessaging).d(message);
 }
 
 class Home extends StatefulWidget {
@@ -46,8 +43,9 @@ class _HomeState extends State<Home> {
 
     FirebaseMessaging.onBackgroundMessage(_onBackgroundMessage);
     FirebaseMessaging.onMessage.listen((event) {
-      print(event.notification);
-      print(event);
+      //TODO: HANDEL ON CLICK
+      logger(_HomeState).d(event.notification);
+      logger(_HomeState).d(event);
     });
 
     super.initState();
@@ -56,7 +54,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final queryBloc = context.read<TripsQueryBloc>();
-    print(queryBloc.state);
     if (queryBloc.state is SearchQueryWaitingForResponse) {
       return const TripsQueryResultPage();
     }

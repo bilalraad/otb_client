@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:otbclient/src/view/utils/utils.dart';
 import '../../data/local_database/app_local_db.dart';
 import '../../data/models/user.dart';
 
@@ -21,15 +22,14 @@ class AppUserCubit extends Cubit<AppUserState> {
             AppUserState(status: AppUserStatus.tokenRegistered, user: appUser));
       } else {
         final deviceToken = await _fcm.getToken();
-        print(deviceToken);
-
         emit(AppUserState(
             status: AppUserStatus.tokenRegistered,
             user: AppUser(deviceToken: deviceToken!)));
         _lcoalDB.updateUserData(state.user);
       }
-    } catch (e) {
-      print(e);
+    } catch (e, s) {
+      logger(AppUserCubit).d(e);
+      logger(AppUserCubit).d(s);
     }
   }
 
