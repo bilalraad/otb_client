@@ -120,6 +120,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.5-nullsafety"
+  entry:
+    dependency: "direct main"
+    description:
+      name: entry
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   equatable:
     dependency: "direct main"
     description:
@@ -518,6 +525,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.2"
+  simple_animations:
+    dependency: transitive
+    description:
+      name: simple_animations
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.1"
   sky_engine:
     dependency: transitive
     description: flutter

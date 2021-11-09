@@ -1,3 +1,4 @@
+import 'package:entry/entry.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -40,26 +41,35 @@ class _TripsQueryResultPageState extends State<TripsQueryResultPage> {
               if (state is SearchQueryLoading) {
                 return const Center(child: CupertinoActivityIndicator());
               } else if (state is SearchQueryWaitingForResponse) {
-                return const WaitingForResponseWidget();
+                return const Entry.scale(
+                  delay: Duration(milliseconds: 500),
+                  child: WaitingForResponseWidget(),
+                );
               } else if (state is SearchQuerySendingError) {
-                return DisplayError(
-                  title: appLoc.errorWhileSending,
-                  error: state.error,
-                  onRetry: () {
-                    context
-                        .read<TripsQueryBloc>()
-                        .add(QuerySubmitted(state.query));
-                  },
+                return Entry.scale(
+                  delay: const Duration(milliseconds: 500),
+                  child: DisplayError(
+                    title: appLoc.errorWhileSending,
+                    error: state.error,
+                    onRetry: () {
+                      context
+                          .read<TripsQueryBloc>()
+                          .add(QuerySubmitted(state.query));
+                    },
+                  ),
                 );
               } else if (state is SearchQueryStreamError) {
-                return DisplayError(
-                  title: appLoc.unknownError,
-                  error: state.error,
-                  onRetry: () {
-                    context
-                        .read<TripsQueryBloc>()
-                        .add(QueryResultStreamRetry(state.queryId));
-                  },
+                return Entry.scale(
+                  delay: const Duration(milliseconds: 500),
+                  child: DisplayError(
+                    title: appLoc.unknownError,
+                    error: state.error,
+                    onRetry: () {
+                      context
+                          .read<TripsQueryBloc>()
+                          .add(QueryResultStreamRetry(state.queryId));
+                    },
+                  ),
                 );
               } else if (state is SearchQueryResponseRecived) {
                 final result = state.trips;
@@ -100,7 +110,10 @@ class _TripsQueryResultPageState extends State<TripsQueryResultPage> {
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: ResponseTripItem(trip: result[index]),
+                            child: Entry.scale(
+                              delay: const Duration(milliseconds: 500),
+                              child: ResponseTripItem(trip: result[index]),
+                            ),
                           );
                         },
                         separatorBuilder: (context, index) =>
