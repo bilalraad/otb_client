@@ -134,6 +134,8 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
           .collection('quries')
           .doc(query.queryId)
           .set(query.toMap());
+      //TODO: SEND EMAIL TO ROA
+      //TODO: SEND NOTIFICATION TO THE ADMING APP
     } catch (e) {
       throw UnknownErrorException();
     }

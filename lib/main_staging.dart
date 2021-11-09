@@ -14,6 +14,10 @@ import './src/data/API/search_query_service.dart';
 import './src/data/local_database/app_local_db.dart';
 
 Future<void> main() async {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
   runZonedGuarded<Future<void>>(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
