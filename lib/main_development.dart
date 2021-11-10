@@ -20,12 +20,12 @@ import './src/data/local_database/app_local_db.dart';
 import 'src/bloc/search_query/search_query_bloc.dart';
 
 Future<void> main() async {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.portraitUp,
-  ]);
   runZonedGuarded<Future<void>>(() async {
     WidgetsFlutterBinding.ensureInitialized();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
     await Firebase.initializeApp();
 
     HydratedBloc.storage = await HydratedStorage.build(
