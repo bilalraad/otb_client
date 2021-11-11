@@ -12,8 +12,8 @@ final searchResult = {
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": describeEnum(Airport.BGW),
-        "to": describeEnum(Airport.DAM),
+        "from": describeEnum(AirportCode.BGW),
+        "to": describeEnum(AirportCode.DAM),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -21,8 +21,8 @@ final searchResult = {
       },
       "return": {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
-        "from": describeEnum(Airport.DAM),
-        "to": describeEnum(Airport.BGW),
+        "from": describeEnum(AirportCode.DAM),
+        "to": describeEnum(AirportCode.BGW),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -37,8 +37,8 @@ final searchResult = {
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": describeEnum(Airport.BGW),
-        "to": describeEnum(Airport.BEY),
+        "from": describeEnum(AirportCode.BGW),
+        "to": describeEnum(AirportCode.BEY),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -46,8 +46,8 @@ final searchResult = {
       },
       "return": {
         "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
-        "from": describeEnum(Airport.BEY),
-        "to": describeEnum(Airport.BGW),
+        "from": describeEnum(AirportCode.BEY),
+        "to": describeEnum(AirportCode.BGW),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -68,8 +68,8 @@ final searchResultOneWay = {
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": describeEnum(Airport.BGW),
-        "to": describeEnum(Airport.DAM),
+        "from": describeEnum(AirportCode.BGW),
+        "to": describeEnum(AirportCode.DAM),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -84,8 +84,8 @@ final searchResultOneWay = {
       "airline": describeEnum(Airline.IAW),
       "leaving": {
         "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-        "from": describeEnum(Airport.BGW),
-        "to": describeEnum(Airport.BEY),
+        "from": describeEnum(AirportCode.BGW),
+        "to": describeEnum(AirportCode.BEY),
         "departureTime": DateTime.now().toIso8601String(),
         "arriveTime": DateTime.now()
             .add(const Duration(hours: 24, minutes: 10))
@@ -100,8 +100,8 @@ final searchQuery = {
   "userDeviceToken": "ADASDASDDQWDQDQWDQWW",
   "tripCategory": describeEnum(TripCategory.economic),
   "type": describeEnum(TripType.oneWay),
-  "departureCity": describeEnum(Airport.BGW),
-  "arriveCity": describeEnum(Airport.AMM),
+  "departureCity": describeEnum(AirportCode.BGW),
+  "arriveCity": describeEnum(AirportCode.AMM),
   "leaveDate": DateTime.now().toIso8601String(),
   "returnDate": "",
   "travelers": {"adults": 1, "kids": 0, "infants": 0},
@@ -119,8 +119,8 @@ final fakeTrip = {
   "airline": describeEnum(Airline.IAW),
   "leaving": {
     "date": DateTime.now().add(const Duration(days: 1)).toIso8601String(),
-    "from": describeEnum(Airport.BGW),
-    "to": describeEnum(Airport.DAM),
+    "from": describeEnum(AirportCode.BGW),
+    "to": describeEnum(AirportCode.DAM),
     "departureTime": DateTime.now().toIso8601String(),
     "arriveTime": DateTime.now()
         .add(const Duration(hours: 24, minutes: 10))
@@ -128,8 +128,8 @@ final fakeTrip = {
   },
   "return": {
     "date": DateTime.now().add(const Duration(days: 10)).toIso8601String(),
-    "from": describeEnum(Airport.DAM),
-    "to": describeEnum(Airport.BGW),
+    "from": describeEnum(AirportCode.DAM),
+    "to": describeEnum(AirportCode.BGW),
     "departureTime": DateTime.now().toIso8601String(),
     "arriveTime": DateTime.now()
         .add(const Duration(hours: 24, minutes: 10))

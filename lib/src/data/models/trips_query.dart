@@ -22,8 +22,8 @@ class TripsQuery {
   final String userDeviceToken;
   final TripCategory tripCategory;
   final TripType type;
-  final String departureCity;
-  final String arriveCity;
+  final AirportCode? departureCity;
+  final AirportCode? arriveCity;
   final DateTime? leaveDate;
   final DateTime? returnDate;
   final Travelers travelers;
@@ -34,8 +34,8 @@ class TripsQuery {
     String? userDeviceToken,
     TripCategory? tripCategory,
     TripType? type,
-    String? departureCity,
-    String? arriveCity,
+    AirportCode? departureCity,
+    AirportCode? arriveCity,
     DateTime? leaveDate,
     DateTime? returnDate,
     Travelers? travelers,
@@ -69,8 +69,10 @@ class TripsQuery {
           .firstWhere((tc) => describeEnum(tc) == json["tripCategory"]),
       type:
           TripType.values.firstWhere((ty) => describeEnum(ty) == json["type"]),
-      departureCity: json["departureCity"],
-      arriveCity: json["arriveCity"],
+      departureCity: AirportCode.values
+          .firstWhere((ac) => describeEnum(ac) == json["departureCity"]),
+      arriveCity: AirportCode.values
+          .firstWhere((ac) => describeEnum(ac) == json["arriveCity"]),
       leaveDate: DateTime.parse(json["leaveDate"]),
       returnDate: DateTime.parse(json["returnDate"]),
       travelers: Travelers.fromMap(json["travelers"]),
@@ -83,8 +85,8 @@ class TripsQuery {
         "userDeviceToken": userDeviceToken,
         "tripCategory": describeEnum(tripCategory),
         "type": describeEnum(type),
-        "departureCity": departureCity,
-        "arriveCity": arriveCity,
+        "departureCity": describeEnum(departureCity!),
+        "arriveCity": describeEnum(arriveCity!),
         "leaveDate": leaveDate?.toIso8601String(),
         "returnDate": returnDate?.toIso8601String(),
         "travelers": travelers.toMap(),
@@ -97,8 +99,8 @@ class TripsQuery {
       userDeviceToken: '',
       tripCategory: TripCategory.economic,
       type: TripType.oneWay,
-      departureCity: '',
-      arriveCity: '',
+      departureCity: null,
+      arriveCity: null,
       travelers: Travelers(adults: 1),
       airLines: [],
     );

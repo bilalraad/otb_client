@@ -13,15 +13,15 @@ class FlightDetails extends Equatable {
   });
 
   final DateTime date;
-  final Airport from;
-  final Airport to;
+  final AirportCode from;
+  final AirportCode to;
   final TimeOfDay departureTime;
   final TimeOfDay arriveTime;
 
   FlightDetails copyWith({
     DateTime? date,
-    Airport? from,
-    Airport? to,
+    AirportCode? from,
+    AirportCode? to,
     TimeOfDay? departureTime,
     TimeOfDay? arriveTime,
   }) =>
@@ -36,8 +36,9 @@ class FlightDetails extends Equatable {
   factory FlightDetails.fromMap(Map<String, dynamic> json) {
     return FlightDetails(
       date: DateTime.parse(json["date"]),
-      from: Airport.values.firstWhere((a) => describeEnum(a) == json["from"]),
-      to: Airport.values.firstWhere((a) => describeEnum(a) == json["to"]),
+      from:
+          AirportCode.values.firstWhere((a) => describeEnum(a) == json["from"]),
+      to: AirportCode.values.firstWhere((a) => describeEnum(a) == json["to"]),
       departureTime:
           TimeOfDay.fromDateTime(DateTime.parse(json["departureTime"])),
       arriveTime: TimeOfDay.fromDateTime(DateTime.parse(json["arriveTime"])),

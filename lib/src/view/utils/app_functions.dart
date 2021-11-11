@@ -59,9 +59,9 @@ String _tripQueryToWhatsAppMessage(TripsQuery query) {
 }
 
 void validateTripQuery(TripsQuery query, AppLocalizations appLoc) {
-  if (query.departureCity.isEmpty) {
+  if (query.departureCity == null) {
     throw appLoc.pleaseSelectDepartureCity;
-  } else if (query.arriveCity.isEmpty) {
+  } else if (query.arriveCity == null) {
     throw appLoc.pleaseSelectArriveCity;
   } else if (query.leaveDate == null) {
     throw appLoc.pleaseSelectDepartureDate;
@@ -97,21 +97,21 @@ Route createRoute(Widget route, {Cubic curve = Curves.ease}) {
   );
 }
 
-String mapAirportCodeToName(Airport code, AppLocalizations appLoc) {
+String mapAirportCodeToName(AirportCode code, AppLocalizations appLoc) {
   switch (code) {
-    case Airport.BGW:
+    case AirportCode.BGW:
       return appLoc.baghdad;
-    case Airport.DAM:
+    case AirportCode.DAM:
       return appLoc.damascus;
-    case Airport.BEY:
+    case AirportCode.BEY:
       return appLoc.beirut;
-    case Airport.CAI:
+    case AirportCode.CAI:
       return appLoc.cairo;
-    case Airport.AMM:
+    case AirportCode.AMM:
       return appLoc.amman;
-    case Airport.SAW:
+    case AirportCode.SAW:
       return appLoc.istanbulSabiha;
-    case Airport.IST:
+    case AirportCode.IST:
       return appLoc.istanbulAtaturk;
     default:
       return appLoc.baghdad;

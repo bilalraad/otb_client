@@ -64,7 +64,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                     SelectCity(
                       excludeCountry: newQuery.arriveCity,
                       onCitySelected: (val) {
-                        newQuery = newQuery.copyWith(departureCity: val.code);
+                        newQuery = newQuery.copyWith(departureCity: val);
                         setState(() {});
                       },
                       title: appLoc.depatrueCiry,
@@ -74,7 +74,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                     SelectCity(
                       excludeCountry: newQuery.departureCity,
                       onCitySelected: (val) {
-                        newQuery = newQuery.copyWith(arriveCity: val.code);
+                        newQuery = newQuery.copyWith(arriveCity: val);
                         setState(() {});
                       },
                       title: appLoc.returnCiry,

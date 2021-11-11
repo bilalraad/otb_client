@@ -11,6 +11,7 @@ class AppUserCubit extends Cubit<AppUserState> {
   final FirebaseMessaging _fcm;
   final BaseApplocalDB _lcoalDB;
   AppUserCubit(this._fcm, this._lcoalDB) : super(const AppUserState()) {
+    //TODO: add signin anonymosly
     _getUserToken();
   }
 

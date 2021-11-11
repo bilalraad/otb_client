@@ -1,7 +1,9 @@
+import 'package:otbclient/src/view/utils/enums.dart';
+
 import '../../view/utils/app_assets.dart';
 
 class Airport {
-  final String code;
+  final AirportCode code;
   final String name;
   final String provanceName;
   final String countryName;
@@ -19,7 +21,7 @@ class Airport {
 
   static final supportedAirports = [
     Airport(
-      code: 'BGW',
+      code: AirportCode.BGW,
       name: 'Baghdad International Airport',
       countryName: 'Iraq',
       countryNameAr: 'العراق',
@@ -27,7 +29,7 @@ class Airport {
       countryImage: AppAssets.iraqFlag,
     ),
     Airport(
-      code: 'DAM',
+      code: AirportCode.DAM,
       name: 'Damascus International Airport',
       countryName: 'sirya',
       countryNameAr: 'سوريا',
@@ -35,7 +37,7 @@ class Airport {
       countryImage: AppAssets.siryaFlag,
     ),
     Airport(
-      code: 'BEY',
+      code: AirportCode.BEY,
       name: 'Beirut Rafic Hariri International Airport',
       countryName: 'lebanon',
       countryNameAr: 'لبنان',
@@ -43,7 +45,7 @@ class Airport {
       countryImage: AppAssets.lebanonFlag,
     ),
     Airport(
-      code: 'CAI',
+      code: AirportCode.CAI,
       name: 'Cairo International Airport',
       countryName: 'eygpt',
       countryNameAr: 'مصر',
@@ -51,7 +53,7 @@ class Airport {
       countryImage: AppAssets.egyptFlag,
     ),
     Airport(
-      code: 'AMM',
+      code: AirportCode.AMM,
       name: 'Queen Alia International Airport',
       countryName: 'jordan',
       countryNameAr: 'الاردن',
@@ -59,7 +61,7 @@ class Airport {
       countryImage: AppAssets.jordanFlag,
     ),
     Airport(
-      code: 'SAW',
+      code: AirportCode.SAW,
       name: 'Sabiha Gokcen International Airport',
       countryName: 'turkey',
       countryNameAr: 'تركيا',
@@ -67,7 +69,7 @@ class Airport {
       countryImage: AppAssets.turkeyFlag,
     ),
     Airport(
-      code: 'IST',
+      code: AirportCode.IST,
       name: 'Istanbul Airport',
       countryName: 'turkey',
       countryNameAr: 'تركيا',

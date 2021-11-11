@@ -4,7 +4,7 @@ enum TripType { oneWay, round }
 
 enum TripCategory { economic, business }
 
-enum Airport { BGW, DAM, BEY, CAI, AMM, SAW, IST }
+enum AirportCode { BGW, DAM, BEY, CAI, AMM, SAW, IST }
 
 enum Airline { IAW, THY, MEA, FBA, SAW }
 

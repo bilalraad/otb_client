@@ -1,17 +1,17 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/airport.dart';
-import '../../../utils/app_colors.dart';
-import '../../../utils/app_text_styles.dart';
+import '../../../utils/utils.dart';
 
 class SelectCity extends StatefulWidget {
-  final Function(Airport) onCitySelected;
+  final Function(AirportCode) onCitySelected;
   final String title;
   final IconData icon;
 
   ///useful when you want to prevent the user from slecting same cities for
   ///departur and return
-  final String? excludeCountry;
+  final AirportCode? excludeCountry;
   const SelectCity(
       {Key? key,
       required this.onCitySelected,
@@ -56,6 +56,7 @@ class _SelectCityState extends State<SelectCity> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
+                          //TODO: change this to be dynamic and with licalizaton
                           'اختر مدينة الانطلاق',
                           style: AppTextStyles.subHeaderStyle(),
                         ),
@@ -64,7 +65,8 @@ class _SelectCityState extends State<SelectCity> {
                       Expanded(
                         child: ListView(
                           children: Airport.supportedAirports.map((c) {
-                            if (widget.excludeCountry != c.code) {
+                            if (describeEnum(widget.excludeCountry!) !=
+                                c.code) {
                               return Column(
                                 children: [
                                   Padding(
@@ -72,7 +74,7 @@ class _SelectCityState extends State<SelectCity> {
                                         vertical: 5, horizontal: 10),
                                     child: InkWell(
                                       onTap: () {
-                                        widget.onCitySelected(c);
+                                        widget.onCitySelected(c.code);
                                         setState(() {
                                           selectedAirport = c.provanceName;
                                         });
@@ -93,7 +95,7 @@ class _SelectCityState extends State<SelectCity> {
                                           ),
                                           const Spacer(),
                                           Text(
-                                            c.code,
+                                            describeEnum(c.code),
                                             style: AppTextStyles.subHeaderStyle(
                                                 fontWeight: FontWeight.w500),
                                           ),
