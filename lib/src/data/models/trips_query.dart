@@ -91,6 +91,7 @@ class TripsQuery {
         "returnDate": returnDate?.toIso8601String(),
         "travelers": travelers.toMap(),
         "airLines": List<dynamic>.from(airLines.map((x) => describeEnum(x))),
+        "answeredByAdmin": false
       };
 
   factory TripsQuery.initial() {

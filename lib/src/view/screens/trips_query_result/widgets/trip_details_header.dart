@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../utils/utils.dart';
 import '../../../../data/models/flight_details.dart';
@@ -94,11 +95,7 @@ class TripDetailsHeader extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  flightDetails.date.day.toString() +
-                      "/" +
-                      flightDetails.date.month.toString() +
-                      "/" +
-                      flightDetails.date.year.toString(),
+                  DateFormat.yMEd().format(flightDetails.date),
                   style: AppTextStyles.body(fontWeight: FontWeight.bold),
                 )
               ],

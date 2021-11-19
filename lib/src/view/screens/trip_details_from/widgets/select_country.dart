@@ -65,8 +65,7 @@ class _SelectCityState extends State<SelectCity> {
                       Expanded(
                         child: ListView(
                           children: Airport.supportedAirports.map((c) {
-                            if (describeEnum(widget.excludeCountry!) !=
-                                c.code) {
+                            if (widget.excludeCountry != c.code) {
                               return Column(
                                 children: [
                                   Padding(

@@ -27,12 +27,8 @@ class FlighTimingDetails extends StatelessWidget {
               const Icon(Icons.flight_takeoff_rounded),
               Text(appLoc.departurTime),
               Text(
-                DateFormat.jm().format(DateTime(
-                    2021,
-                    1,
-                    1,
-                    flightDetails.departureTime.hour,
-                    flightDetails.departureTime.minute)),
+                DateFormat.jm()
+                    .format(flightDetails.departureTime!.toDateTime()),
                 style: AppTextStyles.body(fontWeight: FontWeight.w500),
               ),
             ],
@@ -67,12 +63,7 @@ class FlighTimingDetails extends StatelessWidget {
               const Icon(Icons.flight_land_rounded),
               Text(appLoc.arriveTime),
               Text(
-                DateFormat.jm().format(DateTime(
-                    2021,
-                    1,
-                    1,
-                    flightDetails.arriveTime.hour,
-                    flightDetails.arriveTime.minute)),
+                DateFormat.jm().format(flightDetails.arriveTime!.toDateTime()),
                 style: AppTextStyles.body(fontWeight: FontWeight.w500),
               ),
             ],

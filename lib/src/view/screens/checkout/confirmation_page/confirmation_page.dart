@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import '../../../../bloc/app_user/app_user_cubit.dart';
 import '../../../../data/models/user.dart';
 
@@ -88,9 +89,8 @@ class ConfirmationPage extends StatelessWidget {
                 ),
                 AppButton(
                   onPressed: () async {
+                    //on confirm pressed
                     if (formKey.currentState!.validate()) {
-                      Navigator.of(context)
-                          .pushReplacement(createRoute(const FinalStage()));
                       appUser = appUser.copyWith(
                           address: addressController.text,
                           name: nameController.text,
@@ -100,9 +100,23 @@ class ConfirmationPage extends StatelessWidget {
                         paymentMethod: paymentType,
                         selectedTrip: trip,
                       );
-                      await context
-                          .read<ConfirmOrderCubit>()
-                          .confirmOrder(order);
+                      try {
+                        EasyLoading.show(
+                            indicator: const CircularProgressIndicator.adaptive(
+                          backgroundColor: AppColors.secondaryColor,
+                        ));
+                        await context
+                            .read<ConfirmOrderCubit>()
+                            .confirmOrder(order);
+                        EasyLoading.dismiss();
+                        Navigator.of(context)
+                            .popUntil((route) => route.isFirst);
+
+                        Navigator.of(context)
+                            .pushReplacement(createRoute(const FinalStage()));
+                      } catch (e) {
+                        EasyLoading.showError(appLoc.unknownError);
+                      }
                     }
                   },
                   text: appLoc.confirm,

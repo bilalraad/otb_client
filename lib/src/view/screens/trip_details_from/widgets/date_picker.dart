@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
+import 'package:intl/intl.dart';
 
 class AppDatePicker extends StatefulWidget {
   final String title;
@@ -64,11 +65,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
               children: [
                 Text(widget.title),
                 if (selectedDate != null)
-                  Text(selectedDate!.day.toString() +
-                      "/" +
-                      selectedDate!.year.toString() +
-                      "/" +
-                      selectedDate!.month.toString())
+                  Text(DateFormat.yMEd().format(selectedDate!))
               ],
             ),
           ],

@@ -12,6 +12,7 @@ import 'src/view/home.dart';
 import 'src/view/utils/app_colors.dart';
 import 'src/view/utils/app_text_styles.dart';
 
+//TODO: CHECK IF THE USER CAN GO BACK ID HE FINISHES THE ORDER
 class OTBApp extends StatelessWidget {
   final BaseTripsQueryService tripsQueryService;
   final String flavor;

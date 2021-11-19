@@ -47,6 +47,7 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
     _resultsStreamSubscription?.cancel();
     _resultsStreamSubscription =
         _queryService.getTripsResult(queryId).listen((event) {
+      print(event);
       if (event.isNotEmpty) add(ResponseRecieved(event));
     })
           ..onError((e) {

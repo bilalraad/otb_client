@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
   logger: ^1.1.0
   flutter_spinkit: ^5.1.0

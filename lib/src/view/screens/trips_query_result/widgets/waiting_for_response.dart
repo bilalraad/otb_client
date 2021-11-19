@@ -9,6 +9,7 @@ class WaitingForResponseWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appLoc = AppLocalizations.of(context)!;
+    //TODO: ADD LOADING INDICATOR
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -97,7 +97,7 @@ class _TripsQueryResultPageState extends State<TripsQueryResultPage> {
                               mapAirportCodeToName(
                                   result.first.leaving.to, appLoc) +
                               " - " +
-                              describeEnum(result.first.type),
+                              mapTripTypeToName(result.first.type, appLoc),
                           style:
                               AppTextStyles.body(fontWeight: FontWeight.w500),
                         )

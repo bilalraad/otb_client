@@ -58,6 +58,15 @@ String _tripQueryToWhatsAppMessage(TripsQuery query) {
       'الخطوط الجوية المحددة:\n${query.airLines}');
 }
 
+String mapTripTypeToName(TripType type, AppLocalizations appLoc) {
+  switch (type) {
+    case TripType.oneWay:
+      return appLoc.oneWay;
+    default:
+      return appLoc.round;
+  }
+}
+
 void validateTripQuery(TripsQuery query, AppLocalizations appLoc) {
   if (query.departureCity == null) {
     throw appLoc.pleaseSelectDepartureCity;

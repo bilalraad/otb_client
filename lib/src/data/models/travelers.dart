@@ -20,11 +20,13 @@ class Travelers {
         infants: infants ?? this.infants,
       );
 
-  factory Travelers.fromMap(Map<String, dynamic> json) => Travelers(
-        adults: json["adults"],
-        kids: json["kids"],
-        infants: json["infants"],
-      );
+  factory Travelers.fromMap(Map<String, dynamic> json) {
+    return Travelers(
+      adults: json["adults"],
+      kids: json["kids"],
+      infants: json["infants"],
+    );
+  }
 
   Map<String, dynamic> toMap() => {
         "adults": adults,
