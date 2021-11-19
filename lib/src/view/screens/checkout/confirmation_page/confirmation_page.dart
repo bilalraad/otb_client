@@ -100,23 +100,14 @@ class ConfirmationPage extends StatelessWidget {
                         paymentMethod: paymentType,
                         selectedTrip: trip,
                       );
-                      try {
-                        EasyLoading.show(
-                            indicator: const CircularProgressIndicator.adaptive(
-                          backgroundColor: AppColors.secondaryColor,
-                        ));
-                        await context
-                            .read<ConfirmOrderCubit>()
-                            .confirmOrder(order);
-                        EasyLoading.dismiss();
-                        Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
 
-                        Navigator.of(context)
-                            .pushReplacement(createRoute(const FinalStage()));
-                      } catch (e) {
-                        EasyLoading.showError(appLoc.unknownError);
-                      }
+                      await context
+                          .read<ConfirmOrderCubit>()
+                          .confirmOrder(order);
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+
+                      Navigator.of(context)
+                          .pushReplacement(createRoute(const FinalStage()));
                     }
                   },
                   text: appLoc.confirm,

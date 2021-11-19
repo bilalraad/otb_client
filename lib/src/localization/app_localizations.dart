@@ -601,6 +601,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'من نحن'**
   String get whoAreWe;
+
+  /// No description provided for @theresNoItemsHere.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد عناصر'**
+  String get theresNoItemsHere;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

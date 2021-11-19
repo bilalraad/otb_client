@@ -261,4 +261,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get whoAreWe => 'من نحن';
+
+  @override
+  String get theresNoItemsHere => 'لا يوجد عناصر';
 }
