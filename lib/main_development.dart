@@ -28,9 +28,8 @@ Future<void> main() async {
     ]);
     await Firebase.initializeApp();
 
-    HydratedBloc.storage = await HydratedStorage.build(
+    final storage = await HydratedStorage.build(
         storageDirectory: await getApplicationDocumentsDirectory());
-    Bloc.observer = AppObserver();
     final _tripsQueryService = FirebaseTripsQueryService();
     final _appUserCubit =
         AppUserCubit(FirebaseMessaging.instance, SecureLocalDB());
@@ -39,12 +38,15 @@ Future<void> main() async {
     } else {
       FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
     }
-
-    runApp(BlocProvider.value(
-      value: _appUserCubit,
-      child:
-          OTBApp(tripsQueryService: _tripsQueryService, flavor: 'development'),
-    ));
+    HydratedBlocOverrides.runZoned(
+      () => runApp(BlocProvider.value(
+        value: _appUserCubit,
+        child: OTBApp(
+            tripsQueryService: _tripsQueryService, flavor: 'development'),
+      )),
+      storage: storage,
+      blocObserver: AppObserver(),
+    );
   }, (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack));
 }
 
