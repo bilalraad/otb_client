@@ -95,7 +95,7 @@ class TripDetailsHeader extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  DateFormat.yMEd().format(flightDetails.date),
+                  DateFormat('d/M/yy ,E').format(flightDetails.date),
                   style: AppTextStyles.body(fontWeight: FontWeight.bold),
                 )
               ],

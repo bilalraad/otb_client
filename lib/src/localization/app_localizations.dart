@@ -383,7 +383,7 @@ abstract class AppLocalizations {
   /// No description provided for @errorWhileSending.
   ///
   /// In ar, this message translates to:
-  /// **'حدث خطا أثناء البحث عن رحلات'**
+  /// **'حدث خطا أثناء إرسال طلبك'**
   String get errorWhileSending;
 
   /// No description provided for @unknownError.
@@ -602,11 +602,53 @@ abstract class AppLocalizations {
   /// **'من نحن'**
   String get whoAreWe;
 
-  /// No description provided for @theresNoItemsHere.
+  /// No description provided for @chooseDepartureCity.
   ///
   /// In ar, this message translates to:
-  /// **'لا يوجد عناصر'**
-  String get theresNoItemsHere;
+  /// **'اختر مدينة الانطلاق'**
+  String get chooseDepartureCity;
+
+  /// No description provided for @chooseArriveCity.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر مدينة الوصول'**
+  String get chooseArriveCity;
+
+  /// No description provided for @pleaseEnterAddress.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال العنوان'**
+  String get pleaseEnterAddress;
+
+  /// No description provided for @pleaseEnterDetailedAddress.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال عنوان مفصل'**
+  String get pleaseEnterDetailedAddress;
+
+  /// No description provided for @pleaseEnterName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال الاسم'**
+  String get pleaseEnterName;
+
+  /// No description provided for @pleaseEnterFullName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال الاسم الكامل'**
+  String get pleaseEnterFullName;
+
+  /// No description provided for @pleaseEnterACorrectNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرجاء ادخال رقم صحيح'**
+  String get pleaseEnterACorrectNumber;
+
+  /// No description provided for @pleaseEnterPhoneNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رجاءا ادخل رقم الهاتف'**
+  String get pleaseEnterPhoneNumber;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

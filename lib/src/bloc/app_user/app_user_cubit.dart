@@ -11,7 +11,6 @@ class AppUserCubit extends Cubit<AppUserState> {
   final FirebaseMessaging _fcm;
   final BaseApplocalDB _lcoalDB;
   AppUserCubit(this._fcm, this._lcoalDB) : super(const AppUserState()) {
-    //TODO: add signin anonymosly
     _getUserToken();
   }
 
@@ -22,11 +21,15 @@ class AppUserCubit extends Cubit<AppUserState> {
         emit(
             AppUserState(status: AppUserStatus.tokenRegistered, user: appUser));
       } else {
-        //TODO: HANDLE WHEN THE TOKEN IS MISSING DUE TO INTERNET PROBLEMS
+        //!: Not a good way to garnt user token 100%
         final deviceToken = await _fcm.getToken();
-        emit(AppUserState(
-            status: AppUserStatus.tokenRegistered,
-            user: AppUser(deviceToken: deviceToken!)));
+        if (deviceToken == null) {
+          emit(AppUserState(
+              status: AppUserStatus.tokenRegistered,
+              user: AppUser(deviceToken: deviceToken!)));
+        } else {
+          emit(const AppUserState(status: AppUserStatus.noToken));
+        }
         _lcoalDB.updateUserData(state.user);
       }
     } catch (e, s) {

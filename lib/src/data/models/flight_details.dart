@@ -45,8 +45,6 @@ class FlightDetails extends Equatable {
       );
 
   factory FlightDetails.fromMap(Map<String, dynamic> json) {
-    print(json['flightNumber']);
-
     return FlightDetails(
       date: DateTime.parse(json["date"]),
       flightNumber: json['flightNumber'],

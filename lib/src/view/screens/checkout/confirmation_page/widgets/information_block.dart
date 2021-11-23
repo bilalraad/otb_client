@@ -39,7 +39,7 @@ class _InformationBlockState extends State<InformationBlock> {
   @override
   Widget build(BuildContext context) {
     final appLoc = AppLocalizations.of(context)!;
-
+    final validators = Validators(appLoc: appLoc);
     return Form(
       key: widget.formKey,
       child: Column(
@@ -50,21 +50,21 @@ class _InformationBlockState extends State<InformationBlock> {
           AppTextField(
             controller: widget.nameController,
             lableText: appLoc.fullName,
-            validator: validateFullName,
+            validator: validators.validateFullName,
           ),
           const SizedBox(height: 10),
           AppTextField(
             controller: widget.phoneNumberController,
             keyboardType: TextInputType.phone,
             lableText: appLoc.phoneNumber,
-            validator: validatePhoneNo,
+            validator: validators.validatePhoneNo,
           ),
           const SizedBox(height: 10),
           if (widget.showAddress)
             AppTextField(
               controller: widget.addressController,
               lableText: appLoc.address,
-              validator: validateAddress,
+              validator: validators.validateAddress,
             ),
         ],
       ),

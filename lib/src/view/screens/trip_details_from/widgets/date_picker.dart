@@ -65,7 +65,9 @@ class _AppDatePickerState extends State<AppDatePicker> {
               children: [
                 Text(widget.title),
                 if (selectedDate != null)
-                  Text(DateFormat.yMEd().format(selectedDate!))
+                  Text(
+                    DateFormat('d/M/yy ,E').format(selectedDate!),
+                  )
               ],
             ),
           ],

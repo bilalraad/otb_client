@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../models/user.dart';
 
@@ -15,6 +16,7 @@ class SecureLocalDB extends BaseApplocalDB {
       if (_userJson != null) {
         return AppUser.fromJson(_userJson);
       } else {
+        await FirebaseAuth.instance.signInAnonymously();
         return null;
       }
     } catch (e) {

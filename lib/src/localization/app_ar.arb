@@ -47,7 +47,7 @@
   "youllBeNotified": "سوف يتم تنبيهك عند وصول نتيجة",
   "checkInternet": "الرجاء التأكد من اتصالك بالأنترنت والمحاولة مرة اخرى",
   "tryAgain": "إعادة المحاولة",
-  "errorWhileSending": "حدث خطا أثناء البحث عن رحلات",
+  "errorWhileSending": "حدث خطا أثناء إرسال طلبك",
   "unknownError": "حدث خطأ غير معروف",
   "bookNow": "احجز الان",
   "baghdad": "بغداد",
@@ -83,5 +83,13 @@
   "backToHome": "العودة الى الرئيسية",
   "confirm": "تأكيد",
   "aboutUs": "شركة ناشئة هدفها تسهيل عملية حجز التذاكر وتوفير رحلات بأسعارمناسبة للجميع ونطمح الى ان نكون رائدين بهذا المجال.",
-  "whoAreWe": "من نحن"
+  "whoAreWe": "من نحن",
+  "chooseDepartureCity": "اختر مدينة الانطلاق",
+  "chooseArriveCity": "اختر مدينة الوصول",
+  "pleaseEnterAddress": "الرجاء ادخال العنوان",
+  "pleaseEnterDetailedAddress": "الرجاء ادخال عنوان مفصل",
+  "pleaseEnterName": "الرجاء ادخال الاسم",
+  "pleaseEnterFullName": "الرجاء ادخال الاسم الكامل",
+  "pleaseEnterACorrectNumber": "الرجاء ادخال رقم صحيح",
+  "pleaseEnterPhoneNumber": "رجاءا ادخل رقم الهاتف"
 }

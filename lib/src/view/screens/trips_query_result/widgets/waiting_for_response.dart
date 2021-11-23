@@ -23,6 +23,7 @@ class WaitingForResponseWidget extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             child: Image.asset(AppAssets.waiting),
           ),
+          const SizedBox(height: 20),
           SpinKitFadingCube(color: Theme.of(context).colorScheme.primary),
           const SizedBox(height: 20),
           Text(appLoc.mightTakeFiveToFifteen,

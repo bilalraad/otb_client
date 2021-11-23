@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 import '../../../../bloc/app_user/app_user_cubit.dart';
 import '../../../../data/models/user.dart';
-
 import '../../../utils/utils.dart';
 import '../../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../../data/models/book_trip.dart';

@@ -43,7 +43,6 @@ class _HomeState extends State<Home> {
 
     FirebaseMessaging.onBackgroundMessage(_onBackgroundMessage);
     FirebaseMessaging.onMessage.listen((event) {
-      //TODO: HANDEL ON CLICK
       logger(_HomeState).d(event.notification);
       logger(_HomeState).d(event);
     });

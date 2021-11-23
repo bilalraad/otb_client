@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:otbclient/src/localization/app_localizations.dart';
 
 import '../../../../data/models/airport.dart';
 import '../../../utils/utils.dart';
@@ -8,6 +9,7 @@ class SelectCity extends StatefulWidget {
   final Function(AirportCode) onCitySelected;
   final String title;
   final IconData icon;
+  final bool isSelectDepartureCity;
 
   ///useful when you want to prevent the user from slecting same cities for
   ///departur and return
@@ -16,6 +18,7 @@ class SelectCity extends StatefulWidget {
       {Key? key,
       required this.onCitySelected,
       required this.title,
+      this.isSelectDepartureCity = true,
       required this.icon,
       this.excludeCountry})
       : super(key: key);
@@ -28,6 +31,7 @@ class _SelectCityState extends State<SelectCity> {
   String? selectedAirport;
   @override
   Widget build(BuildContext context) {
+    final appLoc = AppLocalizations.of(context)!;
     return Container(
       height: 50,
       width: (MediaQuery.of(context).size.width / 2) - 25,
@@ -56,8 +60,9 @@ class _SelectCityState extends State<SelectCity> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          //TODO: change this to be dynamic and with licalizaton
-                          'اختر مدينة الانطلاق',
+                          widget.isSelectDepartureCity
+                              ? appLoc.chooseDepartureCity
+                              : appLoc.chooseArriveCity,
                           style: AppTextStyles.subHeaderStyle(),
                         ),
                       ),

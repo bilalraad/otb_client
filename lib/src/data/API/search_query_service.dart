@@ -109,7 +109,6 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
     try {
       await _fireStore.collection('confirmedOrders').add(bookOrder.toMap());
     } catch (e) {
-      print('jjj' + e.toString());
       throw UnknownErrorException();
     }
   }

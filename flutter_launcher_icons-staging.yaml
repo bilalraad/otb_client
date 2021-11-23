@@ -1,5 +1,5 @@
 flutter_icons:
-  image_path: "assets/icons/staging_icon.png"
+  image_path: "assets/icons/staging_icon_filled.png"
   remove_alpha_ios: true
   android: true # can specify file name here e.g. "ic_launcher"
   ios: true # can specify file name here e.g. "My-Launcher-Icon"

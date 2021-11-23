@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../data/models/trips_query.dart';
@@ -8,21 +10,20 @@ import '../../localization/app_localizations.dart';
 import './utils.dart';
 
 void launchWhatsApp({
-  //TODO: Change to the otb real number
-  int phone = 07821304951,
+  int phone = 07730000231,
   TripsQuery? query,
 }) async {
   String url() {
     if (Platform.isAndroid) {
       if (query == null) return 'https://wa.me/+964$phone';
 
-      return "https://wa.me/+964$phone/?text=${_tripQueryToWhatsAppMessage(query)}";
+      return "https://wa.me/+964$phone/?text=${tripQueryToWhatsAppMessage(query)}";
     } else {
       if (query == null) {
         return 'https://api.whatsapp.com/send?phone=+964$phone';
       }
 
-      return "https://api.whatsapp.com/send?phone=+964$phone&text=${_tripQueryToWhatsAppMessage(query)}";
+      return "https://api.whatsapp.com/send?phone=+964$phone&text=${tripQueryToWhatsAppMessage(query)}";
     }
   }
 
@@ -44,18 +45,21 @@ Future<void> launchMap() async {
   }
 }
 
-String _tripQueryToWhatsAppMessage(TripsQuery query) {
-  //TODO: make sure to send [tripCategory] and [type] in their string fromat
-  return ('اريد حجز رحلة من ${query.departureCity} الى ${query.arriveCity} \n'
-      'نوع الرحلة: ${query.type}\n'
-      'فئة الرحلة: ${query.tripCategory}\n\n'
-      'موعد المغادرة: ${query.leaveDate}\n'
-      'موعد العودة: ${query.returnDate ?? 'لا يوجد'}\n\n'
+String tripQueryToWhatsAppMessage(TripsQuery query) {
+  List<String> airlines = [];
+  for (var airline in query.airLines) {
+    airlines.add(describeEnum(airline));
+  }
+  return ('اريد حجز رحلة من ${describeEnum(query.departureCity!)} الى ${describeEnum(query.arriveCity!)} \n'
+      'نوع الرحلة: ${describeEnum(query.type)}\n'
+      'فئة الرحلة: ${describeEnum(query.tripCategory)}\n\n'
+      'موعد المغادرة: ${DateFormat('d/M/yy ,E').format(query.leaveDate!)}\n'
+      'موعد العودة: ${query.returnDate == null ? 'لا يوجد' : DateFormat('d/M/yy ,E').format(query.returnDate!)}\n\n'
       'عدد المسافرين\n'
       'الكبار: ${query.travelers.adults}\n'
       'الاطفال: ${query.travelers.kids == 0 ? 'لايوجد' : query.travelers.kids}\n'
       'الرضع: ${query.travelers.infants == 0 ? 'لايوجد' : query.travelers.infants}\n\n'
-      'الخطوط الجوية المحددة:\n${query.airLines}');
+      'الخطوط الجوية المحددة:\n$airlines');
 }
 
 String mapTripTypeToName(TripType type, AppLocalizations appLoc) {
@@ -161,31 +165,35 @@ String mapAirlineCodeToLogo(Airline code) {
   }
 }
 
-String? validatePhoneNo(String? phoneNo) {
-  //TODO: INTEGRATE LOCALIZATION
-  final phoneRegEx = RegExp(r"07[3-9][0-9]{8}");
-  if (phoneNo == null || phoneNo.isEmpty) {
-    return "رجاءا ادخل رقم الهاتف";
-  } else if (!phoneRegEx.hasMatch(phoneNo) || phoneNo.length > 11) {
-    return "الرقم غير صحيح";
-  }
-  return null;
-}
+class Validators {
+  AppLocalizations appLoc;
+  Validators({required this.appLoc});
 
-String? validateFullName(String? fullName) {
-  if (fullName == null || fullName.isEmpty) {
-    return "الرجاء ادخال الاسم";
-  } else if (fullName.length < 8) {
-    return "الرجاء ادخال الاسم الكامل";
+  String? validatePhoneNo(String? phoneNo) {
+    final phoneRegEx = RegExp(r"07[3-9][0-9]{8}");
+    if (phoneNo == null || phoneNo.isEmpty) {
+      return appLoc.pleaseEnterPhoneNumber;
+    } else if (!phoneRegEx.hasMatch(phoneNo) || phoneNo.length > 11) {
+      return appLoc.pleaseEnterACorrectNumber;
+    }
+    return null;
   }
-  return null;
-}
 
-String? validateAddress(String? address) {
-  if (address == null || address.isEmpty) {
-    return "الرجاء ادخال العنوان";
-  } else if (address.length < 8) {
-    return "الرجاء ادخال عنوان مفصل";
+  String? validateFullName(String? fullName) {
+    if (fullName == null || fullName.isEmpty) {
+      return appLoc.pleaseEnterName;
+    } else if (fullName.length < 8) {
+      return appLoc.pleaseEnterFullName;
+    }
+    return null;
   }
-  return null;
+
+  String? validateAddress(String? address) {
+    if (address == null || address.isEmpty) {
+      return appLoc.pleaseEnterAddress;
+    } else if (address.length < 8) {
+      return appLoc.pleaseEnterDetailedAddress;
+    }
+    return null;
+  }
 }

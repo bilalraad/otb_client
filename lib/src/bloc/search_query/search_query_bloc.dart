@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:otbclient/src/view/utils/utils.dart';
 import '../../data/exceptions/exceptions.dart';
 
 import '../../data/models/trip.dart';
@@ -47,7 +48,7 @@ class TripsQueryBloc extends HydratedBloc<SearchQueryEvent, SearchQueryState> {
     _resultsStreamSubscription?.cancel();
     _resultsStreamSubscription =
         _queryService.getTripsResult(queryId).listen((event) {
-      print(event);
+      logger(TripsQueryBloc).i(event);
       if (event.isNotEmpty) add(ResponseRecieved(event));
     })
           ..onError((e) {

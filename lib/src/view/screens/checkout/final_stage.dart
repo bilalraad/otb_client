@@ -52,7 +52,6 @@ class OrderFailedWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            //TODO: change this for the order error
             appLoc.errorWhileSending,
             style: AppTextStyles.headerStyle(),
           ),

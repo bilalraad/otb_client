@@ -77,6 +77,7 @@ class _TripDetailsFormState extends State<TripDetailsForm> {
                         newQuery = newQuery.copyWith(arriveCity: val);
                         setState(() {});
                       },
+                      isSelectDepartureCity: false,
                       title: appLoc.returnCiry,
                       icon: Icons.location_on_outlined,
                     ),

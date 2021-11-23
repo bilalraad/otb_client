@@ -152,7 +152,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tryAgain => 'إعادة المحاولة';
 
   @override
-  String get errorWhileSending => 'حدث خطا أثناء البحث عن رحلات';
+  String get errorWhileSending => 'حدث خطا أثناء إرسال طلبك';
 
   @override
   String get unknownError => 'حدث خطأ غير معروف';
@@ -263,5 +263,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get whoAreWe => 'من نحن';
 
   @override
-  String get theresNoItemsHere => 'لا يوجد عناصر';
+  String get chooseDepartureCity => 'اختر مدينة الانطلاق';
+
+  @override
+  String get chooseArriveCity => 'اختر مدينة الوصول';
+
+  @override
+  String get pleaseEnterAddress => 'الرجاء ادخال العنوان';
+
+  @override
+  String get pleaseEnterDetailedAddress => 'الرجاء ادخال عنوان مفصل';
+
+  @override
+  String get pleaseEnterName => 'الرجاء ادخال الاسم';
+
+  @override
+  String get pleaseEnterFullName => 'الرجاء ادخال الاسم الكامل';
+
+  @override
+  String get pleaseEnterACorrectNumber => 'الرجاء ادخال رقم صحيح';
+
+  @override
+  String get pleaseEnterPhoneNumber => 'رجاءا ادخل رقم الهاتف';
 }
