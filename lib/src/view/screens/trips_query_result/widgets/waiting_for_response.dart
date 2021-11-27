@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../utils/utils.dart';
-import '../../../../localization/app_localizations.dart';
 
 class WaitingForResponseWidget extends StatelessWidget {
   const WaitingForResponseWidget({Key? key}) : super(key: key);

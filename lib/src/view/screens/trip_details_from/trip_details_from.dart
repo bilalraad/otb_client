@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/utils.dart';
 import '../../../bloc/search_query/search_query_bloc.dart';
 import '../../../data/models/trips_query.dart';
-import '../../../localization/app_localizations.dart';
 import '../trips_query_result/trips_query_result_page.dart';
 import 'widgets/date_picker.dart';
 import 'widgets/select_catgeory_and_type.dart';

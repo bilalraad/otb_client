@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../../../../data/models/flight_details.dart';
-import '../../../../localization/app_localizations.dart';
 import '../../../utils/app_text_styles.dart';
 
 class FlighTimingDetails extends StatelessWidget {

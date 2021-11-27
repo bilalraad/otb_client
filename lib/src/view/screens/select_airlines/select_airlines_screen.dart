@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/utils.dart';
-import '../../../localization/app_localizations.dart';
 import './widgets/aireline_card.dart';
 import '../trip_details_from/trip_details_from.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../../../data/models/user.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../../../data/models/user.dart';
 import '../../../../utils/utils.dart';
-import '../../../../../localization/app_localizations.dart';
 
 class InformationBlock extends StatefulWidget {
   final bool showAddress;

@@ -137,6 +137,7 @@ class FirebaseTripsQueryService extends BaseTripsQueryService {
       //TODO: SEND EMAIL TO ROA
       //TODO: SEND NOTIFICATION TO THE ADMING APP
     } catch (e) {
+      logger(FirebaseTripsQueryService).e(e);
       throw UnknownErrorException();
     }
   }

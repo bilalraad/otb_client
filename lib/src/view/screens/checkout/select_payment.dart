@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../../../data/models/trip.dart';
-import '../../../localization/app_localizations.dart';
 import 'confirmation_page/confirmation_page.dart';
 import '../../utils/utils.dart';
 

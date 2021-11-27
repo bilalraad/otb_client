@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../bloc/app_user/app_user_cubit.dart';
 import '../../../../data/models/user.dart';
@@ -7,7 +8,6 @@ import '../../../utils/utils.dart';
 import '../../../../bloc/confirm_order/confirm_order_cubit.dart';
 import '../../../../data/models/book_trip.dart';
 import '../../../../data/models/trip.dart';
-import '../../../../localization/app_localizations.dart';
 import 'widgets/direct_payment_description.dart';
 import 'widgets/information_block.dart';
 import 'widgets/zaincash_payment_description.dart';

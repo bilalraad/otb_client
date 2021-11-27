@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../home.dart';
 import '../../utils/utils.dart';
 import '../../../bloc/search_query/search_query_bloc.dart';
-import '../../../localization/app_localizations.dart';
 import 'widgets/display_error.dart';
 import 'widgets/response_trip_item.dart';
 import 'widgets/waiting_for_response.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../utils/utils.dart';
-import '../../../../../localization/app_localizations.dart';
 
 class DirectPaymentDescription extends StatelessWidget {
   const DirectPaymentDescription({Key? key}) : super(key: key);

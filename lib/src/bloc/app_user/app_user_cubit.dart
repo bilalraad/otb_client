@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:otbclient/src/view/utils/utils.dart';
 import '../../data/local_database/app_local_db.dart';
@@ -17,6 +18,8 @@ class AppUserCubit extends Cubit<AppUserState> {
   void _getUserToken() async {
     try {
       final appUser = await _lcoalDB.getUserData();
+      await FirebaseAuth.instance.signInAnonymously();
+
       if (appUser != null && appUser.deviceToken.isNotEmpty) {
         emit(
             AppUserState(status: AppUserStatus.tokenRegistered, user: appUser));

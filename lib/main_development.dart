@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:otbclient/src/data/fake_data.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 
@@ -59,17 +57,17 @@ class AppObserver extends BlocObserver {
         logger(FirebaseTripsQueryService).d('event');
         logger(FirebaseTripsQueryService).d(event);
 
-        final _fireStore = FirebaseFirestore.instance;
-        final resultItems = (event.query.type == TripType.oneWay
-            ? searchResultOneWay['resultItems']
-            : searchResult['resultItems']) as List<Map<String, dynamic>>;
-        for (var item in resultItems) {
-          _fireStore
-              .collection('quries')
-              .doc(event.query.queryId)
-              .collection('queryResults')
-              .add(item);
-        }
+        // final _fireStore = FirebaseFirestore.instance;
+        // final resultItems = (event.query.type == TripType.oneWay
+        //     ? searchResultOneWay['resultItems']
+        //     : searchResult['resultItems']) as List<Map<String, dynamic>>;
+        // for (var item in resultItems) {
+        //   _fireStore
+        //       .collection('quries')
+        //       .doc(event.query.queryId)
+        //       .collection('queryResults')
+        //       .add(item);
+        // }
       });
     }
     logger(AppObserver).d("Event" + event.toString());
